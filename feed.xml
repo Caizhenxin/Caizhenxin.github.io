@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Cai Zhenxin 的博客</title>
+        <link>https://caizhenxin.github.io/</link>
+        <description>技术博客与个人作品集</description>
+        <lastBuildDate>Mon, 09 Mar 2026 13:09:08 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <image>
+            <title>Cai Zhenxin 的博客</title>
+            <url>https://valaxy.site/valaxy-logo.png</url>
+            <link>https://caizhenxin.github.io/</link>
+        </image>
+        <copyright>CC BY-NC-SA 4.0 2026 © Cai Zhenxin</copyright>
+        <atom:link href="https://caizhenxin.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[第一篇博客]]></title>
+            <link>https://caizhenxin.github.io/posts/hello-world</link>
+            <guid isPermaLink="false">https://caizhenxin.github.io/posts/hello-world</guid>
+            <pubDate>Mon, 09 Mar 2026 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h1>你好，世界！</h1>
+<p>这是我的第一篇博客文章。</p>
+<h2>博客搭建完成</h2>
+<p>我使用 Valaxy + valaxy-theme-yun 搭建了这个博客。</p>
+<h3>特性</h3>
+<ul>
+<li>⚡ 热更新开发体验</li>
+<li>🎨</li>
+</ul>
+<br/><p>访问 <a href="https://caizhenxin.github.io/posts/hello-world" target="_blank">https://caizhenxin.github.io/posts/hello-world</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (Cai Zhenxin)</author>
+        </item>
+    </channel>
+</rss>

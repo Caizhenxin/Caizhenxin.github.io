@@ -1,0 +1,26 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Cai Zhenxin 的博客",
+    "home_page_url": "https://caizhenxin.github.io/",
+    "feed_url": "https://caizhenxin.github.io/feed.json",
+    "description": "技术博客与个人作品集",
+    "icon": "https://valaxy.site/valaxy-logo.png",
+    "author": {
+        "name": "Cai Zhenxin",
+        "url": "https://valaxy.site"
+    },
+    "items": [
+        {
+            "id": "https://caizhenxin.github.io/posts/hello-world",
+            "content_html": "<h1>你好，世界！</h1>\n<p>这是我的第一篇博客文章。</p>\n<h2>博客搭建完成</h2>\n<p>我使用 Valaxy + valaxy-theme-yun 搭建了这个博客。</p>\n<h3>特性</h3>\n<ul>\n<li>⚡ 热更新开发体验</li>\n<li>🎨</li>\n</ul>\n<br/><p>访问 <a href=\"https://caizhenxin.github.io/posts/hello-world\" target=\"_blank\">https://caizhenxin.github.io/posts/hello-world</a> 阅读全文。</p>",
+            "url": "https://caizhenxin.github.io/posts/hello-world",
+            "title": "第一篇博客",
+            "date_modified": "2026-03-09T00:00:00.000Z",
+            "date_published": "2026-03-09T00:00:00.000Z",
+            "author": {
+                "name": "Cai Zhenxin",
+                "url": "https://valaxy.site"
+            }
+        }
+    ]
+}

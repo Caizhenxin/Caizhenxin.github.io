@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://caizhenxin.github.io/</id>
+    <title>Cai Zhenxin 的博客</title>
+    <updated>2026-03-09T13:09:09.528Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <author>
+        <name>Cai Zhenxin</name>
+        <email>i@valaxy.site</email>
+        <uri>https://valaxy.site</uri>
+    </author>
+    <link rel="alternate" href="https://caizhenxin.github.io/"/>
+    <link rel="self" href="https://caizhenxin.github.io/atom.xml"/>
+    <subtitle>技术博客与个人作品集</subtitle>
+    <logo>https://valaxy.site/valaxy-logo.png</logo>
+    <icon>https://caizhenxin.github.io/favicon.svg</icon>
+    <rights>CC BY-NC-SA 4.0 2026 © Cai Zhenxin</rights>
+    <entry>
+        <title type="html"><![CDATA[第一篇博客]]></title>
+        <id>https://caizhenxin.github.io/posts/hello-world</id>
+        <link href="https://caizhenxin.github.io/posts/hello-world"/>
+        <updated>2026-03-09T00:00:00.000Z</updated>
+        <content type="html"><![CDATA[<h1>你好，世界！</h1>
+<p>这是我的第一篇博客文章。</p>
+<h2>博客搭建完成</h2>
+<p>我使用 Valaxy + valaxy-theme-yun 搭建了这个博客。</p>
+<h3>特性</h3>
+<ul>
+<li>⚡ 热更新开发体验</li>
+<li>🎨</li>
+</ul>
+<br/><p>访问 <a href="https://caizhenxin.github.io/posts/hello-world" target="_blank">https://caizhenxin.github.io/posts/hello-world</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>Cai Zhenxin</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2026-03-09T00:00:00.000Z</published>
+    </entry>
+</feed>
