@@ -42,14 +42,29 @@ jobs:
         run: pnpm install
 
       - name: Build
-        run: pnpm build
+        run: |
+          pnpm build
+          # Verify build output
+          if [ ! -f dist/index.html ]; then
+            echo "ERROR: Build failed - index.html not found!"
+            exit 1
+          fi
+          echo "Build successful - found index.html"
         
       - name: Debug - List dist contents
-        run: ls -la dist/
-
+        run: |
+          echo "=== dist directory contents ==="
+          ls -la dist/
+          echo ""
+          echo "=== assets directory contents ==="
+          ls -la dist/assets/ || echo "No assets directory"
+          echo ""
+          echo "=== Total files in dist ==="
+          find dist/ -type f | wc -l
+          
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          force_orphan: true
+          # Remove force_orphan: true as it may be causing issues
