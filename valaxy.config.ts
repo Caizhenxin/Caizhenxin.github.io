@@ -19,10 +19,8 @@ export default defineValaxyConfig<ThemeConfig>({
     banner: {
       enable: true,
       title: '游手好闲辛大人的小站',
-      cloud: true,
-      hero: {
-        title: '游手好闲辛大人的小站',
-        description: '技术博客与个人作品集',
+      cloud: {
+        enable: true,
       },
     },
     // 社交链接
