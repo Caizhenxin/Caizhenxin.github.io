@@ -4,7 +4,7 @@
         <title>Cai Zhenxin 的博客</title>
         <link>https://caizhenxin.github.io/</link>
         <description>技术博客与个人作品集</description>
-        <lastBuildDate>Tue, 10 Mar 2026 07:53:37 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 10 Mar 2026 08:19:04 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -14,6 +14,17 @@
         </image>
         <copyright>CC BY-NC-SA 4.0 2026 © Cai Zhenxin</copyright>
         <atom:link href="https://caizhenxin.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[从零搭建个人博客：我的技术选型与部署实战]]></title>
+            <link>https://caizhenxin.github.io/posts/blog-journey</link>
+            <guid isPermaLink="false">https://caizhenxin.github.io/posts/blog-journey</guid>
+            <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h1>从零搭建个人博客：我的技术选型与部署实战</h1>
+<p>最近终于完成了个人博客的搭建和部署，整个过程既有挑战也有收获。这篇文章记录了我的技术选型、遇到的问题以及最终的解决方案。</p>
+<h2>为什么选择静态博客？</h2>
+<br/><p>访问 <a href="https://caizhenxin.github.io/posts/blog-journey" target="_blank">https://caizhenxin.github.io/posts/blog-journey</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (Cai Zhenxin)</author>
+        </item>
         <item>
             <title><![CDATA[第一篇博客]]></title>
             <link>https://caizhenxin.github.io/posts/hello-world</link>
@@ -29,6 +40,28 @@
 <li>🎨</li>
 </ul>
 <br/><p>访问 <a href="https://caizhenxin.github.io/posts/hello-world" target="_blank">https://caizhenxin.github.io/posts/hello-world</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (Cai Zhenxin)</author>
+        </item>
+        <item>
+            <title><![CDATA[Vue 3 核心概念与实践笔记]]></title>
+            <link>https://caizhenxin.github.io/posts/vue3-notes</link>
+            <guid isPermaLink="false">https://caizhenxin.github.io/posts/vue3-notes</guid>
+            <pubDate>Mon, 09 Mar 2026 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h1>Vue 3 核心概念与实践笔记</h1>
+<p>Vue 3 作为现代化的前端框架，带来了许多激动人心的改进。本文记录了我学习 Vue 3 过程中的核心概念和实践经验。</p>
+<h2>Vue 3 的主要变化</h2>
+<h3></h3>
+<br/><p>访问 <a href="https://caizhenxin.github.io/posts/vue3-notes" target="_blank">https://caizhenxin.github.io/posts/vue3-notes</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (Cai Zhenxin)</author>
+        </item>
+        <item>
+            <title><![CDATA[GitHub Actions 实战指南：自动化部署静态网站]]></title>
+            <link>https://caizhenxin.github.io/posts/github-actions-guide</link>
+            <guid isPermaLink="false">https://caizhenxin.github.io/posts/github-actions-guide</guid>
+            <pubDate>Sun, 08 Mar 2026 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h1>GitHub Actions 实战指南：自动化部署静态网站</h1>
+<p>在搭建个人博客的过程中，我深入使用了 GitHub Actions 进行自动化部署。这篇文章将分享我的实战经验，帮助你掌握 GitH</p>
+<br/><p>访问 <a href="https://caizhenxin.github.io/posts/github-actions-guide" target="_blank">https://caizhenxin.github.io/posts/github-actions-guide</a> 阅读全文。</p>]]></content:encoded>
             <author>i@valaxy.site (Cai Zhenxin)</author>
         </item>
     </channel>
