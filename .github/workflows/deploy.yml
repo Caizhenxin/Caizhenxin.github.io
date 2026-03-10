@@ -36,8 +36,15 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
+          cache: pnpm
 
+      - name: Check environment
+        run: |
+          echo "Node version: $(node --version)"
+          echo "PNPM version: $(pnpm --version)"
+          echo "NPM version: $(npm --version)"
+          
       - name: Install dependencies
         run: pnpm install
 
