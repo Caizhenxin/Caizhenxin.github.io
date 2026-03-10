@@ -1,0 +1,1 @@
+import{as as t,av as r}from"./index.CdvY6SEU.js";const u=t({cast(e){return typeof e=="number"?{value:e}:e},defaults:{"@type":"QuantitativeValue"}}),l=t({defaults:{"@type":"MonetaryAmount"},resolve(e,a){return typeof e.value!="number"&&(e.value=r(e.value,a,u)),e}});export{l as m,u as q};
