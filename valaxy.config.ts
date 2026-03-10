@@ -18,7 +18,12 @@ export default defineValaxyConfig<ThemeConfig>({
   themeConfig: {
     banner: {
       enable: true,
-      title: '欢迎来到我的博客',
+      title: '游手好闲辛大人的小站',
+      cloud: true,
+      hero: {
+        title: '游手好闲辛大人的小站',
+        description: '技术博客与个人作品集',
+      },
     },
     // 社交链接
     social: [
@@ -28,6 +33,33 @@ export default defineValaxyConfig<ThemeConfig>({
         icon: 'i-ri-github-line',
       },
     ],
+    // 页面配置
+    pages: [
+      {
+        name: '归档',
+        url: '/archives/',
+        icon: 'i-ri-archive-line',
+      },
+      {
+        name: '标签',
+        url: '/tags/',
+        icon: 'i-ri-price-tag-3-line',
+      },
+      {
+        name: '关于',
+        url: '/about/',
+        icon: 'i-ri-user-line',
+      },
+    ],
+    // 页脚配置
+    footer: {
+      since: 2026,
+      icon: {
+        enable: true,
+        name: 'i-ri-cloud-line',
+        animated: true,
+      },
+    },
   },
 
   // 开发工具
