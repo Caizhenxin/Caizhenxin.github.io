@@ -67,4 +67,9 @@ export default defineValaxyConfig<ThemeConfig>({
   build: {
     ssgForPagination: true,
   },
+
+  // 路由配置 - 修复 route.meta 问题
+  router: {
+    base: '/',
+  },
 })
