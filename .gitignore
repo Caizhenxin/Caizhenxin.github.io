@@ -24,6 +24,7 @@ Thumbs.db
 # Valaxy
 .cache/
 .valaxy/route-map.d.ts
+preview/
 
 # valaxy fuse
 public/valaxy-fuse-list.json
