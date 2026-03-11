@@ -61,9 +61,30 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/posts/blog-journey': RouteRecordInfo<
+      '/posts/blog-journey',
+      '/posts/blog-journey',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/github-actions-guide': RouteRecordInfo<
+      '/posts/github-actions-guide',
+      '/posts/github-actions-guide',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     '/posts/hello-world': RouteRecordInfo<
       '/posts/hello-world',
       '/posts/hello-world',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/vue3-notes': RouteRecordInfo<
+      '/posts/vue3-notes',
+      '/posts/vue3-notes',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -111,9 +132,27 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
+    'pages/posts/blog-journey.md': {
+      routes:
+        | '/posts/blog-journey'
+      views:
+        | never
+    }
+    'pages/posts/github-actions-guide.md': {
+      routes:
+        | '/posts/github-actions-guide'
+      views:
+        | never
+    }
     'pages/posts/hello-world.md': {
       routes:
         | '/posts/hello-world'
+      views:
+        | never
+    }
+    'pages/posts/vue3-notes.md': {
+      routes:
+        | '/posts/vue3-notes'
       views:
         | never
     }
