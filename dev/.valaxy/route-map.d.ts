@@ -40,6 +40,13 @@ declare module 'vue-router/auto-routes' {
       { path: ParamValue<false> },
       | never
     >,
+    '/about/': RouteRecordInfo<
+      '/about/',
+      '/about',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     '/page/[page]': RouteRecordInfo<
       '/page/[page]',
       '/page/:page',
@@ -50,6 +57,34 @@ declare module 'vue-router/auto-routes' {
     '/posts/': RouteRecordInfo<
       '/posts/',
       '/posts',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/blog-journey': RouteRecordInfo<
+      '/posts/blog-journey',
+      '/posts/blog-journey',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/github-actions-guide': RouteRecordInfo<
+      '/posts/github-actions-guide',
+      '/posts/github-actions-guide',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/hello-world': RouteRecordInfo<
+      '/posts/hello-world',
+      '/posts/hello-world',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/vue3-notes': RouteRecordInfo<
+      '/posts/vue3-notes',
+      '/posts/vue3-notes',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -67,7 +102,7 @@ declare module 'vue-router/auto-routes' {
    * @internal
    */
   export interface _RouteFileInfoMap {
-    'node_modules/.pnpm/valaxy-theme-yun@0.27.0_vue@3.5.29_typescript@5.9.3_/node_modules/valaxy-theme-yun/pages/index.vue': {
+    'dev/pages/index.vue': {
       routes:
         | '/'
       views:
@@ -76,6 +111,12 @@ declare module 'vue-router/auto-routes' {
     'node_modules/.pnpm/valaxy@0.28.0-beta.1_@babel_ac0b7030b0b28be082e8a8cf5a1065e8/node_modules/valaxy/client/pages/[...path].vue': {
       routes:
         | '/[...path]'
+      views:
+        | never
+    }
+    'dev/pages/about/index.md': {
+      routes:
+        | '/about/'
       views:
         | never
     }
@@ -88,6 +129,30 @@ declare module 'vue-router/auto-routes' {
     'node_modules/.pnpm/valaxy-theme-yun@0.27.0_vue@3.5.29_typescript@5.9.3_/node_modules/valaxy-theme-yun/pages/posts/index.vue': {
       routes:
         | '/posts/'
+      views:
+        | never
+    }
+    'dev/pages/posts/blog-journey.md': {
+      routes:
+        | '/posts/blog-journey'
+      views:
+        | never
+    }
+    'dev/pages/posts/github-actions-guide.md': {
+      routes:
+        | '/posts/github-actions-guide'
+      views:
+        | never
+    }
+    'dev/pages/posts/hello-world.md': {
+      routes:
+        | '/posts/hello-world'
+      views:
+        | never
+    }
+    'dev/pages/posts/vue3-notes.md': {
+      routes:
+        | '/posts/vue3-notes'
       views:
         | never
     }
