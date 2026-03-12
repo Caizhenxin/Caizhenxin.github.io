@@ -77,6 +77,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           # 确保404.html也被部署
-          exclude_assets: '.github,node_modules,dist,dev,public'
+          exclude_assets: '.github,node_modules,dist,dev'
           # 修复基路径问题
           keep_files: false
