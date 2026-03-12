@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Cai Zhenxin 的博客</title>
+        <title>游手好闲辛大人</title>
         <link>https://caizhenxin.github.io/</link>
         <description>技术博客与个人作品集</description>
-        <lastBuildDate>Thu, 12 Mar 2026 05:33:21 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 12 Mar 2026 06:13:12 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
-            <title>Cai Zhenxin 的博客</title>
+            <title>游手好闲辛大人</title>
             <url>https://valaxy.site/valaxy-logo.png</url>
             <link>https://caizhenxin.github.io/</link>
         </image>
