@@ -5,7 +5,7 @@ export default defineValaxyConfig<ThemeConfig>({
   // 站点配置
   siteConfig: {
     lang: 'zh-CN',
-    title: 'Cai Zhenxin 的博客',
+    title: '游手好闲辛大人',
     author: {
       name: 'Cai Zhenxin',
     },
@@ -68,8 +68,11 @@ export default defineValaxyConfig<ThemeConfig>({
     ssgForPagination: true,
   },
 
-  // 路由配置 - 修复 route.meta 问题
+  // 路由配置 - 修复 GitHub Pages 路由问题
   router: {
     base: '/',
   },
+  
+  // 确保兼容 GitHub Pages
+  base: '/',
 })

@@ -38,7 +38,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: '24'
           cache: pnpm
 
       - name: Check environment
@@ -76,4 +76,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          # Remove force_orphan: true as it may be causing issues
+          # 确保404.html也被部署
+          exclude_assets: '.github,node_modules,dist,dev,public'
+          # 修复基路径问题
+          keep_files: false
