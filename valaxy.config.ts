@@ -29,5 +29,16 @@ export default defineValaxyConfig<ThemeConfig>({
 
   router: {
     base: '/',
+    extendRoute(route) {
+      // Ensure route.meta exists and has a layout property
+      if (!route.meta) {
+        route.meta = {}
+      }
+      // Set default layout if not specified
+      if (!route.meta.layout) {
+        route.meta.layout = 'default'
+      }
+      return route
+    },
   },
 })
