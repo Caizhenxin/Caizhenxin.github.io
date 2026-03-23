@@ -15,7 +15,7 @@ export default defineValaxyConfig<ThemeConfig>({
   theme: 'yun',
   themeConfig: {
     banner: {
-      enable: true,
+      enable: false,
       title: '游手好闲辛大人',
     },
     social: [
