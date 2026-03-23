@@ -34,9 +34,9 @@ const app = useAppStore()
 const yun = useYunAppStore()
 const route = useRoute()
 
-// 修复：检查 route 和 route.meta 是否存在
+// 修复：安全地处理路由变化，避免访问未定义的 route.meta
 watch(
-  () => route?.meta?.layout,
+  () => route && route.meta && route.meta.layout,
   (layout) => {
     if (layout === 'home' || app.isMobile)
       yun.leftSidebar.isOpen = false
