@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "valaxy dev",
     "build": "valaxy build",
-    "preview": "valaxy preview"
+    "preview": "valaxy preview",
+    "postinstall": "node patches/fix-theme.mjs"
   },
   "repository": {
     "type": "git",
