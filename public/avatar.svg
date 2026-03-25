@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景 -->
+  <circle cx="100" cy="100" r="100" fill="url(#bg)"/>
+  
+  <!-- 头部 -->
+  <circle cx="100" cy="70" r="35" fill="white"/>
+  
+  <!-- 身体 -->
+  <path d="M100 105 Q70 105 60 130 Q50 155 100 155 Q150 155 140 130 Q130 105 100 105" fill="white"/>
+  
+  <!-- 眼睛 -->
+  <circle cx="90" cy="65" r="4" fill="#333"/>
+  <circle cx="110" cy="65" r="4" fill="#333"/>
+  
+  <!-- 微笑 -->
+  <path d="M85 80 Q100 90 115 80" stroke="#333" stroke-width="2" fill="none" stroke-linecap="round"/>
+</svg>
