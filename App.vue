@@ -2,8 +2,8 @@
 import { useAppStore } from 'valaxy'
 import { onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
-import { useThemeConfig } from 'valaxy-theme-yun/composables'
-import { useYunAppStore } from 'valaxy-theme-yun/stores'
+import { useThemeConfig } from 'valaxy-theme-yun/composables/config'
+import { useYunAppStore } from 'valaxy-theme-yun/stores/app'
 
 const themeConfig = useThemeConfig()
 
