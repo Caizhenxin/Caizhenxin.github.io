@@ -1,44 +1,47 @@
 import { readFileSync, writeFileSync, existsSync, globSync } from 'fs'
-import { join } from 'path'
 
-// Find the theme's App.vue file
-const pattern = 'node_modules/.pnpm/valaxy-theme-yun*/node_modules/valaxy-theme-yun/App.vue'
+console.log('[fix-theme] Patching valaxy-theme-yun for route undefined errors...')
+
+// Find all Vue files in the theme
+const pattern = 'node_modules/.pnpm/valaxy-theme-yun*/node_modules/valaxy-theme-yun/**/*.vue'
 const files = globSync(pattern)
 
 if (files.length === 0) {
-  console.log('[fix-theme] No App.vue found, skipping patch')
+  console.log('[fix-theme] No theme files found, skipping patch')
   process.exit(0)
 }
 
-const appVuePath = files[0]
-console.log(`[fix-theme] Found App.vue at: ${appVuePath}`)
+let patchedCount = 0
 
-if (!existsSync(appVuePath)) {
-  console.log('[fix-theme] App.vue does not exist, skipping patch')
-  process.exit(0)
+for (const filePath of files) {
+  if (!existsSync(filePath)) continue
+
+  let content = readFileSync(filePath, 'utf-8')
+  const originalContent = content
+
+  // Fix 1: route.meta -> route?.meta
+  content = content.replace(/route\.meta(?!\?)/g, 'route?.meta')
+
+  // Fix 2: route.path -> route?.path
+  content = content.replace(/route\.path(?!\?)/g, 'route?.path')
+
+  // Fix 3: route.query -> route?.query
+  content = content.replace(/route\.query(?!\?)/g, 'route?.query')
+
+  // Fix 4: route.params -> route?.params
+  content = content.replace(/route\.params(?!\?)/g, 'route?.params')
+
+  // Fix 5: route.fullPath -> route?.fullPath
+  content = content.replace(/route\.fullPath(?!\?)/g, 'route?.fullPath')
+
+  // Fix 6: route.name -> route?.name
+  content = content.replace(/route\.name(?!\?)/g, 'route?.name')
+
+  if (content !== originalContent) {
+    writeFileSync(filePath, content, 'utf-8')
+    patchedCount++
+    console.log(`[fix-theme] Patched: ${filePath.split('/').pop()}`)
+  }
 }
 
-let content = readFileSync(appVuePath, 'utf-8')
-
-// Check if already patched
-if (content.includes('route?.meta?.layout')) {
-  console.log('[fix-theme] Already patched, skipping')
-  process.exit(0)
-}
-
-// Fix the route.meta undefined error
-// Replace route.meta.layout with route?.meta?.layout
-const originalContent = content
-content = content.replace(
-  /route\.meta\.layout/g,
-  'route?.meta?.layout'
-)
-
-if (content === originalContent) {
-  console.log('[fix-theme] No changes needed')
-  process.exit(0)
-}
-
-writeFileSync(appVuePath, content, 'utf-8')
-console.log('[fix-theme] Successfully patched App.vue')
-console.log('[fix-theme] - route.meta.layout -> route?.meta?.layout')
+console.log(`[fix-theme] Done! Patched ${patchedCount} files.`)
