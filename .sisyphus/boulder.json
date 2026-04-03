@@ -1,7 +1,10 @@
 {
   "active_plan": "D:\\GitHub_programe\\GitHub\\Caizhenxin.github.io\\.sisyphus\\plans\\hexo-blog-setup.md",
   "started_at": "2026-03-09T00:00:00Z",
-  "session_ids": [],
+  "session_ids": [
+    "ses_320011155ffeYOOFAkIurL7KzZ"
+  ],
   "plan_name": "hexo-blog-setup",
-  "worktree_path": "D:\\GitHub_programe\\GitHub\\Caizhenxin.github.io"
+  "worktree_path": "D:\\GitHub_programe\\GitHub\\Caizhenxin.github.io",
+  "task_sessions": {}
 }
