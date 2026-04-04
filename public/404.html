@@ -89,7 +89,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Fluid</strong>
+      <strong>游手好闲辛大人</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -287,8 +287,8 @@
 
   
 
-<div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+<div id="banner" class="banner" parallax=true data-random-banner='/img/random/Collapse-73317886-0.png,/img/random/default.png,/img/random/IMG_0306.PNG,/img/random/IMG_0897.PNG,/img/random/IMG_0939.PNG,/img/random/IMG_2864.PNG,/img/random/interlude_16.png,/img/random/interlude_fubuki.png,/img/random/Konachan.com%20-%20309248%20animal%20animal_ears%20book%20cat%20long_hair%20original%20sagiri_(ulpha220).png,/img/random/Konachan.com%20-%20320161%20animal%20apron%20bird%20blush%20cat%20catgirl%20chibi%20dress%20flowers%20group%20long_hair%20maid%20original%20petals%20rabbit%20ribbons%20sleeping%20stockings%20tail%20twintails.png,/img/random/Konachan.com%20-%20321166%20animal%20bikini%20blonde_hair%20cat%20clouds%20fate_grand_order%20fate_(series)%20loli%20long_hair%20navel%20sky%20swim_ring%20swimsuit%20tenshin_kagehisa%20tree%20water.png,/img/random/Konachan.com%20-%20322738%20animal%20animal_ears%20aruya%20blush%20brown_eyes%20brown_hair%20cat%20chibi%20dog%20green_eyes%20long_hair%20original%20scarf%20short_hair%20sketch%20skirt%20watermark.png,/img/random/Konachan.com%20-%20322820%20sample.png,/img/random/Konachan.com%20-%20324902%20animal%20barefoot%20beach%20bikini%20blonde_hair%20cat%20clouds%20fate_grand_order%20fate_(series)%20headdress%20lolita_fashion%20long_hair%20sky%20swimsuit%20water%20yukiyama_momo.png,/img/random/Konachan.com%20-%20335644%20animal%20blue%20cat%20chocoshi%20clouds%20original%20polychromatic%20scenic%20sky%20stars.png,/img/random/QQ%E5%9B%BE%E7%89%8720200908184512.png,/img/random/%E2%9D%80-91837671-0.png,/img/random/%E4%BC%8A%E8%95%BE%E5%A8%9C.png,/img/random/%E7%8C%AB%E3%81%95%E3%82%93%E3%81%A8%E3%82%AF%E3%82%B8%E3%83%A9-89478039-0.png,/img/random/%E9%B5%9C%E9%A3%BC%E3%81%84-44873217-0.png'
+     style="background: url('/img/random/Collapse-73317886-0.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -306,6 +306,19 @@
   </div>
 </div>
 
+
+  <script>
+    (function() {
+      var banner = document.getElementById('banner');
+      if (!banner) return;
+      var list = banner.getAttribute('data-random-banner');
+      if (!list) return;
+      list = list.split(',').filter(Boolean);
+      if (list.length === 0) return;
+      var pick = list[Math.floor(Math.random() * list.length)];
+      banner.style.backgroundImage = "url('" + pick + "')";
+    })();
+  </script>
 
 
 </div>
