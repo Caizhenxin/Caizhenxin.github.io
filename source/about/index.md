@@ -1,30 +1,34 @@
 ---
-title: 关于我
+title: About Me
 date: 2026-04-04 12:00:00
 type: about
-layout: about
+layout: page
 comments: false
 ---
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Philosopher:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-/* 关于页面自定义样式 */
-.about-page {
-  max-width: 900px;
+/* 覆盖 Fluid 主题默认样式 */
+.about-page-wrapper {
+  max-width: 960px;
   margin: 0 auto;
-  padding: 2rem 1rem;
-  font-family: 'Philosopher', 'Noto Serif SC', serif;
+  padding: 2rem 1.5rem 4rem;
+  font-family: 'Inter', 'Noto Serif SC', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #2c3e50;
+  line-height: 1.7;
 }
 
 /* 个人主页头部 */
-.profile-hero {
+.profile-header {
   display: flex;
-  gap: 2.5rem;
-  align-items: flex-start;
+  gap: 3rem;
+  align-items: center;
   margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e2e8f0;
   flex-wrap: wrap;
 }
 
@@ -33,161 +37,177 @@ comments: false
 }
 
 .profile-photo {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 24px rgba(44, 62, 80, 0.12);
   border: 4px solid #fff;
+  transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.03);
 }
 
 .profile-info {
   flex: 1;
-  min-width: 250px;
+  min-width: 280px;
 }
 
-.profile-info p:first-child {
-  font-size: 2rem;
+.profile-name {
+  font-size: 2.2rem;
   font-weight: 700;
-  margin: 0 0 0.2rem 0;
+  margin: 0 0 0.3rem 0;
   color: #1a202c;
+  letter-spacing: -0.02em;
 }
 
-.profile-info p:nth-child(2) {
-  font-size: 1.3rem;
-  color: #4a5568;
-  margin: 0 0 0.8rem 0;
+.profile-subtitle {
+  font-size: 1.1rem;
+  color: #64748b;
+  margin: 0 0 1rem 0;
+  font-weight: 400;
 }
 
 .profile-divider {
-  width: 60px;
+  width: 50px;
   height: 3px;
-  background: linear-gradient(90deg, #667eea, #764ba2);
+  background: linear-gradient(90deg, #3b82f6, #0ea5e9);
   margin: 1rem 0;
   border-radius: 2px;
 }
 
-.profile-info p:nth-child(4) {
-  font-size: 1.1rem;
-  color: #2d3748;
+.profile-role {
+  font-size: 1.05rem;
+  color: #334155;
   margin: 0.5rem 0;
   font-weight: 500;
 }
 
 .profile-affiliation {
   margin: 0.5rem 0;
-}
-
-.profile-affiliation a {
-  color: #667eea;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.profile-affiliation a:hover {
-  text-decoration: underline;
-}
-
-.profile-focus {
-  margin-top: 0.8rem;
-  padding: 0.5rem 1rem;
-  background: #f7fafc;
-  border-radius: 8px;
-  border-left: 3px solid #667eea;
   font-size: 0.95rem;
-  color: #4a5568;
+  color: #64748b;
+}
+
+.profile-tags {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.profile-tag {
+  padding: 0.3rem 0.8rem;
+  background: #f1f5f9;
+  color: #475569;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
 }
 
 /* 导航卡片 */
 .nav-cards {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 1rem;
-  margin: 2rem 0;
-  flex-wrap: wrap;
+  margin: 2.5rem 0;
 }
 
 .nav-card {
-  flex: 1;
-  min-width: 120px;
   text-align: center;
   padding: 1.5rem 1rem;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border: 1px solid #e2e8f0;
   transition: all 0.3s ease;
-  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 .nav-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.12);
+  border-color: #3b82f6;
 }
 
 .nav-card-icon {
-  font-size: 2rem;
+  font-size: 1.8rem;
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
 }
 
-.nav-card-link {
-  color: #2d3748;
-  text-decoration: none;
+.nav-card-title {
   font-weight: 600;
-  font-size: 1rem;
-}
-
-.nav-card-link:hover {
-  color: #667eea;
-}
-
-/* CV 下载按钮 */
-.cv-button-wrapper {
-  text-align: center;
-  margin: 2rem 0;
-}
-
-.cv-button {
-  display: inline-block;
-  padding: 0.8rem 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: #fff;
-  text-decoration: none;
-  border-radius: 30px;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-}
-
-.cv-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-  color: #fff;
+  font-size: 0.95rem;
+  color: #334155;
 }
 
 /* 介绍区域 */
 .intro-section {
   background: #fff;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
   margin: 2rem 0;
-  line-height: 1.8;
-  color: #4a5568;
+  border: 1px solid #f1f5f9;
 }
 
 .intro-section p {
-  margin: 1rem 0;
+  margin: 0 0 1.2rem 0;
+  color: #475569;
+}
+
+.intro-section p:last-child {
+  margin-bottom: 0;
+}
+
+.intro-section strong {
+  color: #1e293b;
+  font-weight: 600;
 }
 
 .intro-section a {
-  color: #667eea;
+  color: #3b82f6;
   text-decoration: none;
   font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
 }
 
 .intro-section a:hover {
-  text-decoration: underline;
+  border-bottom-color: #3b82f6;
+}
+
+/* 联系方式 */
+.contact-section {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e2e8f0;
+  text-align: center;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.8rem;
+  background: linear-gradient(135deg, #3b82f6 0%, #0ea5e9 100%);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.35);
+  color: #fff;
 }
 
 /* 页脚 */
@@ -195,30 +215,34 @@ comments: false
   text-align: center;
   margin-top: 3rem;
   padding-top: 1.5rem;
-  border-top: 1px solid #e2e8f0;
-  color: #a0aec0;
-  font-size: 0.9rem;
+  color: #94a3b8;
+  font-size: 0.85rem;
 }
 
 /* 响应式设计 */
 @media (max-width: 768px) {
-  .profile-hero {
+  .about-page-wrapper {
+    padding: 1.5rem 1rem 3rem;
+  }
+  
+  .profile-header {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 1.5rem;
   }
   
   .profile-photo {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
   }
   
   .profile-divider {
     margin: 1rem auto;
   }
   
-  .nav-cards {
-    flex-direction: column;
+  .profile-tags {
+    justify-content: center;
   }
   
   .intro-section {
@@ -228,112 +252,110 @@ comments: false
 
 /* 深色模式适配 */
 @media (prefers-color-scheme: dark) {
-  .profile-info p:first-child {
-    color: #f7fafc;
-  }
-  
-  .profile-info p:nth-child(2) {
-    color: #cbd5e0;
-  }
-  
-  .profile-info p:nth-child(4) {
+  .about-page-wrapper {
     color: #e2e8f0;
   }
   
-  .profile-focus {
-    background: #2d3748;
-    color: #cbd5e0;
+  .profile-name {
+    color: #f8fafc;
+  }
+  
+  .profile-subtitle, .profile-role {
+    color: #cbd5e1;
+  }
+  
+  .profile-tag {
+    background: #334155;
+    color: #e2e8f0;
   }
   
   .nav-card {
-    background: #2d3748;
+    background: #1e293b;
+    border-color: #334155;
   }
   
-  .nav-card-link {
+  .nav-card-title {
     color: #e2e8f0;
   }
   
   .intro-section {
-    background: #2d3748;
-    color: #cbd5e0;
+    background: #1e293b;
+    border-color: #334155;
+  }
+  
+  .intro-section p {
+    color: #cbd5e1;
+  }
+  
+  .intro-section strong {
+    color: #f1f5f9;
   }
   
   .page-footer {
-    border-top-color: #4a5568;
+    border-top-color: #334155;
   }
 }
 </style>
 
-<div class="about-page">
+<div class="about-page-wrapper">
   <!-- 个人主页头部 -->
-  <div class="profile-hero">
+  <div class="profile-header">
     <div class="profile-photo-wrapper">
-      <img src="/img/avatar.jpg" class="profile-photo" alt="Cai Zhenxin">
+      <img src="/img/avatar.jpg" class="profile-photo" alt="Caizhenxin">
     </div>
     <div class="profile-info">
-      <p>Cai Zhenxin</p>
-      <p>蔡振辛</p>
+      <h1 class="profile-name">Caizhenxin</h1>
+      <p class="profile-subtitle">蔡振辛</p>
       <div class="profile-divider"></div>
-      <p>热爱技术的开发者</p>
+      <p class="profile-role">Psychology Student & Aspiring Researcher</p>
       <div class="profile-affiliation">
-        <p>独立开发者 · 技术博主</p>
+        <p>Nanjing Normal University</p>
       </div>
-      <div class="profile-focus">
-        <p>前端开发 · 静态博客 · 用户体验设计</p>
+      <div class="profile-tags">
+        <span class="profile-tag">Psychology</span>
+        <span class="profile-tag">Cognitive Processes</span>
+        <span class="profile-tag">Research</span>
+        <span class="profile-tag">Hengyang, Hunan</span>
       </div>
     </div>
   </div>
 
   <!-- 导航卡片 -->
   <div class="nav-cards">
-    <div class="nav-card">
+    <a href="/archives/" class="nav-card">
       <span class="nav-card-icon">📝</span>
-      <a href="/archives/" class="nav-card-link">文章归档</a>
-    </div>
-    <div class="nav-card">
+      <span class="nav-card-title">Articles</span>
+    </a>
+    <a href="/tags/" class="nav-card">
       <span class="nav-card-icon">🏷️</span>
-      <a href="/tags/" class="nav-card-link">标签</a>
-    </div>
-    <div class="nav-card">
+      <span class="nav-card-title">Tags</span>
+    </a>
+    <a href="mailto:czx@nnu.edu.cn" class="nav-card">
       <span class="nav-card-icon">💬</span>
-      <a href="mailto:caizhenxin@example.com" class="nav-card-link">联系我</a>
-    </div>
-  </div>
-
-  <!-- CV 下载按钮 -->
-  <div class="cv-button-wrapper">
-    <a href="/files/resume.pdf" class="cv-button">📄 下载我的简历</a>
+      <span class="nav-card-title">Contact</span>
+    </a>
   </div>
 
   <!-- 介绍区域 -->
   <div class="intro-section">
-    <p>👋 你好，朋友！很高兴你来到了我的个人网站！</p>
+    <p>Hi, I'm <strong>Caizhenxin</strong>, originally from Hengyang, Hunan, China, and currently a student at <strong>Nanjing Normal University</strong>, majoring in psychology.</p>
     
-    <p>我是 <strong>蔡振辛</strong>，一名热爱技术的前端开发者。目前专注于 Web 开发和用户体验设计，正在探索静态博客生成器（如 Hexo）的最佳实践。</p>
+    <p>I'm deeply fascinated by psychology and aspire to become a researcher in the future, focusing on understanding human behavior and cognitive processes. I am continually developing my research skills and knowledge through my studies.</p>
     
-    <p>我的兴趣主要集中在：</p>
-    <ul>
-      <li><strong>前端开发</strong> - Vue.js、React、TypeScript</li>
-      <li><strong>静态站点生成</strong> - Hexo、Valaxy、VitePress</li>
-      <li><strong>用户体验设计</strong> - 响应式设计、无障碍访问</li>
-      <li><strong>DevOps</strong> - GitHub Actions、CI/CD 自动化</li>
-    </ul>
+    <p>I'm actively working on improving my English skills and communication abilities to better engage in academic discussions and collaborate with others. I'm eager to develop both my research and language capabilities as I pursue my studies.</p>
     
-    <p>除了编程，我还喜欢：</p>
-    <ul>
-      <li>📷 摄影 - 用镜头记录美好瞬间</li>
-      <li>📚 阅读 - 技术书籍和科幻小说</li>
-      <li>🎵 音乐 - 学习吉他和音乐制作</li>
-      <li>🏃 运动 - 跑步和羽毛球</li>
-    </ul>
-    
-    <p>我尝试以透明、可复现和包容的方式进行开发。这包括分享代码、参与开源项目，以及持续学习新技术。</p>
-    
-    <p>欢迎随意浏览我的博客，如果你有任何想法或发现任何错误，请随时<a href="mailto:caizhenxin@example.com">联系我</a>，希望我们能一起创造一些很棒的东西！</p>
+    <p>If you have any suggestions, opportunities, or feedback, feel free to contact me at <a href="mailto:czx@nnu.edu.cn">czx@nnu.edu.cn</a> or <a href="mailto:Idle.Mr.Xin@gmail.com">Idle.Mr.Xin@gmail.com</a>.</p>
+  </div>
+
+  <!-- 联系方式按钮 -->
+  <div class="contact-section">
+    <a href="mailto:czx@nnu.edu.cn" class="contact-btn">
+      <span>📧</span> Get in Touch
+    </a>
   </div>
 
   <!-- 页脚 -->
   <div class="page-footer">
-    <p><em>最后更新：2026 年 4 月</em></p>
+    <p><em>Last updated: April 2026</em></p>
   </div>
 </div>
