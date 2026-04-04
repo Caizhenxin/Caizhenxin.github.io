@@ -375,7 +375,7 @@ comments: false
   <!-- 个人主页头部 -->
   <div class="profile-header">
     <div class="profile-photo-wrapper">
-      <img src="/img/avatar.jpg" class="profile-photo" alt="Caizhenxin">
+      <img src="/img/avatar.png" class="profile-photo" alt="Caizhenxin">
     </div>
     <div class="profile-info">
       <h1 class="profile-name">Caizhenxin</h1>
@@ -429,13 +429,7 @@ comments: false
 
   <!-- 介绍区域 -->
   <div class="intro-section">
-    <p>Hi, I'm <strong>Caizhenxin</strong>, originally from Hengyang, Hunan, China, and currently a student at <strong>Nanjing Normal University</strong>, majoring in psychology.</p>
-    
-    <p>I'm deeply fascinated by psychology and aspire to become a researcher in the future, focusing on understanding human behavior and cognitive processes. I am continually developing my research skills and knowledge through my studies.</p>
-    
-    <p>I'm actively working on improving my English skills and communication abilities to better engage in academic discussions and collaborate with others. I'm eager to develop both my research and language capabilities as I pursue my studies.</p>
-    
-    <p>If you have any suggestions, opportunities, or feedback, feel free to contact me at <a href="mailto:czx@nnu.edu.cn">czx@nnu.edu.cn</a> or <a href="mailto:Idle.Mr.Xin@gmail.com">Idle.Mr.Xin@gmail.com</a>.</p>
+    <p>Hi, I'm <strong>Caizhenxin</strong>, originally from Hengyang, Hunan, China, and currently a student at <strong>Nanjing Normal University</strong>, majoring in psychology. I'm deeply fascinated by psychology and aspire to become a researcher in the future, focusing on understanding human behavior and cognitive processes. I am continually developing my research skills and knowledge through my studies. I'm actively working on improving my English skills and communication abilities to better engage in academic discussions and collaborate with others. I'm eager to develop both my research and language capabilities as I pursue my studies. If you have any suggestions, opportunities, or feedback, feel free to contact me at <a href="mailto:czx@nnu.edu.cn">czx@nnu.edu.cn</a> or <a href="mailto:Idle.Mr.Xin@gmail.com">Idle.Mr.Xin@gmail.com</a>.</p>
   </div>
 
   <!-- 联系方式按钮 -->
