@@ -1,82 +1,29 @@
-# Deploy to GitHub Pages
-
-name: Deploy to GitHub Pages
+name: Deploy Hexo Blog
 
 on:
   push:
-    branches:
-      - main
-
-  # 允许手动触发
+    branches: [main]
   workflow_dispatch:
 
-# 设置 GITHUB_TOKEN 权限
-permissions:
-  contents: write
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
-
 jobs:
-  # 构建和部署作业
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
+      - uses: actions/checkout@v4
+      
+      - uses: actions/setup-node@v4
         with:
-          version: 8
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '24'
-          cache: pnpm
-
-      - name: Check environment
-        run: |
-          echo "Node version: $(node --version)"
-          echo "PNPM version: $(pnpm --version)"
-          echo "NPM version: $(npm --version)"
-          
+          node-version: '20'
+      
       - name: Install dependencies
-        run: pnpm install
-
+        run: npm install
+      
       - name: Build
-        run: |
-          pnpm build
-          # Verify build output
-          if [ ! -f dist/index.html ]; then
-            echo "ERROR: Build failed - index.html not found!"
-            exit 1
-          fi
-          echo "Build successful - found index.html"
-        
-      - name: Debug - List dist contents
-        run: |
-          echo "=== dist directory contents ==="
-          ls -la dist/
-          echo ""
-          echo "=== assets directory contents ==="
-          ls -la dist/assets/ || echo "No assets directory"
-          echo ""
-          echo "=== Total files in dist ==="
-          find dist/ -type f | wc -l
-          
+        run: npm run build
+      
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          # 确保404.html也被部署
-          exclude_assets: '.github,node_modules,dist,dev'
-          # 修复基路径问题
+          publish_dir: ./public
           keep_files: false
