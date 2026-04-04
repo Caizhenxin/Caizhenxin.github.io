@@ -375,10 +375,10 @@ comments: false
   <!-- 个人主页头部 -->
   <div class="profile-header">
     <div class="profile-photo-wrapper">
-      <img src="/img/avatar.png" class="profile-photo" alt="Caizhenxin">
+      <img src="/img/avatar.png" class="profile-photo" alt="Cai zhenxin">
     </div>
     <div class="profile-info">
-      <h1 class="profile-name">Caizhenxin</h1>
+      <h1 class="profile-name">Cai zhenxin</h1>
       <p class="profile-subtitle">蔡振辛</p>
       <div class="profile-divider"></div>
       <p class="profile-role">Psychology Student & Aspiring Researcher</p>
