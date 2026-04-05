@@ -8,7 +8,9 @@ subtitle: '热爱技术，热爱生活'
 description: '技术博客与个人作品集'
 keywords:
 author: Cai Zhenxin
-language: zh-CN
+language:
+  - zh-CN
+  - en
 timezone: 'Asia/Shanghai'
 
 # URL

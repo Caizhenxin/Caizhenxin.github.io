@@ -1,0 +1,38 @@
+/* 语言切换按钮样式 */
+.lang-switch-btn {
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 0.3rem 0.8rem !important;
+  margin-left: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.lang-switch-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* 深色导航栏适配 */
+.navbar-dark .lang-switch-btn {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar-dark .lang-switch-btn:hover {
+  color: #fff;
+}
+
+/* 浅色导航栏适配 */
+.navbar-light .lang-switch-btn {
+  color: rgba(0, 0, 0, 0.7);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.navbar-light .lang-switch-btn:hover {
+  color: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.05);
+}
