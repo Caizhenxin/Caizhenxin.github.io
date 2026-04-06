@@ -1,0 +1,45 @@
+/* 鼠标点击涟漪特效样式 */
+
+/* 基础样式 - 为可点击元素添加相对定位以容纳涟漪 */
+a,
+button,
+[role="button"],
+[onclick],
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+label,
+select,
+summary {
+    position: relative;
+    overflow: hidden;
+    /* 防止涟漪溢出父容器 */
+}
+
+/* 涟漪元素样式 */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none; /* 确保涟漪不影响点击事件 */
+}
+
+/* 涟漪动画 */
+@keyframes ripple {
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* 添加活动状态时开始动画 */
+.ripple.active {
+    animation: ripple 0.6s linear;
+}
+
+/* 为了在深色模式下也有良好效果，可以根据背景调整颜色 */
+[data-user-color-scheme="dark"] .ripple {
+    background: rgba(0, 0, 0, 0.3);
+}
