@@ -1,0 +1,102 @@
+/* 自定义鼠标光标样式 - Elaina 主题 */
+/* 光标文件路径：/cursors/elaina/ */
+
+/* 默认光标（正常选择） */
+body {
+  cursor: url('/cursors/elaina/正常选择.ani'), auto;
+}
+
+/* 链接和可点击元素 */
+a,
+a *,
+button,
+button *,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+label,
+select,
+summary,
+[role="button"],
+[onclick] {
+  cursor: url('/cursors/elaina/链接选择.ani'), pointer;
+}
+
+/* 文本输入区域 */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+textarea,
+[contenteditable="true"] {
+  cursor: url('/cursors/elaina/文本选择.ani'), text;
+}
+
+/* 文本选择状态 */
+::selection {
+  cursor: url('/cursors/elaina/文本选择.ani'), text;
+}
+
+/* 忙碌状态 */
+.busy,
+.loading {
+  cursor: url('/cursors/elaina/忙.ani'), wait;
+}
+
+/* 水平调整大小 */
+.col-resize,
+[data-resize="horizontal"] {
+  cursor: url('/cursors/elaina/水平调整大小.cur'), ew-resize;
+}
+
+/* 垂直调整大小 */
+.row-resize,
+[data-resize="vertical"] {
+  cursor: url('/cursors/elaina/垂直调整大小.cur'), ns-resize;
+}
+
+/* 对角线调整大小（左上到右下） */
+.nwse-resize {
+  cursor: url('/cursors/elaina/沿对角线调整大小1.cur'), nwse-resize;
+}
+
+/* 对角线调整大小（右上到左下） */
+.nesw-resize {
+  cursor: url('/cursors/elaina/沿对角线调整大小2.cur'), nesw-resize;
+}
+
+/* 移动/拖拽 */
+.move,
+[draggable="true"] {
+  cursor: url('/cursors/elaina/移动.cur'), move;
+}
+
+/* 精确选择/十字光标 */
+.crosshair,
+.precise-select {
+  cursor: url('/cursors/elaina/精确选择.cur'), crosshair;
+}
+
+/* 手写/画笔 */
+.pen,
+.drawing {
+  cursor: url('/cursors/elaina/手写.cur'), cell;
+}
+
+/* 不可用/禁用 */
+.disabled,
+[disabled] {
+  cursor: url('/cursors/elaina/不可用.cur'), not-allowed;
+}
+
+/* 候选/建议 */
+.candidate {
+  cursor: url('/cursors/elaina/候选.ani'), help;
+}
+
+/* 帮助选择 */
+.help-select {
+  cursor: url('/cursors/elaina/帮助选择.ani'), help;
+}
