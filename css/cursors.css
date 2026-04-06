@@ -3,7 +3,7 @@
 
 /* 默认光标（正常选择） */
 body {
-  cursor: url('/cursors/elaina/正常选择.ani'), auto;
+  cursor: url('/cursors/elaina/正常选择.cur') 0 0, auto;
 }
 
 /* 链接和可点击元素 */
@@ -19,7 +19,7 @@ select,
 summary,
 [role="button"],
 [onclick] {
-  cursor: url('/cursors/elaina/链接选择.ani'), pointer;
+  cursor: url('/cursors/elaina/链接选择.cur') 0 0, pointer;
 }
 
 /* 文本输入区域 */
@@ -31,72 +31,67 @@ input[type="tel"],
 input[type="url"],
 textarea,
 [contenteditable="true"] {
-  cursor: url('/cursors/elaina/文本选择.ani'), text;
-}
-
-/* 文本选择状态 */
-::selection {
-  cursor: url('/cursors/elaina/文本选择.ani'), text;
+  cursor: url('/cursors/elaina/文本选择.cur') 0 0, text;
 }
 
 /* 忙碌状态 */
 .busy,
 .loading {
-  cursor: url('/cursors/elaina/忙.ani'), wait;
+  cursor: url('/cursors/elaina/忙.cur') 0 0, wait;
 }
 
 /* 水平调整大小 */
 .col-resize,
 [data-resize="horizontal"] {
-  cursor: url('/cursors/elaina/水平调整大小.cur'), ew-resize;
+  cursor: url('/cursors/elaina/水平调整大小.cur') 0 0, ew-resize;
 }
 
 /* 垂直调整大小 */
 .row-resize,
 [data-resize="vertical"] {
-  cursor: url('/cursors/elaina/垂直调整大小.cur'), ns-resize;
+  cursor: url('/cursors/elaina/垂直调整大小.cur') 0 0, ns-resize;
 }
 
 /* 对角线调整大小（左上到右下） */
 .nwse-resize {
-  cursor: url('/cursors/elaina/沿对角线调整大小1.cur'), nwse-resize;
+  cursor: url('/cursors/elaina/沿对角线调整大小1.cur') 0 0, nwse-resize;
 }
 
 /* 对角线调整大小（右上到左下） */
 .nesw-resize {
-  cursor: url('/cursors/elaina/沿对角线调整大小2.cur'), nesw-resize;
+  cursor: url('/cursors/elaina/沿对角线调整大小2.cur') 0 0, nesw-resize;
 }
 
 /* 移动/拖拽 */
 .move,
 [draggable="true"] {
-  cursor: url('/cursors/elaina/移动.cur'), move;
+  cursor: url('/cursors/elaina/移动.cur') 0 0, move;
 }
 
 /* 精确选择/十字光标 */
 .crosshair,
 .precise-select {
-  cursor: url('/cursors/elaina/精确选择.cur'), crosshair;
+  cursor: url('/cursors/elaina/精确选择.cur') 0 0, crosshair;
 }
 
 /* 手写/画笔 */
 .pen,
 .drawing {
-  cursor: url('/cursors/elaina/手写.cur'), cell;
+  cursor: url('/cursors/elaina/手写.cur') 0 0, cell;
 }
 
 /* 不可用/禁用 */
 .disabled,
 [disabled] {
-  cursor: url('/cursors/elaina/不可用.cur'), not-allowed;
+  cursor: url('/cursors/elaina/不可用.cur') 0 0, not-allowed;
 }
 
 /* 候选/建议 */
 .candidate {
-  cursor: url('/cursors/elaina/候选.ani'), help;
+  cursor: url('/cursors/elaina/候选.cur') 0 0, help;
 }
 
 /* 帮助选择 */
 .help-select {
-  cursor: url('/cursors/elaina/帮助选择.ani'), help;
+  cursor: url('/cursors/elaina/帮助选择.cur') 0 0, help;
 }
