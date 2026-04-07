@@ -2,13 +2,19 @@
 (function() {
     'use strict';
 
+    // 检查效果是否被启用
+    if (!window.EffectToggle || !window.EffectToggle.isEnabled('titleEffect')) {
+        // 如果效果被禁用，直接返回不初始化
+        return;
+    }
+
     // 存储原始标题
     const originalTitle = document.title;
-    
+     
     // 定义离开时的标题和返回时的标题
     const leaveTitle = "你别走呀Σσ(・Д・；)!!!";
     const returnTitle = "我知道你还会回来٩(๑>◡<๑)۶ ";
-    
+     
     // 处理页面可见性变化
     function handleVisibilityChange() {
         if (document.hidden) {
@@ -23,7 +29,7 @@
             }, 2000); // 2秒后恢复原始标题
         }
     }
-
+     
     // 监听页面可见性变化
     function initTitleEffect() {
         // 使用Page Visibility API
@@ -49,7 +55,7 @@
             }, 2000);
         });
     }
-
+     
     // 初始化
     function init() {
         if (document.readyState === 'loading') {
@@ -58,10 +64,10 @@
             initTitleEffect();
         }
     }
-
+     
     // 暴露初始化函数
     window.initTitleEffect = initTitleEffect;
-    
+     
     // 自动初始化
     init();
 })();
