@@ -239,9 +239,6 @@ custom_js:
   - /js/mouse-trail.js
   - /js/title-effect.js
   - /js/snow-effect.js
-  - /js/effect-toggle.js
-  - /js/custom-cursors.js
-  - /js/toggle-ui.js
 
 # 指定自定义 .css 文件路径，用法和 custom_js 相同
 # The usage is the same as custom_js
@@ -694,31 +691,31 @@ post:
     # Collapse depth. If 0, all headings collapsed. If greater than 0, it will be expanded by default if there are sub headings
     collapseDepth: 0
 
-# 版权声明，会显示在每篇文章的结尾
-# Copyright, will be displayed at the end of each post
-copyright:
-  enable: true
-
-  # CreativeCommons license
-  # See: https://creativecommons.org/share-your-work/cclicenses/
-  # Options: BY | BY-SA | BY-ND | BY-NC | BY-NC-SA | BY-NC-ND | ZERO
-  license: 'BY-NC-SA'
-
-  # 显示作者
-  author:
+  # 版权声明，会显示在每篇文章的结尾
+  # Copyright, will be displayed at the end of each post
+  copyright:
     enable: true
 
-  # 显示发布日期
-  # Show post date
-  post_date:
-    enable: true
-    format: "LL"
+    # CreativeCommons license
+    # See: https://creativecommons.org/share-your-work/cclicenses/
+    # Options: BY | BY-SA | BY-ND | BY-NC | BY-NC-SA | BY-NC-ND | ZERO
+    license: 'BY'
 
-  # 显示更新日期
-  # Show update date
-  update_date:
-    enable: false
-    format: "LL"
+    # 显示作者
+    author:
+      enable: true
+
+    # 显示发布日期
+    # Show post date
+    post_date:
+      enable: true
+      format: "LL"
+
+    # 显示更新日期
+    # Show update date
+    update_date:
+      enable: false
+      format: "LL"
 
   # 文章底部上一篇下一篇功能
   # Link to previous/next post

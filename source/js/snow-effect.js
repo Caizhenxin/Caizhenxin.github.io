@@ -2,12 +2,6 @@
 (function() {
     'use strict';
 
-    // 检查效果是否被启用
-    if (!window.EffectToggle || !window.EffectToggle.isEnabled('snow')) {
-        // 如果效果被禁用，直接返回不初始化
-        return;
-    }
-
     var flakes = [],
         canvas = document.createElement('canvas'),
         ctx = canvas.getContext('2d'),

@@ -2,12 +2,6 @@
 (function() {
     'use strict';
 
-    // 检查效果是否被启用
-    if (!window.EffectToggle || !window.EffectToggle.isEnabled('clickEffects')) {
-        // 如果效果被禁用，直接返回不初始化
-        return;
-    }
-
     // 爱心形状SVG
     function createHeartSVG() {
         return "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23ff6b81' d='M16 28C16 28 2 20.4 2 10.4C2 5.6 5.6 2 10.4 2C13.2 2 15.2 3.6 16 5C16.8 3.6 18.8 2 21.6 2C26.4 2 30 5.6 30 10.4C30 20.4 16 28 16 28Z'/%3E%3C/svg%3E";

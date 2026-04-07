@@ -1,23 +1,22 @@
 /* 自定义鼠标光标样式 - Genshin Impact Hu Tao 主题 */
 
-/* 仅当启用自定义光标时应用 */
-body.custom-cursors-enabled {
-  /* 默认光标 */
+/* 默认光标 */
+body {
   cursor: url('/cursors/elaina/default.cur') 0 0, auto;
 }
 
 /* 链接和可点击元素 */
-body.custom-cursors-enabled a,
-body.custom-cursors-enabled a *,
-body.custom-cursors-enabled button,
-body.custom-cursors-enabled button *,
-body.custom-cursors-enabled input[type="submit"],
-body.custom-cursors-enabled input[type="button"],
-body.custom-cursors-enabled input[type="reset"],
-body.custom-cursors-enabled label,
-body.custom-cursors-enabled select,
-body.custom-cursors-enabled summary,
-body.custom-cursors-enabled [role="button"],
-body.custom-cursors-enabled [onclick] {
+a,
+a *,
+button,
+button *,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+label,
+select,
+summary,
+[role="button"],
+[onclick] {
   cursor: url('/cursors/elaina/pointer.cur') 0 0, pointer;
 }
