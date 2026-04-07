@@ -221,3 +221,6 @@ url: https://caizhenxin.github.io
 ## 📄 许可证
 
 MIT License
+## ✨ 更新频率
+  <!--Activity Graph-->
+[![Ashutosh's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=Caizhenxin&theme=react)](https://github.com/Caizhenxin/Caizhenxin.github.io)
