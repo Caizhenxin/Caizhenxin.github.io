@@ -1,100 +1,68 @@
-// 鼠标点击涟漪特效
+// 鼠标点击爱心特效
 (function() {
     'use strict';
 
-    // 创建涟漪效果
-    function createRipple(event) {
-        const button = event.currentTarget;
-
-        // 创建涟漪元素
-        const ripple = document.createElement('span');
-        ripple.className = 'ripple';
-        
-        // 获取点击坐标相对于按钮的位置
-        const rect = button.getBoundingClientRect();
-        const x = event.clientX - rect.left;
-        const y = event.clientY - rect.top;
-        
-        // 设置涟漪位置和大小
-        ripple.style.left = `${x}px`;
-        ripple.style.top = `${y}px`;
-        
-        // 添加到按钮
-        button.appendChild(ripple);
-        
-        // 触发CSS动画
-        // 使用requestAnimationFrame确保DOM已更新
-        requestAnimationFrame(() => {
-            ripple.classList.add('active');
-        });
-        
-        // 动画结束后移除元素
-        ripple.addEventListener('animationend', () => {
-            ripple.remove();
-        });
+    // 爱心形状SVG
+    function createHeartSVG() {
+        return "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23ff6b81' d='M16 28C16 28 2 20.4 2 10.4C2 5.6 5.6 2 10.4 2C13.2 2 15.2 3.6 16 5C16.8 3.6 18.8 2 21.6 2C26.4 2 30 5.6 30 10.4C30 20.4 16 28 16 28Z'/%3E%3C/svg%3E";
     }
 
-    // 为所有按钮和可点击元素添加涟漪效果
-    function addRippleEffect() {
-        // 选择所有可点击元素
-        const clickableElements = document.querySelectorAll('a, button, [role="button"], [onclick], input[type="button"], input[type="submit"], input[type="reset"], label, select, summary');
-        
-        clickableElements.forEach(element => {
-            // 防止重复绑定
-            if (!element.classList.contains('ripple-effect-attached')) {
-                element.classList.add('ripple-effect-attached');
-                element.addEventListener('click', createRipple);
-            }
+    // 创建飘落的爱心
+    function createHeart(x, y) {
+        const heart = document.createElement('div');
+        heart.className = 'click-heart';
+        heart.style.left = x + 'px';
+        heart.style.top = y + 'px';
+
+        // 随机大小
+        const size = 12 + Math.random() * 16;
+        heart.style.width = size + 'px';
+        heart.style.height = size + 'px';
+
+        // 随机颜色
+        const colors = ['#ff6b81', '#ff4757', '#ff6b9d', '#c44569', '#e66767', '#f8a5c2', '#f78fb3'];
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        heart.innerHTML = `<svg viewBox="0 0 32 32" width="${size}" height="${size}"><path fill="${color}" d="M16 28C16 28 2 20.4 2 10.4C2 5.6 5.6 2 10.4 2C13.2 2 15.2 3.6 16 5C16.8 3.6 18.8 2 21.6 2C26.4 2 30 5.6 30 10.4C30 20.4 16 28 16 28Z"/></svg>`;
+
+        // 随机水平偏移
+        const offsetX = (Math.random() - 0.5) * 80;
+        heart.style.setProperty('--offset-x', offsetX + 'px');
+
+        document.body.appendChild(heart);
+
+        // 动画结束后移除
+        heart.addEventListener('animationend', () => {
+            heart.remove();
         });
+
+        // 超时清理
+        setTimeout(() => {
+            if (heart.parentNode) heart.remove();
+        }, 2000);
+    }
+
+    // 点击事件处理
+    function handleClick(e) {
+        // 每次点击创建多个爱心
+        const count = 3 + Math.floor(Math.random() * 3); // 3-5个
+        for (let i = 0; i < count; i++) {
+            setTimeout(() => {
+                createHeart(
+                    e.clientX + (Math.random() - 0.5) * 20,
+                    e.clientY + (Math.random() - 0.5) * 20
+                );
+            }, i * 50);
+        }
     }
 
     // 初始化
-    function initRippleEffect() {
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', addRippleEffect);
-        } else {
-            addRippleEffect();
-        }
-        
-        // 同时监听DOM变化以处理动态添加的元素
-        if ('MutationObserver' in window) {
-            const observer = new MutationObserver(function(mutations) {
-                mutations.forEach(function(mutation) {
-                    if (mutation.addedNodes.length) {
-                        // 检查新添加的节点是否需要添加涟漪效果
-                        mutation.addedNodes.forEach(function(node) {
-                            if (node.nodeType === 1) { // 元素节点
-                                // 检查节点本身
-                                if (node.matches && node.matches('a, button, [role="button"], [onclick], input[type="button"], input[type="submit"], input[type="reset"], label, select, summary')) {
-                                    if (!node.classList.contains('ripple-effect-attached')) {
-                                        node.classList.add('ripple-effect-attached');
-                                        node.addEventListener('click', createRipple);
-                                    }
-                                }
-                                // 检查节点的子元素
-                                const clickableChildren = node.querySelectorAll('a, button, [role="button"], [onclick], input[type="button"], input[type="submit"], input[type="reset"], label, select, summary');
-                                clickableChildren.forEach(child => {
-                                    if (!child.classList.contains('ripple-effect-attached')) {
-                                        child.classList.add('ripple-effect-attached');
-                                        child.addEventListener('click', createRipple);
-                                    }
-                                });
-                            }
-                        });
-                    }
-                });
-            });
-            
-            observer.observe(document.body, {
-                childList: true,
-                subtree: true
-            });
-        }
+    function initHeartEffect() {
+        document.addEventListener('click', handleClick);
     }
 
-    // 暴露初始化函数
-    window.initRippleEffect = initRippleEffect;
-
-    // 自动初始化
-    initRippleEffect();
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initHeartEffect);
+    } else {
+        initHeartEffect();
+    }
 })();
