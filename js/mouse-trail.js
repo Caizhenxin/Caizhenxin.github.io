@@ -1,87 +1,71 @@
-// 鼠标轨迹特效
+// 鼠标彩虹渐变拖尾特效
 (function() {
     'use strict';
 
-    // 加载mouse-animations库
-    function loadMouseAnimations() {
-        return new Promise((resolve, reject) => {
-            // 检查是否已经加载
-            if (window.mouseAnimationsLoaded) {
-                resolve();
-                return;
-            }
-            
-            const script = document.createElement('script');
-            script.src = 'https://cdn.jsdelivr.net/npm/mouse-animations/+esm';
-            script.type = 'module';
-            
-            script.onload = () => {
-                window.mouseAnimationsLoaded = true;
-                resolve();
-            };
-            
-            script.onerror = () => {
-                reject(new Error('Failed to load mouse-animations library'));
-            };
-            
-            document.head.appendChild(script);
-        });
-    }
+    var canvas = document.createElement('canvas');
+    var ctx = canvas.getContext('2d');
+    var points = [];
+    var maxPoints = 30;
+    var hue = 0;
 
-    // 初始化鼠标轨迹效果
-    function initMouseTrail() {
-        loadMouseAnimations().then(() => {
-            // 使用mouse-animations库的Trail效果
-            import('https://cdn.jsdelivr.net/npm/mouse-animations/+esm').then(({ Trail }) => {
-                const trail = new Trail({
-                    color: '#ff6b6b', // 露珠粉色
-                    size: 4,          // 点的最大半径
-                    length: 15,       // 轨迹点数量
-                    decay: 0.05,      // 透明度衰减
-                    blur: 1           // 轻微模糊
-                });
-                
-                // 存储实例以便后续可能的销毁
-                window.mouseTrailInstance = trail;
-                
-                // 监听主题切换以适应深色/浅色模式
-                if (window.matchMedia) {
-                    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-                    const handleThemeChange = (e) => {
-                        // 根据主题调整颜色
-                        if (e.matches) {
-                            // 深色模式 - 使用更亮的颜色
-                            trail.options.color = '#ff9e9e';
-                        } else {
-                            // 浅色模式 - 使用标准颜色
-                            trail.options.color = '#ff6b6b';
-                        }
-                    };
-                    
-                    mediaQuery.addEventListener('change', handleThemeChange);
-                    // 初始化时也设置一次
-                    handleThemeChange(mediaQuery);
-                }
-            }).catch(error => {
-                console.error('Failed to initialize mouse trail effect:', error);
-            });
-        }).catch(error => {
-            console.error('Failed to load mouse animations library:', error);
-        });
-    }
+    canvas.id = 'rainbow-trail';
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.zIndex = '99999';
+    canvas.style.pointerEvents = 'none';
 
-    // 初始化
-    function init() {
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initMouseTrail);
-        } else {
-            initMouseTrail();
+    document.body.appendChild(canvas);
+
+    function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    document.addEventListener('mousemove', function(e) {
+        points.push({
+            x: e.clientX,
+            y: e.clientY,
+            hue: hue,
+            life: 1.0
+        });
+
+        if (points.length > maxPoints) {
+            points.shift();
         }
+
+        hue = (hue + 3) % 360;
+    });
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        for (var i = 0; i < points.length; i++) {
+            var p = points[i];
+            var size = (i / points.length) * 6 + 2;
+            p.life -= 0.03;
+
+            if (p.life <= 0) {
+                points.splice(i, 1);
+                i--;
+                continue;
+            }
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, size, 0, Math.PI * 2);
+            ctx.fillStyle = 'hsla(' + p.hue + ', 100%, 65%, ' + p.life + ')';
+            ctx.shadowBlur = 10;
+            ctx.shadowColor = 'hsla(' + p.hue + ', 100%, 65%, ' + p.life + ')';
+            ctx.fill();
+        }
+
+        ctx.shadowBlur = 0;
+        requestAnimationFrame(animate);
     }
 
-    // 暴露初始化函数
-    window.initMouseTrail = initMouseTrail;
-    
-    // 自动初始化
-    init();
+    animate();
 })();
