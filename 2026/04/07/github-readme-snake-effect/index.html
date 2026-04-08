@@ -19,21 +19,25 @@
   <meta name="author" content="Cai Zhenxin">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="为 GitHub Readme 添加动态贪吃蛇效果——我的实践记录 看到很多大佬的 GitHub 首页都有炫酷的贪吃蛇代码贡献图，我也想给自己的 Readme 加上这个效果。这篇文章记录了我从零实现这一功能的全过程，包括遇到的问题和解决方案。   起因在逛 GitHub 时，我注意到许多开发者的个人主页 Readme 都有一个动态的贪吃蛇图形，它根据 GitHub 贡献数据生成不同颜色的方块，形成">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://caizhenxin.github.io/en/2026/04/03/hello-world/index.html">
+<meta property="og:title" content="为 GitHub Readme 添加动态贪吃蛇效果——我的实践记录">
+<meta property="og:url" content="https://caizhenxin.github.io/2026/04/07/github-readme-snake-effect/index.html">
 <meta property="og:site_name" content="游手好闲辛大人">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2026-04-03T07:00:00.000Z">
+<meta property="og:description" content="为 GitHub Readme 添加动态贪吃蛇效果——我的实践记录 看到很多大佬的 GitHub 首页都有炫酷的贪吃蛇代码贡献图，我也想给自己的 Readme 加上这个效果。这篇文章记录了我从零实现这一功能的全过程，包括遇到的问题和解决方案。   起因在逛 GitHub 时，我注意到许多开发者的个人主页 Readme 都有一个动态的贪吃蛇图形，它根据 GitHub 贡献数据生成不同颜色的方块，形成">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-04-07T02:00:00.000Z">
 <meta property="article:modified_time" content="2026-04-08T03:46:57.432Z">
 <meta property="article:author" content="Cai Zhenxin">
+<meta property="article:tag" content="GitHub">
+<meta property="article:tag" content="工作流">
+<meta property="article:tag" content="效果美化">
+<meta property="article:tag" content="自动化">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Hello World - 游手好闲辛大人</title>
+  <title>为 GitHub Readme 添加动态贪吃蛇效果——我的实践记录 - 游手好闲辛大人</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -123,7 +127,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
-                <span>Home</span>
+                <span>首页</span>
               </a>
             </li>
           
@@ -135,7 +139,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
-                <span>Archives</span>
+                <span>归档</span>
               </a>
             </li>
           
@@ -147,7 +151,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
-                <span>Categories</span>
+                <span>分类</span>
               </a>
             </li>
           
@@ -159,7 +163,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
-                <span>Tags</span>
+                <span>标签</span>
               </a>
             </li>
           
@@ -171,7 +175,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
-                <span>About</span>
+                <span>关于</span>
               </a>
             </li>
           
@@ -210,7 +214,7 @@
               <a href="/" target="_self">
                 <div class="mobile-grid-item">
                   <i class="iconfont icon-home-fill"></i>
-                  <span>Home</span>
+                  <span>首页</span>
                 </div>
               </a>
             </div>
@@ -224,7 +228,7 @@
               <a href="/archives/" target="_self">
                 <div class="mobile-grid-item">
                   <i class="iconfont icon-archive-fill"></i>
-                  <span>Archives</span>
+                  <span>归档</span>
                 </div>
               </a>
             </div>
@@ -238,7 +242,7 @@
               <a href="/categories/" target="_self">
                 <div class="mobile-grid-item">
                   <i class="iconfont icon-category-fill"></i>
-                  <span>Categories</span>
+                  <span>分类</span>
                 </div>
               </a>
             </div>
@@ -252,7 +256,7 @@
               <a href="/tags/" target="_self">
                 <div class="mobile-grid-item">
                   <i class="iconfont icon-tags-fill"></i>
-                  <span>Tags</span>
+                  <span>标签</span>
                 </div>
               </a>
             </div>
@@ -266,7 +270,7 @@
               <a href="/about/" target="_self">
                 <div class="mobile-grid-item">
                   <i class="iconfont icon-user-fill"></i>
-                  <span>About</span>
+                  <span>关于</span>
                 </div>
               </a>
             </div>
@@ -277,19 +281,19 @@
             <a href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
               <div class="mobile-grid-item">
                 <i class="iconfont icon-search"></i>
-                <span>Search</span>
+                <span>搜索</span>
               </div>
             </a>
           </div>
         
         
           <div class="col-4 mobile-grid-cell" id="mobile-color-toggle-btn"
-               data-label-light="Light"
-               data-label-dark="Dark">
+               data-label-light="开灯"
+               data-label-dark="关灯">
             <a href="javascript:;" aria-label="Color Toggle">
               <div class="mobile-grid-item">
                 <i class="iconfont icon-dark" id="mobile-color-toggle-icon"></i>
-                <span id="mobile-color-toggle-label">Dark</span>
+                <span id="mobile-color-toggle-label">关灯</span>
               </div>
             </a>
           </div>
@@ -308,7 +312,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hello World"></span>
+            <span id="subtitle" data-typed-text="为 GitHub Readme 添加动态贪吃蛇效果——我的实践记录"></span>
           
         </div>
 
@@ -319,8 +323,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-04-03 15:00" pubdate>
-          April 3, 2026 pm
+        <time datetime="2026-04-07 10:00" pubdate>
+          2026年4月7日 上午
         </time>
       </span>
     
@@ -331,7 +335,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          367 words
+          3.2k 字
         
       </span>
     
@@ -342,7 +346,7 @@
         
         
         
-          4 mins
+          27 分钟
         
       </span>
     
@@ -381,24 +385,84 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Hello World</h1>
+            <h1 id="seo-header">为 GitHub Readme 添加动态贪吃蛇效果——我的实践记录</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+                <h1 id="为-GitHub-Readme-添加动态贪吃蛇效果——我的实践记录"><a href="#为-GitHub-Readme-添加动态贪吃蛇效果——我的实践记录" class="headerlink" title="为 GitHub Readme 添加动态贪吃蛇效果——我的实践记录"></a>为 GitHub Readme 添加动态贪吃蛇效果——我的实践记录</h1><blockquote>
+<p>看到很多大佬的 GitHub 首页都有炫酷的贪吃蛇代码贡献图，我也想给自己的 Readme 加上这个效果。这篇文章记录了我从零实现这一功能的全过程，包括遇到的问题和解决方案。</p>
+</blockquote>
+<hr>
+<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>在逛 GitHub 时，我注意到许多开发者的个人主页 Readme 都有一个动态的贪吃蛇图形，它根据 GitHub 贡献数据生成不同颜色的方块，形成一条”蛇”。这个效果不仅好看，还能直观展示代码贡献情况。</p>
+<p>我心想：这也太酷了！必须要给自己的 Readme 加上这个效果。</p>
+<p>于是我找到了两个关键资源：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://github.com/Platane/snk">Platane&#x2F;snk</a> - 最早的贪吃蛇生成器</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/denvercoder1/readme-typing-svg">denvercoder1&#x2F;readme-typing-svg</a> - 另一个有趣的 Readme 效果（虽然我最终没用这个，但提供了思路）</li>
+</ol>
+<h2 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h2><h3 id="第一步：理解原理"><a href="#第一步：理解原理" class="headerlink" title="第一步：理解原理"></a>第一步：理解原理</h3><p>贪吃蛇效果其实是通过 GitHub Actions 工作流定期生成 SVG 文件，然后在 Readme 中引用这些 SVG。核心步骤是：</p>
+<ol>
+<li>使用 Platane&#x2F;snk action 根据 GitHub 贡献数据生成 SVG</li>
+<li>将生成的 SVG 发布到特定分支（通常是 <code>output</code> 分支）</li>
+<li>在 Readme 中通过正确的路径引用这些 SVG</li>
+</ol>
+<h3 id="第二步：创建工作流"><a href="#第二步：创建工作流" class="headerlink" title="第二步：创建工作流"></a>第二步：创建工作流</h3><p>我在仓库中创建了 <code>.github/workflows/snake.yml</code> 文件：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">name:</span> <span class="hljs-string">GitHub</span> <span class="hljs-string">Snk</span> <span class="hljs-string">Readme</span> <span class="hljs-string">Workflow</span><br><br><span class="hljs-attr">on:</span><br>  <span class="hljs-attr">schedule:</span><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">cron:</span> <span class="hljs-string">&quot;0 0 * * *&quot;</span><br>  <span class="hljs-attr">workflow_dispatch:</span><br>  <span class="hljs-attr">push:</span><br>    <span class="hljs-attr">branches:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">main</span><br><br><span class="hljs-attr">permissions:</span><br>  <span class="hljs-attr">contents:</span> <span class="hljs-string">write</span><br><br><span class="hljs-attr">jobs:</span><br>  <span class="hljs-attr">generate:</span><br>    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span><br>    <span class="hljs-attr">timeout-minutes:</span> <span class="hljs-number">10</span><br><br>    <span class="hljs-attr">steps:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-number">1</span><span class="hljs-string">.</span> <span class="hljs-string">Checkout</span> <span class="hljs-string">Repository</span><br>        <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v4</span><br><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-number">2</span><span class="hljs-string">.</span> <span class="hljs-string">Generate</span> <span class="hljs-string">GitHub</span> <span class="hljs-string">Contributions</span> <span class="hljs-string">Snake</span> <span class="hljs-string">Animations</span><br>        <span class="hljs-attr">uses:</span> <span class="hljs-string">Platane/snk/svg-only@v3</span><br>        <span class="hljs-attr">with:</span><br>          <span class="hljs-attr">github_user_name:</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">github.repository_owner</span> <span class="hljs-string">&#125;&#125;</span><br>          <span class="hljs-attr">outputs:</span> <span class="hljs-string">|</span><br><span class="hljs-string">            github-snake.svg</span><br><span class="hljs-string">            github-snake-dark.svg?palette=github-dark</span><br><span class="hljs-string"></span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-number">3</span><span class="hljs-string">.</span> <span class="hljs-string">Deploy</span> <span class="hljs-string">to</span> <span class="hljs-string">Output</span> <span class="hljs-string">Branch</span><br>        <span class="hljs-attr">uses:</span> <span class="hljs-string">peaceiris/actions-gh-pages@v4</span><br>        <span class="hljs-attr">with:</span><br>          <span class="hljs-attr">github_token:</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">secrets.GITHUB_TOKEN</span> <span class="hljs-string">&#125;&#125;</span><br>          <span class="hljs-attr">publish_dir:</span> <span class="hljs-string">./</span><br>          <span class="hljs-attr">publish_branch:</span> <span class="hljs-string">output</span><br>          <span class="hljs-attr">commit_message:</span> <span class="hljs-string">&quot;Update snake animation [skip ci]&quot;</span><br>          <span class="hljs-attr">allow_empty_commit:</span> <span class="hljs-literal">true</span><br>          <span class="hljs-attr">force_orphan:</span> <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+<h3 id="第三步：遇到的问题和解决方案"><a href="#第三步：遇到的问题和解决方案" class="headerlink" title="第三步：遇到的问题和解决方案"></a>第三步：遇到的问题和解决方案</h3><h4 id="问题1：权限不足"><a href="#问题1：权限不足" class="headerlink" title="问题1：权限不足"></a>问题1：权限不足</h4><p>最初运行工作流时，遇到了这样的错误：</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs vbnet"><span class="hljs-symbol">remote:</span> Permission <span class="hljs-keyword">to</span> Caizhenxin/Caizhenxin.git denied <span class="hljs-keyword">to</span> github-actions[bot].<br><span class="hljs-symbol">fatal:</span> unable <span class="hljs-keyword">to</span> access <span class="hljs-comment">&#x27;https://github.com/Caizhenxin/Caizhenxin.git/&#x27;: The requested URL returned error: 403</span><br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p><strong>解决方案</strong>：在工作流中添加了 <code>permissions: contents: write</code> 来授予必要的写权限。</p>
+<h4 id="问题2：文件路径不匹配"><a href="#问题2：文件路径不匹配" class="headerlink" title="问题2：文件路径不匹配"></a>问题2：文件路径不匹配</h4><p>工作流成功运行后，我在 GitHub 上看不到贪吃蛇效果。检查发现：</p>
+<ul>
+<li>工作流生成的 SVG 文件在 <code>output</code> 分支的根目录（如 <code>github-snake.svg</code>）</li>
+<li>但我的 Readme 尝试从 <code>./assets/</code> 路径加载这些文件</li>
+</ul>
+<p><strong>解决方案</strong>： </p>
+<ol>
+<li>修改工作流，直接在根目录生成 SVG（去掉 <code>assets/</code> 前缀）</li>
+<li>更新 Readme 使用可靠的 CDN 链接：<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!--Snake Code Contribution Map 贪吃蛇代码贡献图--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">picture</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">media</span>=<span class="hljs-string">&quot;(prefers-color-scheme: dark)&quot;</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Caizhenxin/Caizhenxin@output/github-snake-dark.svg&quot;</span> /&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">media</span>=<span class="hljs-string">&quot;(prefers-color-scheme: light)&quot;</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Caizhenxin/Caizhenxin@output/github-snake.svg&quot;</span> /&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;100%&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;github-snake&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Caizhenxin/Caizhenxin@output/github-snake.svg&quot;</span> /&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">picture</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<p>使用 CDN 的好处是：</p>
+<ul>
+<li>可以实时获取最新版本，避免缓存问题</li>
+<li>加载速度快，有全球节点</li>
+<li>不需要担心仓库内部路径问题</li>
+</ul>
+<h3 id="第四步：最终效果"><a href="#第四步：最终效果" class="headerlink" title="第四步：最终效果"></a>第四步：最终效果</h3><p>完成以上步骤后，我的 GitHub 个人主页 Readme 就成功显示了动态贪吃蛇效果！🐍</p>
+<p>效果展示：</p>
+<ul>
+<li>每个方块代表一天，颜色深浅表示当天的贡献量（越深贡献越多）</li>
+<li>暗色&#x2F;亮色主题会根据访问者的系统偏好自动切换</li>
+<li>工作流每天午夜自动更新，保持数据最新</li>
+<li>同时支持手动触发（workflow_dispatch）和 push 触发</li>
+</ul>
+<h2 id="我的几点感受"><a href="#我的几点感受" class="headerlink" title="我的几点感受"></a>我的几点感受</h2><h3 id="1-小问题要重视"><a href="#1-小问题要重视" class="headerlink" title="1. 小问题要重视"></a>1. 小问题要重视</h3><p>开始时我只关注了生成 SVG，忽略了权限和路径问题。其实这些看似琐碎的配置往往是决定成败的关键。后来每遇到一个问题，我都会仔细阅读错误日志，而不是猜测。</p>
+<h3 id="2-利用现成工具"><a href="#2-利用现成工具" class="headerlink" title="2. 利用现成工具"></a>2. 利用现成工具</h3><p>与其自己从零实现一个贪吃蛇算法，不如直接使用成熟的 Platane&#x2F;snk action。这不仅省时，还能确保效果专业可靠。在开发中，善用现有轮子往往比重复造轮子更明智。</p>
+<h3 id="3-CDN-是好帮手"><a href="#3-CDN-是好帮手" class="headerlink" title="3. CDN 是好帮手"></a>3. CDN 是好帮手</h3><p>对于需要频繁更新的静态资源（如每日更新的贡献图），使用 CDN 比直接引用仓库文件更可靠。它解决了缓存更新不及时的问题，确保访问者总能看到最新效果。</p>
+<h3 id="4-迭代验证很重要"><a href="#4-迭代验证很重要" class="headerlink" title="4. 迭代验证很重要"></a>4. 迭代验证很重要</h3><p>我没有一下子把所有配置都写好就提交，而是：</p>
+<ol>
+<li>先创建最基本的工作流</li>
+<li>触发运行看看是否能生成文件</li>
+<li>检查生成的文件位置和内容</li>
+<li>根据问题逐步修复配置</li>
+<li>最后添加 CDN 提高可靠性</li>
+</ol>
+<p>这种小步快跑的方式比一次性解决所有问题更有效。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>为 GitHub Readme 添加贪吃蛇效果看起来是个小功能，但实际涉及工作流配置、权限管理、文件发布和资源引用等多个环节。通过这次实践，我不仅得到了一个炫酷的个人主页效果，还深入理解了 GitHub Actions 的工作机制。</p>
+<p>如果你也想为自己的 Readme 添加类似效果，可以参考我的工作流配置。记住：</p>
+<ul>
+<li>确保有足够的权限（<code>permissions: contents: write</code>）</li>
+<li>注意文件生成和引用路径的一致性</li>
+<li>考虑使用 CDN 提高可靠性</li>
+<li>不要忘记测试验证每一步</li>
+</ul>
+<p>现在，去给你的 Readme 也来条酷酷的贪吃蛇吧！🚀</p>
+<hr>
+<blockquote>
+<p>本文记录了我为个人 GitHub Readme 添加动态贪吃蛇效果的完整过程。如果你有其他有趣的 Readme 美化想法，欢迎在评论区交流！</p>
+</blockquote>
 
                 
               </div>
@@ -407,6 +471,40 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="category-chain-item">技术分享</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/GitHub/" class="print-no-link">#GitHub</a>
+      
+        <a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/" class="print-no-link">#自动化</a>
+      
+        <a href="/tags/%E6%95%88%E6%9E%9C%E7%BE%8E%E5%8C%96/" class="print-no-link">#效果美化</a>
+      
+        <a href="/tags/%E5%B7%A5%E4%BD%9C%E6%B5%81/" class="print-no-link">#工作流</a>
+      
+    </div>
   
 </div>
 
@@ -416,32 +514,32 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hello World</div>
-      <div>https://caizhenxin.github.io/en/2026/04/03/hello-world/</div>
+      <div>为 GitHub Readme 添加动态贪吃蛇效果——我的实践记录</div>
+      <div>https://caizhenxin.github.io/2026/04/07/github-readme-snake-effect/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
-          <div>Author</div>
+          <div>作者</div>
           <div>Cai Zhenxin</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
-          <div>Posted on</div>
-          <div>April 3, 2026</div>
+          <div>发布于</div>
+          <div>2026年4月7日</div>
         </div>
       
       
       
         <div class="license-meta-item">
-          <div>Licensed under</div>
+          <div>许可协议</div>
           <div>
             
               
               
                 <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
                     <i class="iconfont icon-cc-by"></i>
                   </span>
                 </a>
@@ -461,15 +559,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/04/04/hexo-blog-guide/" title="📖 新手必看：如何维护你的 Hexo 博客">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">📖 新手必看：如何维护你的 Hexo 博客</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2026/04/06/custom-cursor-guide/" title="给博客换上胡桃鼠标！Hexo 自定义光标完整教程">
+                        <span class="hidden-mobile">给博客换上胡桃鼠标！Hexo 自定义光标完整教程</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
@@ -488,7 +586,7 @@
     <div id="toc">
   <p class="toc-header">
     <i class="iconfont icon-list"></i>
-    <span>Table of Contents</span>
+    <span>目录</span>
   </p>
   <div class="toc-body" id="toc-body"></div>
 </div>
@@ -544,7 +642,7 @@
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
         <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -552,7 +650,7 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
@@ -805,7 +903,7 @@
   
 
   <noscript>
-    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
 </html>
