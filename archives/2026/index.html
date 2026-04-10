@@ -430,6 +430,64 @@
     
 
     
+      <div class="col-lg-7 mx-auto nopadding-x-md">
+        <div class="container custom mx-auto">
+          <!-- 底部走动的桌宠 -->
+<img id="zhuochong" src="/images/zc.gif" srcset="/img/loading.gif" lazyload>
+<style>
+    #zhuochong{position: fixed;z-index: 999999;bottom:0;left:-100px;opacity: 0.9;transform:scaleX(-1);animation-direction: alternate;animation-timing-function: linear;}
+</style>
+<style id="zcCss"></style>
+<script type="text/javascript">
+    (function () {
+        var zc,zcCss,w1,w2,leftStart,leftEnd,speed,time,fx,isfirst;
+        document.addEventListener("DOMContentLoaded", function () {
+            zc=document.querySelector("#zhuochong"),
+            zcCss=document.querySelector("#zcCss"),
+            w1=document.body.scrollWidth,
+            w2=86,
+            leftStart=0-w2,
+            leftEnd=w1-w2,
+            speed=100,
+            time=parseInt(w1/speed),
+            fx="r",
+            isfirst=true;
+            zcmove(fx);
+            zc.addEventListener("animationend", function () {
+                isfirst=false;
+                fx==="r"?fx="l":fx="r";
+                zcmove(fx);
+            });
+        });
+ 
+        function zcmove(fx) {
+            if (!isfirst) {
+                leftStart=0;
+            }
+            if (fx==="r") {
+                zc.style.transform="scaleX(-1)";
+                zcCss.innerHTML='@keyframes zcmove{' +
+                                    'from {left: '+leftStart+'px}' +
+                                    'to {left: '+leftEnd+'px}' +
+                                '}';
+                zc.style.animationName="zcmove";
+                zc.style.animationDuration=time+"s";
+            }else if (fx==="l") {
+                zc.style.transform="scaleX(1)";
+                zcCss.innerHTML='@keyframes zcmove2{' +
+                                    'from {left: '+leftEnd+'px}' +
+                                    'to {left: '+leftStart+'px}' +
+                                '}';
+                zc.style.animationName="zcmove2";
+                zc.style.animationDuration=time+"s";
+            }
+        }
+    })();
+</script>
+
+        </div>
+      </div>
+    
   </main>
 
   <footer>
