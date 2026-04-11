@@ -19,25 +19,26 @@
   <meta name="author" content="Cai Zhenxin">
   <meta name="keywords" content="">
   
-    <meta name="description" content="为 GitHub Readme 添加动态贪吃蛇效果——我的实践记录 看到很多大佬的 GitHub 首页都有炫酷的贪吃蛇代码贡献图，我也想给自己的 Readme 加上这个效果。这篇文章记录了我从零实现这一功能的全过程，包括遇到的问题和解决方案。   起因在逛 GitHub 时，我注意到许多开发者的个人主页 Readme 都有一个动态的贪吃蛇图形，它根据 GitHub 贡献数据生成不同颜色的方块，形成">
+    <meta name="description" content="参考来源：使用CSS3动画制作页面底部走动的桌宠  想让你的博客更有生机吗？添加一个可爱的桌宠（Desktop Pet）特效是个不错的选择！本教程将手把手教你如何在 Hexo Fluid 主题中添加一个可以在页面底部左右走动的桌宠。 🎯 效果预览添加成功后，你会看到一个可爱的小角色在你的博客页面底部来回走动，为访客增添乐趣。 📋 前置条件 你的博客基于 Hexo + Fluid 主题 已经准">
 <meta property="og:type" content="article">
-<meta property="og:title" content="为 GitHub Readme 添加动态贪吃蛇效果——我的实践记录">
-<meta property="og:url" content="https://caizhenxin.github.io/en/2026/04/07/github-readme-snake-effect/index.html">
+<meta property="og:title" content="🎨 为你的 Hexo Fluid 博客添加可爱桌宠特效">
+<meta property="og:url" content="https://caizhenxin.github.io/en/2026/04/11/desktop-pet-guide/index.html">
 <meta property="og:site_name" content="游手好闲辛大人">
-<meta property="og:description" content="为 GitHub Readme 添加动态贪吃蛇效果——我的实践记录 看到很多大佬的 GitHub 首页都有炫酷的贪吃蛇代码贡献图，我也想给自己的 Readme 加上这个效果。这篇文章记录了我从零实现这一功能的全过程，包括遇到的问题和解决方案。   起因在逛 GitHub 时，我注意到许多开发者的个人主页 Readme 都有一个动态的贪吃蛇图形，它根据 GitHub 贡献数据生成不同颜色的方块，形成">
+<meta property="og:description" content="参考来源：使用CSS3动画制作页面底部走动的桌宠  想让你的博客更有生机吗？添加一个可爱的桌宠（Desktop Pet）特效是个不错的选择！本教程将手把手教你如何在 Hexo Fluid 主题中添加一个可以在页面底部左右走动的桌宠。 🎯 效果预览添加成功后，你会看到一个可爱的小角色在你的博客页面底部来回走动，为访客增添乐趣。 📋 前置条件 你的博客基于 Hexo + Fluid 主题 已经准">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2026-04-07T02:00:00.000Z">
-<meta property="article:modified_time" content="2026-04-07T13:33:33.694Z">
+<meta property="article:published_time" content="2026-04-11T04:00:00.000Z">
+<meta property="article:modified_time" content="2026-04-11T04:44:33.844Z">
 <meta property="article:author" content="Cai Zhenxin">
-<meta property="article:tag" content="GitHub">
-<meta property="article:tag" content="工作流">
-<meta property="article:tag" content="效果美化">
-<meta property="article:tag" content="自动化">
+<meta property="article:tag" content="Fluid主题">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="前端特效">
+<meta property="article:tag" content="教程">
+<meta property="article:tag" content="桌宠">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>为 GitHub Readme 添加动态贪吃蛇效果——我的实践记录 - 游手好闲辛大人</title>
+  <title>🎨 为你的 Hexo Fluid 博客添加可爱桌宠特效 - 游手好闲辛大人</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -312,7 +313,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="为 GitHub Readme 添加动态贪吃蛇效果——我的实践记录"></span>
+            <span id="subtitle" data-typed-text="🎨 为你的 Hexo Fluid 博客添加可爱桌宠特效"></span>
           
         </div>
 
@@ -323,8 +324,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-04-07 10:00" pubdate>
-          April 7, 2026 am
+        <time datetime="2026-04-11 12:00" pubdate>
+          April 11, 2026 pm
         </time>
       </span>
     
@@ -335,7 +336,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.2k words
+          3.4k words
         
       </span>
     
@@ -346,7 +347,7 @@
         
         
         
-          27 mins
+          29 mins
         
       </span>
     
@@ -385,83 +386,84 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">为 GitHub Readme 添加动态贪吃蛇效果——我的实践记录</h1>
+            <h1 id="seo-header">🎨 为你的 Hexo Fluid 博客添加可爱桌宠特效</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="为-GitHub-Readme-添加动态贪吃蛇效果——我的实践记录"><a href="#为-GitHub-Readme-添加动态贪吃蛇效果——我的实践记录" class="headerlink" title="为 GitHub Readme 添加动态贪吃蛇效果——我的实践记录"></a>为 GitHub Readme 添加动态贪吃蛇效果——我的实践记录</h1><blockquote>
-<p>看到很多大佬的 GitHub 首页都有炫酷的贪吃蛇代码贡献图，我也想给自己的 Readme 加上这个效果。这篇文章记录了我从零实现这一功能的全过程，包括遇到的问题和解决方案。</p>
+                <blockquote>
+<p>参考来源：<a target="_blank" rel="noopener" href="https://saber.love/%e4%bd%bf%e7%94%a8css3%e5%8a%a8%e7%94%ba%e5%88%b6%e4%bd%9c%e7%bd%91%e9%a1%b5%e5%ba%95%e9%83%a8%e8%b5%b0%e5%8a%a8%e7%9a%84%e6%a1%8c%e5%ae%a0.html">使用CSS3动画制作页面底部走动的桌宠</a></p>
 </blockquote>
-<hr>
-<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>在逛 GitHub 时，我注意到许多开发者的个人主页 Readme 都有一个动态的贪吃蛇图形，它根据 GitHub 贡献数据生成不同颜色的方块，形成一条”蛇”。这个效果不仅好看，还能直观展示代码贡献情况。</p>
-<p>我心想：这也太酷了！必须要给自己的 Readme 加上这个效果。</p>
-<p>于是我找到了两个关键资源：</p>
-<ol>
-<li><a target="_blank" rel="noopener" href="https://github.com/Platane/snk">Platane&#x2F;snk</a> - 最早的贪吃蛇生成器</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/denvercoder1/readme-typing-svg">denvercoder1&#x2F;readme-typing-svg</a> - 另一个有趣的 Readme 效果（虽然我最终没用这个，但提供了思路）</li>
+<p>想让你的博客更有生机吗？添加一个可爱的桌宠（Desktop Pet）特效是个不错的选择！本教程将手把手教你如何在 Hexo Fluid 主题中添加一个可以在页面底部左右走动的桌宠。</p>
+<h2 id="🎯-效果预览"><a href="#🎯-效果预览" class="headerlink" title="🎯 效果预览"></a>🎯 效果预览</h2><p>添加成功后，你会看到一个可爱的小角色在你的博客页面底部来回走动，为访客增添乐趣。</p>
+<h2 id="📋-前置条件"><a href="#📋-前置条件" class="headerlink" title="📋 前置条件"></a>📋 前置条件</h2><ol>
+<li>你的博客基于 Hexo + Fluid 主题</li>
+<li>已经准备好一个你喜欢的桌宠GIF图片（建议使用透明背景的GIF）</li>
 </ol>
-<h2 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h2><h3 id="第一步：理解原理"><a href="#第一步：理解原理" class="headerlink" title="第一步：理解原理"></a>第一步：理解原理</h3><p>贪吃蛇效果其实是通过 GitHub Actions 工作流定期生成 SVG 文件，然后在 Readme 中引用这些 SVG。核心步骤是：</p>
-<ol>
-<li>使用 Platane&#x2F;snk action 根据 GitHub 贡献数据生成 SVG</li>
-<li>将生成的 SVG 发布到特定分支（通常是 <code>output</code> 分支）</li>
-<li>在 Readme 中通过正确的路径引用这些 SVG</li>
+<h2 id="🛠️-实现步骤"><a href="#🛠️-实现步骤" class="headerlink" title="🛠️ 实现步骤"></a>🛠️ 实现步骤</h2><h3 id="步骤1：准备桌宠图片"><a href="#步骤1：准备桌宠图片" class="headerlink" title="步骤1：准备桌宠图片"></a>步骤1：准备桌宠图片</h3><ol>
+<li>选择或制作一个你喜欢的桌宠GIF图片</li>
+<li>将图片命名为 <code>zc.gif</code>（或其他名称，但需与后续代码匹配）</li>
+<li>将图片放置到博客的 <code>source/images/</code> 目录下<ul>
+<li>完整路径：<code>source/images/zc.gif</code></li>
+</ul>
+</li>
 </ol>
-<h3 id="第二步：创建工作流"><a href="#第二步：创建工作流" class="headerlink" title="第二步：创建工作流"></a>第二步：创建工作流</h3><p>我在仓库中创建了 <code>.github/workflows/snake.yml</code> 文件：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">name:</span> <span class="hljs-string">GitHub</span> <span class="hljs-string">Snk</span> <span class="hljs-string">Readme</span> <span class="hljs-string">Workflow</span><br><br><span class="hljs-attr">on:</span><br>  <span class="hljs-attr">schedule:</span><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">cron:</span> <span class="hljs-string">&quot;0 0 * * *&quot;</span><br>  <span class="hljs-attr">workflow_dispatch:</span><br>  <span class="hljs-attr">push:</span><br>    <span class="hljs-attr">branches:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">main</span><br><br><span class="hljs-attr">permissions:</span><br>  <span class="hljs-attr">contents:</span> <span class="hljs-string">write</span><br><br><span class="hljs-attr">jobs:</span><br>  <span class="hljs-attr">generate:</span><br>    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span><br>    <span class="hljs-attr">timeout-minutes:</span> <span class="hljs-number">10</span><br><br>    <span class="hljs-attr">steps:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-number">1</span><span class="hljs-string">.</span> <span class="hljs-string">Checkout</span> <span class="hljs-string">Repository</span><br>        <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v4</span><br><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-number">2</span><span class="hljs-string">.</span> <span class="hljs-string">Generate</span> <span class="hljs-string">GitHub</span> <span class="hljs-string">Contributions</span> <span class="hljs-string">Snake</span> <span class="hljs-string">Animations</span><br>        <span class="hljs-attr">uses:</span> <span class="hljs-string">Platane/snk/svg-only@v3</span><br>        <span class="hljs-attr">with:</span><br>          <span class="hljs-attr">github_user_name:</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">github.repository_owner</span> <span class="hljs-string">&#125;&#125;</span><br>          <span class="hljs-attr">outputs:</span> <span class="hljs-string">|</span><br><span class="hljs-string">            github-snake.svg</span><br><span class="hljs-string">            github-snake-dark.svg?palette=github-dark</span><br><span class="hljs-string"></span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-number">3</span><span class="hljs-string">.</span> <span class="hljs-string">Deploy</span> <span class="hljs-string">to</span> <span class="hljs-string">Output</span> <span class="hljs-string">Branch</span><br>        <span class="hljs-attr">uses:</span> <span class="hljs-string">peaceiris/actions-gh-pages@v4</span><br>        <span class="hljs-attr">with:</span><br>          <span class="hljs-attr">github_token:</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">secrets.GITHUB_TOKEN</span> <span class="hljs-string">&#125;&#125;</span><br>          <span class="hljs-attr">publish_dir:</span> <span class="hljs-string">./</span><br>          <span class="hljs-attr">publish_branch:</span> <span class="hljs-string">output</span><br>          <span class="hljs-attr">commit_message:</span> <span class="hljs-string">&quot;Update snake animation [skip ci]&quot;</span><br>          <span class="hljs-attr">allow_empty_commit:</span> <span class="hljs-literal">true</span><br>          <span class="hljs-attr">force_orphan:</span> <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>💡 <strong>提示</strong>：图片路径以 <code>/</code> 开头表示从网站根目录开始。<code>/images/zc.gif</code> 对应 <code>source/images/zc.gif</code>。</p>
+</blockquote>
+<h3 id="步骤2：修改主题配置"><a href="#步骤2：修改主题配置" class="headerlink" title="步骤2：修改主题配置"></a>步骤2：修改主题配置</h3><ol>
+<li>打开 Fluid 主题配置文件：<code>themes/fluid/_config.yml</code></li>
+<li>滚动到文件最末尾（或找到合适位置添加）</li>
+<li>添加以下配置内容：</li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># 自定义 HTML 内容 - 桌宠</span><br><span class="hljs-comment"># Custom HTML content - Desktop pet</span><br><span class="hljs-attr">custom_html:</span> <span class="hljs-string">|</span><br><span class="hljs-string">  &lt;!-- 底部走动的桌宠 --&gt;</span><br><span class="hljs-string">  &lt;img id=&quot;zhuochong&quot; src=&quot;/images/zc.gif&quot;&gt;</span><br><span class="hljs-string">  &lt;style&gt;</span><br><span class="hljs-string">      #zhuochong&#123;position: fixed;z-index: 999999;bottom:0;left:-100px;opacity: 0.9;transform:scaleX(-1);animation-direction: alternate;animation-timing-function: linear;&#125;</span><br><span class="hljs-string">  &lt;/style&gt;</span><br><span class="hljs-string">  &lt;style id=&quot;zcCss&quot;&gt;&lt;/style&gt;</span><br><span class="hljs-string">  &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="hljs-string">      (function () &#123;</span><br><span class="hljs-string">          var zc,zcCss,w1,w2,leftStart,leftEnd,speed,time,fx,isfirst;</span><br><span class="hljs-string">          document.addEventListener(&quot;DOMContentLoaded&quot;, function () &#123;</span><br><span class="hljs-string">              zc=document.querySelector(&quot;#zhuochong&quot;),</span><br><span class="hljs-string">              zcCss=document.querySelector(&quot;#zcCss&quot;),</span><br><span class="hljs-string">              w1=document.body.scrollWidth,</span><br><span class="hljs-string">              w2=86,</span><br><span class="hljs-string">              leftStart=0-w2,</span><br><span class="hljs-string">              leftEnd=w1-w2,</span><br><span class="hljs-string">              speed=100,</span><br><span class="hljs-string">              time=parseInt(w1/speed),</span><br><span class="hljs-string">              fx=&quot;r&quot;,</span><br><span class="hljs-string">              isfirst=true;</span><br><span class="hljs-string">              zcmove(fx);</span><br><span class="hljs-string">              zc.addEventListener(&quot;animationend&quot;, function () &#123;</span><br><span class="hljs-string">                  isfirst=false;</span><br><span class="hljs-string">                  fx===&quot;r&quot;?fx=&quot;l&quot;:fx=&quot;r&quot;;</span><br><span class="hljs-string">                  zcmove(fx);</span><br><span class="hljs-string">              &#125;);</span><br><span class="hljs-string">          &#125;);</span><br><span class="hljs-string">   </span><br><span class="hljs-string">          function zcmove(fx) &#123;</span><br><span class="hljs-string">              if (!isfirst) &#123;</span><br><span class="hljs-string">                  leftStart=0;</span><br><span class="hljs-string">              &#125;</span><br><span class="hljs-string">              if (fx===&quot;r&quot;) &#123;</span><br><span class="hljs-string">                  zc.style.transform=&quot;scaleX(-1)&quot;;</span><br><span class="hljs-string">                  zcCss.innerHTML=&#x27;@keyframes zcmove&#123;&#x27; +</span><br><span class="hljs-string">                                      &#x27;from &#123;left: &#x27;+leftStart+&#x27;px&#125;&#x27; +</span><br><span class="hljs-string">                                      &#x27;to &#123;left: &#x27;+leftEnd+&#x27;px&#125;&#x27; +</span><br><span class="hljs-string">                                  &#x27;&#125;&#x27;;</span><br><span class="hljs-string">                  zc.style.animationName=&quot;zcmove&quot;;</span><br><span class="hljs-string">                  zc.style.animationDuration=time+&quot;s&quot;;</span><br><span class="hljs-string">              &#125;else if (fx===&quot;l&quot;) &#123;</span><br><span class="hljs-string">                  zc.style.transform=&quot;scaleX(1)&quot;;</span><br><span class="hljs-string">                  zcCss.innerHTML=&#x27;@keyframes zcmove2&#123;&#x27; +</span><br><span class="hljs-string">                                      &#x27;from &#123;left: &#x27;+leftEnd+&#x27;px&#125;&#x27; +</span><br><span class="hljs-string">                                      &#x27;to &#123;left: &#x27;+leftStart+&#x27;px&#125;&#x27; +</span><br><span class="hljs-string">                                  &#x27;&#125;&#x27;;</span><br><span class="hljs-string">                  zc.style.animationName=&quot;zcmove2&quot;;</span><br><span class="hljs-string">                  zc.style.animationDuration=time+&quot;s&quot;;</span><br><span class="hljs-string">              &#125;</span><br><span class="hljs-string">          &#125;</span><br><span class="hljs-string">      &#125;)();</span><br><span class="hljs-string">  &lt;/script&gt;</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="第三步：遇到的问题和解决方案"><a href="#第三步：遇到的问题和解决方案" class="headerlink" title="第三步：遇到的问题和解决方案"></a>第三步：遇到的问题和解决方案</h3><h4 id="问题1：权限不足"><a href="#问题1：权限不足" class="headerlink" title="问题1：权限不足"></a>问题1：权限不足</h4><p>最初运行工作流时，遇到了这样的错误：</p>
-<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs vbnet"><span class="hljs-symbol">remote:</span> Permission <span class="hljs-keyword">to</span> Caizhenxin/Caizhenxin.git denied <span class="hljs-keyword">to</span> github-actions[bot].<br><span class="hljs-symbol">fatal:</span> unable <span class="hljs-keyword">to</span> access <span class="hljs-comment">&#x27;https://github.com/Caizhenxin/Caizhenxin.git/&#x27;: The requested URL returned error: 403</span><br></code></pre></td></tr></table></figure>
+<h3 id="步骤3：调整参数（可选）"><a href="#步骤3：调整参数（可选）" class="headerlink" title="步骤3：调整参数（可选）"></a>步骤3：调整参数（可选）</h3><p>根据你的实际情况，可能需要调整以下参数：</p>
+<ul>
+<li><code>w2=86</code>：桌宠图片的实际宽度（像素），根据你的GIF图片宽度修改</li>
+<li><code>speed=100</code>：移动速度（像素&#x2F;秒），数值越大越快</li>
+<li><code>opacity: 0.9</code>：透明度（0-1之间），调整为1则完全不透明</li>
+<li><code>z-index: 999999</code>：层级，通常无需修改，确保在最上层</li>
+</ul>
+<h3 id="步骤4：生成并部署"><a href="#步骤4：生成并部署" class="headerlink" title="步骤4：生成并部署"></a>步骤4：生成并部署</h3><p>保存配置文件后，执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 1. 清除缓存</span><br>npx hexo clean<br><br><span class="hljs-comment"># 2. 重新生成静态文件</span><br>npx hexo generate<br><br><span class="hljs-comment"># 3. 本地预览（可选）</span><br>npx hexo server<br><br><span class="hljs-comment"># 访问 http://localhost:4000 查看效果</span><br></code></pre></td></tr></table></figure>
 
-<p><strong>解决方案</strong>：在工作流中添加了 <code>permissions: contents: write</code> 来授予必要的写权限。</p>
-<h4 id="问题2：文件路径不匹配"><a href="#问题2：文件路径不匹配" class="headerlink" title="问题2：文件路径不匹配"></a>问题2：文件路径不匹配</h4><p>工作流成功运行后，我在 GitHub 上看不到贪吃蛇效果。检查发现：</p>
-<ul>
-<li>工作流生成的 SVG 文件在 <code>output</code> 分支的根目录（如 <code>github-snake.svg</code>）</li>
-<li>但我的 Readme 尝试从 <code>./assets/</code> 路径加载这些文件</li>
-</ul>
-<p><strong>解决方案</strong>： </p>
+<p>满意后推送到GitHub：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">git add .<br>git commit -m <span class="hljs-string">&quot;添加桌宠特效&quot;</span><br>git push origin main<br></code></pre></td></tr></table></figure>
+
+<p>推送后，GitHub Actions会自动构建并部署你的博客（约1-2分钟）。</p>
+<h2 id="⚙️-技术原理简述"><a href="#⚙️-技术原理简述" class="headerlink" title="⚙️ 技术原理简述"></a>⚙️ 技术原理简述</h2><p>这个特效主要使用了以下前端技术：</p>
 <ol>
-<li>修改工作流，直接在根目录生成 SVG（去掉 <code>assets/</code> 前缀）</li>
-<li>更新 Readme 使用可靠的 CDN 链接：<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!--Snake Code Contribution Map 贪吃蛇代码贡献图--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">picture</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">media</span>=<span class="hljs-string">&quot;(prefers-color-scheme: dark)&quot;</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Caizhenxin/Caizhenxin@output/github-snake-dark.svg&quot;</span> /&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">media</span>=<span class="hljs-string">&quot;(prefers-color-scheme: light)&quot;</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Caizhenxin/Caizhenxin@output/github-snake.svg&quot;</span> /&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;100%&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;github-snake&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Caizhenxin/Caizhenxin@output/github-snake.svg&quot;</span> /&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">picture</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+<li><strong>CSS定位</strong>：使用 <code>position: fixed</code> 将元素固定在视口底部</li>
+<li><strong>CSS动画</strong>：通过 <code>@keyframes</code> 定义从左到右和从右到左的移动动画</li>
+<li><strong>JavaScript控制</strong>：<ul>
+<li>监听 <code>DOMContentLoaded</code> 事件确保DOM已加载</li>
+<li>计算页面宽度和动画时长</li>
+<li>动态生成两个关键帧动画（向左和向右）</li>
+<li>监听 <code>animationend</code> 事件实现无缝循环</li>
+<li>使用 <code>transform:scaleX()</code> 实现图像水平翻转，使桌宠始终面向移动方向</li>
+</ul>
+</li>
 </ol>
-<p>使用 CDN 的好处是：</p>
-<ul>
-<li>可以实时获取最新版本，避免缓存问题</li>
-<li>加载速度快，有全球节点</li>
-<li>不需要担心仓库内部路径问题</li>
-</ul>
-<h3 id="第四步：最终效果"><a href="#第四步：最终效果" class="headerlink" title="第四步：最终效果"></a>第四步：最终效果</h3><p>完成以上步骤后，我的 GitHub 个人主页 Readme 就成功显示了动态贪吃蛇效果！🐍</p>
-<p>效果展示：</p>
-<ul>
-<li>每个方块代表一天，颜色深浅表示当天的贡献量（越深贡献越多）</li>
-<li>暗色&#x2F;亮色主题会根据访问者的系统偏好自动切换</li>
-<li>工作流每天午夜自动更新，保持数据最新</li>
-<li>同时支持手动触发（workflow_dispatch）和 push 触发</li>
-</ul>
-<h2 id="我的几点感受"><a href="#我的几点感受" class="headerlink" title="我的几点感受"></a>我的几点感受</h2><h3 id="1-小问题要重视"><a href="#1-小问题要重视" class="headerlink" title="1. 小问题要重视"></a>1. 小问题要重视</h3><p>开始时我只关注了生成 SVG，忽略了权限和路径问题。其实这些看似琐碎的配置往往是决定成败的关键。后来每遇到一个问题，我都会仔细阅读错误日志，而不是猜测。</p>
-<h3 id="2-利用现成工具"><a href="#2-利用现成工具" class="headerlink" title="2. 利用现成工具"></a>2. 利用现成工具</h3><p>与其自己从零实现一个贪吃蛇算法，不如直接使用成熟的 Platane&#x2F;snk action。这不仅省时，还能确保效果专业可靠。在开发中，善用现有轮子往往比重复造轮子更明智。</p>
-<h3 id="3-CDN-是好帮手"><a href="#3-CDN-是好帮手" class="headerlink" title="3. CDN 是好帮手"></a>3. CDN 是好帮手</h3><p>对于需要频繁更新的静态资源（如每日更新的贡献图），使用 CDN 比直接引用仓库文件更可靠。它解决了缓存更新不及时的问题，确保访问者总能看到最新效果。</p>
-<h3 id="4-迭代验证很重要"><a href="#4-迭代验证很重要" class="headerlink" title="4. 迭代验证很重要"></a>4. 迭代验证很重要</h3><p>我没有一下子把所有配置都写好就提交，而是：</p>
+<h2 id="🔍-故障排除"><a href="#🔍-故障排除" class="headerlink" title="🔍 故障排除"></a>🔍 故障排除</h2><p>如果桌宠没有显示或无法移动，请检查：</p>
 <ol>
-<li>先创建最基本的工作流</li>
-<li>触发运行看看是否能生成文件</li>
-<li>检查生成的文件位置和内容</li>
-<li>根据问题逐步修复配置</li>
-<li>最后添加 CDN 提高可靠性</li>
+<li><strong>图片路径是否正确</strong>：确认 <code>source/images/zc.gif</code> 文件存在</li>
+<li><strong>浏览器控制台</strong>：按 F12 检查是否有JavaScript错误</li>
+<li><strong>配置缩进</strong>：YAML对缩进非常敏感，确保 <code>custom_html:</code> 前没有多余空格</li>
+<li><strong>清除缓存</strong>：有时需要强制刷新浏览器（Ctrl+Shift+R&#x2F;Cmd+Shift+R）</li>
 </ol>
-<p>这种小步快跑的方式比一次性解决所有问题更有效。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>为 GitHub Readme 添加贪吃蛇效果看起来是个小功能，但实际涉及工作流配置、权限管理、文件发布和资源引用等多个环节。通过这次实践，我不仅得到了一个炫酷的个人主页效果，还深入理解了 GitHub Actions 的工作机制。</p>
-<p>如果你也想为自己的 Readme 添加类似效果，可以参考我的工作流配置。记住：</p>
-<ul>
-<li>确保有足够的权限（<code>permissions: contents: write</code>）</li>
-<li>注意文件生成和引用路径的一致性</li>
-<li>考虑使用 CDN 提高可靠性</li>
-<li>不要忘记测试验证每一步</li>
+<h2 id="🎨-自定义建议"><a href="#🎨-自定义建议" class="headerlink" title="🎨 自定义建议"></a>🎨 自定义建议</h2><ul>
+<li>尝试不同的桌宠图片：猫咪、小动物、卡通角色等都很可爱</li>
+<li>调整出现时间：可以添加延迟或滚动触发条件</li>
+<li>添加点击交互：让桌宠被点击时做出特殊动作</li>
+<li>多桌宠：通过修改代码可以实现多个桌宠同时出现</li>
 </ul>
-<p>现在，去给你的 Readme 也来条酷酷的贪吃蛇吧！🚀</p>
+<h2 id="📚-参考资料"><a href="#📚-参考资料" class="headerlink" title="📚 参考资料"></a>📚 参考资料</h2><p>本特效实现参考自：<a target="_blank" rel="noopener" href="https://saber.love/%e4%bd%bf%e7%94%a8css3%e5%8a%a8%e7%94%ba%e5%88%b6%e4%bd%9c%e7%bd%91%e9%a1%b5%e5%ba%95%e9%83%a8%e8%b5%b0%e5%8a%a8%e7%9a%84%e6%a1%8c%e5%ae%a0.html">使用CSS3动画制作页面底部走动的桌宠</a></p>
+<p>原作者使用了类似的CSS3动画和JavaScript实现，我将其适配到了Hexo Fluid主题的配置系统中。</p>
 <hr>
 <blockquote>
-<p>本文记录了我为个人 GitHub Readme 添加动态贪吃蛇效果的完整过程。如果你有其他有趣的 Readme 美化想法，欢迎在评论区交流！</p>
+<p>💡 <strong>小贴士</strong>：每次修改主题配置后，记得执行 <code>npx hexo clean &amp;&amp; npx hexo generate</code> 以确保更改生效。</p>
+<p>现在，去为你的博客增添一点可爱吧！🐾</p>
 </blockquote>
 
                 
@@ -481,7 +483,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="category-chain-item">技术分享</a>
+  <a href="/categories/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/" class="category-chain-item">博客美化</a>
   
   
 
@@ -496,13 +498,15 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/GitHub/" class="print-no-link">#GitHub</a>
+        <a href="/tags/%E6%95%99%E7%A8%8B/" class="print-no-link">#教程</a>
       
-        <a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/" class="print-no-link">#自动化</a>
+        <a href="/tags/Hexo/" class="print-no-link">#Hexo</a>
       
-        <a href="/tags/%E6%95%88%E6%9E%9C%E7%BE%8E%E5%8C%96/" class="print-no-link">#效果美化</a>
+        <a href="/tags/Fluid%E4%B8%BB%E9%A2%98/" class="print-no-link">#Fluid主题</a>
       
-        <a href="/tags/%E5%B7%A5%E4%BD%9C%E6%B5%81/" class="print-no-link">#工作流</a>
+        <a href="/tags/%E6%A1%8C%E5%AE%A0/" class="print-no-link">#桌宠</a>
+      
+        <a href="/tags/%E5%89%8D%E7%AB%AF%E7%89%B9%E6%95%88/" class="print-no-link">#前端特效</a>
       
     </div>
   
@@ -514,8 +518,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>为 GitHub Readme 添加动态贪吃蛇效果——我的实践记录</div>
-      <div>https://caizhenxin.github.io/en/2026/04/07/github-readme-snake-effect/</div>
+      <div>🎨 为你的 Hexo Fluid 博客添加可爱桌宠特效</div>
+      <div>https://caizhenxin.github.io/en/2026/04/11/desktop-pet-guide/</div>
     </div>
     <div class="license-meta">
       
@@ -527,7 +531,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>April 7, 2026</div>
+          <div>April 11, 2026</div>
         </div>
       
       
@@ -559,18 +563,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/04/11/%F0%9F%8E%A8-%E4%B8%BA%E4%BD%A0%E7%9A%84-Hexo-Fluid-%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%8F%AF%E7%88%B1%E6%A1%8C%E5%AE%A0%E7%89%B9%E6%95%88/" title="🎨 为你的 Hexo Fluid 博客添加可爱桌宠特效">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">🎨 为你的 Hexo Fluid 博客添加可爱桌宠特效</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/04/06/custom-cursor-guide/" title="给博客换上胡桃鼠标！Hexo 自定义光标完整教程">
-                        <span class="hidden-mobile">给博客换上胡桃鼠标！Hexo 自定义光标完整教程</span>
+                      <a href="/2026/04/11/%F0%9F%8E%A8-%E4%B8%BA%E4%BD%A0%E7%9A%84-Hexo-Fluid-%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%8F%AF%E7%88%B1%E6%A1%8C%E5%AE%A0%E7%89%B9%E6%95%88/" title="🎨 为你的 Hexo Fluid 博客添加可爱桌宠特效">
+                        <span class="hidden-mobile">🎨 为你的 Hexo Fluid 博客添加可爱桌宠特效</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
