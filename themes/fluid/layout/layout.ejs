@@ -11,6 +11,25 @@ var colorSchema = theme.dark_mode && theme.dark_mode.enable && theme.dark_mode.d
 <body>
   <%- inject_point('bodyBegin') %>
 
+  <div id="divergence-loader" class="divergence-loader" aria-hidden="true">
+    <div class="divergence-loader__bg"></div>
+    <div class="divergence-loader__overlay"></div>
+    <div class="divergence-loader__center">
+      <div class="divergence-loader__title">STEINS;GATE</div>
+      <div class="divergence-loader__meter" role="img" aria-label="divergence meter">
+        <span class="divergence-loader__frame divergence-loader__frame--major"></span>
+        <span class="divergence-loader__frame divergence-loader__frame--dot"></span>
+        <span class="divergence-loader__frame"></span>
+        <span class="divergence-loader__frame"></span>
+        <span class="divergence-loader__frame"></span>
+        <span class="divergence-loader__frame"></span>
+        <span class="divergence-loader__frame"></span>
+        <span class="divergence-loader__frame"></span>
+      </div>
+      <div class="divergence-loader__subtitle">Loading world lines...</div>
+    </div>
+  </div>
+
   <header>
     <%- inject_point('header') %>
   </header>
