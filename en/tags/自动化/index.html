@@ -21,8 +21,8 @@
   
     <meta name="description" content="技术博客与个人作品集">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Categories - 技术分享">
-<meta property="og:url" content="https://caizhenxin.github.io/en/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/index.html">
+<meta property="og:title" content="Tags - 自动化">
+<meta property="og:url" content="https://caizhenxin.github.io/en/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/index.html">
 <meta property="og:site_name" content="游手好闲辛大人">
 <meta property="og:description" content="技术博客与个人作品集">
 <meta property="og:locale" content="en_US">
@@ -31,7 +31,7 @@
   
   
   
-  <title>Categories - 技术分享 - 游手好闲辛大人</title>
+  <title>Tags - 自动化 - 游手好闲辛大人</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -63,6 +63,7 @@
 <link rel="stylesheet" href="/css/lang-switch.css">
 <link rel="stylesheet" href="/css/cursors.css">
 <link rel="stylesheet" href="/css/ripple-effect.css">
+<link rel="stylesheet" href="/css/divergence-loader.css">
 
 
 
@@ -88,10 +89,29 @@
 <body>
   
 
+  <div id="divergence-loader" class="divergence-loader" aria-hidden="true">
+    <div class="divergence-loader__bg"></div>
+    <div class="divergence-loader__overlay"></div>
+    <div class="divergence-loader__center">
+      <div class="divergence-loader__title">STEINS;GATE</div>
+      <div class="divergence-loader__meter" role="img" aria-label="divergence meter">
+        <span class="divergence-loader__frame divergence-loader__frame--major"></span>
+        <span class="divergence-loader__frame divergence-loader__frame--dot"></span>
+        <span class="divergence-loader__frame"></span>
+        <span class="divergence-loader__frame"></span>
+        <span class="divergence-loader__frame"></span>
+        <span class="divergence-loader__frame"></span>
+        <span class="divergence-loader__frame"></span>
+        <span class="divergence-loader__frame"></span>
+      </div>
+      <div class="divergence-loader__subtitle">Loading world lines...</div>
+    </div>
+  </div>
+
   <header>
     
 
-<div class="header-inner" style="height: 60vh;">
+<div class="header-inner" style="height: 80vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -300,13 +320,17 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Categories - 技术分享"></span>
+            <span id="subtitle" data-typed-text="Tags - 自动化"></span>
           
         </div>
 
         
       </div>
 
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
       
     </div>
   </div>
@@ -343,7 +367,7 @@
                 
 
 <div class="list-group">
-  <p class="h4">5 posts in total</p>
+  <p class="h4">1 posts in total</p>
   <hr>
   
   
@@ -354,30 +378,6 @@
     <a href="/2026/04/07/github-readme-snake-effect/" class="list-group-item list-group-item-action">
       <time>04-07</time>
       <div class="list-group-item-title">为 GitHub Readme 添加动态贪吃蛇效果——我的实践记录</div>
-    </a>
-  
-    
-    <a href="/2026/04/06/custom-cursor-guide/" class="list-group-item list-group-item-action">
-      <time>04-06</time>
-      <div class="list-group-item-title">给博客换上胡桃鼠标！Hexo 自定义光标完整教程</div>
-    </a>
-  
-    
-    <a href="/2026/04/05/live2d-widget-guide/" class="list-group-item list-group-item-action">
-      <time>04-05</time>
-      <div class="list-group-item-title">给博客加个看板娘！Hexo + Live2D 超详细教程</div>
-    </a>
-  
-    
-    <a href="/2026/04/05/ai-coding-experience/" class="list-group-item list-group-item-action">
-      <time>04-05</time>
-      <div class="list-group-item-title">用 AI 写代码是什么体验？—— 我的 OpenCode 实战记录</div>
-    </a>
-  
-    
-    <a href="/2026/04/04/hexo-blog-guide/" class="list-group-item list-group-item-action">
-      <time>04-04</time>
-      <div class="list-group-item-title">📖 新手必看：如何维护你的 Hexo 博客</div>
     </a>
   
 </div>
@@ -556,6 +556,7 @@
 <script src="/js/mouse-trail.js"></script>
 <script src="/js/title-effect.js"></script>
 <script src="/js/snow-effect.js"></script>
+<script src="/js/divergence-loader.js"></script>
 
 
 

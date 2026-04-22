@@ -78,6 +78,7 @@
 <link rel="stylesheet" href="/css/lang-switch.css">
 <link rel="stylesheet" href="/css/cursors.css">
 <link rel="stylesheet" href="/css/ripple-effect.css">
+<link rel="stylesheet" href="/css/divergence-loader.css">
 
 
 
@@ -102,6 +103,25 @@
 
 <body>
   
+
+  <div id="divergence-loader" class="divergence-loader" aria-hidden="true">
+    <div class="divergence-loader__bg"></div>
+    <div class="divergence-loader__overlay"></div>
+    <div class="divergence-loader__center">
+      <div class="divergence-loader__title">STEINS;GATE</div>
+      <div class="divergence-loader__meter" role="img" aria-label="divergence meter">
+        <span class="divergence-loader__frame divergence-loader__frame--major"></span>
+        <span class="divergence-loader__frame divergence-loader__frame--dot"></span>
+        <span class="divergence-loader__frame"></span>
+        <span class="divergence-loader__frame"></span>
+        <span class="divergence-loader__frame"></span>
+        <span class="divergence-loader__frame"></span>
+        <span class="divergence-loader__frame"></span>
+        <span class="divergence-loader__frame"></span>
+      </div>
+      <div class="divergence-loader__subtitle">Loading world lines...</div>
+    </div>
+  </div>
 
   <header>
     
@@ -1041,6 +1061,7 @@
 <script src="/js/mouse-trail.js"></script>
 <script src="/js/title-effect.js"></script>
 <script src="/js/snow-effect.js"></script>
+<script src="/js/divergence-loader.js"></script>
 
 
 
