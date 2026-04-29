@@ -1,0 +1,102 @@
+<div class="archive-list">
+    <% 
+    var yearGroups = {};
+    page.posts.each(function (post) {
+        var year = date(post.date, "YYYY");
+        if (!yearGroups[year]) {
+            yearGroups[year] = [];
+        }
+        yearGroups[year].push(post);
+    });
+
+    var sortedYears = Object.keys(yearGroups).sort(function(a, b) {
+        return parseInt(b) - parseInt(a);
+    });
+    %>
+
+    <% sortedYears.forEach(function(year) { %>
+        <div class="year-group" data-year="<%= year %>">
+            <div class="year-header">
+                <h3 class="year-title">
+                    <i class="fas fa-calendar-alt"></i>
+                    <%= year %>
+                </h3>
+                <div class="year-divider"></div>
+                <span class="year-count">
+                    <%= yearGroups[year].length %> 篇
+                </span>
+            </div>
+            
+            <div class="post-cards">
+                <% yearGroups[year].forEach(function(post) { %>
+                    <% 
+                    var categoryName = '';
+                    if (post.categories && post.categories.length > 0 && post.categories[0]) {
+                        categoryName = post.categories[0].name || '';
+                    }
+                    
+                    var tagNames = [];
+                    if (post.tags && post.tags.length > 0) {
+                        post.tags.forEach(function(tag) {
+                            if (tag && tag.name) {
+                                tagNames.push(tag.name);
+                            }
+                        });
+                    }
+                    %>
+                    <article 
+                        class="post-card" 
+                        data-category="<%= categoryName %>"
+                        data-tags="<%= tagNames.join(',') %>"
+                    >
+                        <a href="<%= url_for(post.path) %>" class="card-link">
+                            <div class="card-header">
+                                <% if (categoryName) { %>
+                                    <span class="card-category">
+                                        <i class="fas fa-folder-open"></i>
+                                        <%= categoryName %>
+                                    </span>
+                                <% } %>
+                                <time class="card-date">
+                                    <i class="fas fa-clock"></i>
+                                    <%= date(post.date, "MM-DD") %>
+                                </time>
+                            </div>
+                            
+                            <h4 class="card-title">
+                                <%= post.title %>
+                            </h4>
+                            
+                            <% if (post.excerpt) { %>
+                                <p class="card-excerpt">
+                                    <%= post.excerpt %>
+                                </p>
+                            <% } %>
+                            
+                            <div class="card-footer">
+                                <div class="card-tags">
+                                    <% if (tagNames.length > 0) { %>
+                                        <% tagNames.slice(0, 3).forEach(function(tag) { %>
+                                            <span class="tag">
+                                                <i class="fas fa-tag"></i>
+                                                <%= tag %>
+                                            </span>
+                                        <% }); %>
+                                        <% if (tagNames.length > 3) { %>
+                                            <span class="tag">+<%= tagNames.length - 3 %></span>
+                                        <% } %>
+                                    <% } %>
+                                </div>
+                                
+                                <div class="card-readtime">
+                                    <i class="fas fa-eye"></i>
+                                    <%= post.readtime || '3' %> min
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                <% }); %>
+            </div>
+        </div>
+    <% }); %>
+</div>
