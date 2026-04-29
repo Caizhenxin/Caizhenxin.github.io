@@ -362,67 +362,525 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
-<div class="list-group">
-  <p class="h4">8 posts in total</p>
-  <hr>
-  
-  
+<div class="archive-wrapper">
+    <!-- 粒子背景 -->
+    <div class="particles-container" id="particles-container"></div>
     
-      
-      <p class="h5">2026</p>
+    <!-- 搜索和筛选区域 -->
+    <div class="archive-header">
+        <div class="header-content">
+            <div class="title-section">
+                <h1 class="archive-title">
+                    <span class="title-icon">
+                        <i class="fas fa-archive"></i>
+                    </span>
+                    Archive
+                </h1>
+                <p class="archive-subtitle">
+                    7 篇文章
+                </p>
+            </div>
+            
+            <div class="search-wrapper">
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input 
+                        type="text" 
+                        id="search-input" 
+                        placeholder="搜索文章..." 
+                        class="search-input"
+                    >
+                    <button id="search-clear" class="search-clear" style="display: none;">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 分类标签 -->
+        <div class="filter-tabs">
+            <div class="tabs-wrapper">
+                <button 
+                    class="tab-btn active" 
+                    data-filter="all"
+                >
+                    <i class="fas fa-layer-group"></i>
+                    全部
+                </button>
+                
+                    <button 
+                        class="tab-btn" 
+                        data-filter="category-博客美化"
+                    >
+                        <i class="fas fa-folder"></i>
+                        博客美化
+                    </button>
+                
+                    <button 
+                        class="tab-btn" 
+                        data-filter="category-技术分享"
+                    >
+                        <i class="fas fa-folder"></i>
+                        技术分享
+                    </button>
+                
+            </div>
+        </div>
+        
+        <!-- 年份导航 -->
+        <div class="year-nav">
+            <div class="year-label">按年份浏览</div>
+            <div class="year-timeline">
+                <div class="timeline-line"></div>
+                <div class="year-dots">
+                    
+                    
+                        
+                        
+                            
+                            <button 
+                                class="year-dot" 
+                                data-year="2026"
+                            >
+                                <span class="year-number">2026</span>
+                                <span class="year-pulse"></span>
+                            </button>
+                        
+                    
+                        
+                        
+                    
+                        
+                        
+                    
+                        
+                        
+                    
+                        
+                        
+                    
+                        
+                        
+                    
+                        
+                        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
     
-    <a href="/2026/04/11/desktop-pet-guide/" class="list-group-item list-group-item-action">
-      <time>04-11</time>
-      <div class="list-group-item-title">🎨 为你的 Hexo Fluid 博客添加可爱桌宠特效</div>
-    </a>
-  
+    <!-- 视图切换 -->
+    <div class="view-controls">
+        <button 
+            id="view-timeline" 
+            class="view-btn active" 
+            title="时间线视图"
+        >
+            <i class="fas fa-list view-icon"></i>
+            <span class="view-label">时间线</span>
+        </button>
+        <button 
+            id="view-grid" 
+            class="view-btn" 
+            title="网格视图"
+        >
+            <i class="fas fa-th view-icon"></i>
+            <span class="view-label">网格</span>
+        </button>
+    </div>
     
-    <a href="/2026/04/11/%F0%9F%8E%A8-%E4%B8%BA%E4%BD%A0%E7%9A%84-Hexo-Fluid-%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%8F%AF%E7%88%B1%E6%A1%8C%E5%AE%A0%E7%89%B9%E6%95%88/" class="list-group-item list-group-item-action">
-      <time>04-11</time>
-      <div class="list-group-item-title">🎨 为你的 Hexo Fluid 博客添加可爱桌宠特效</div>
-    </a>
-  
+    <!-- 文章列表区域 -->
+    <div class="archive-content">
+        <div class="archive-list">
     
-    <a href="/2026/04/07/github-readme-snake-effect/" class="list-group-item list-group-item-action">
-      <time>04-07</time>
-      <div class="list-group-item-title">为 GitHub Readme 添加动态贪吃蛇效果——我的实践记录</div>
-    </a>
-  
+
     
-    <a href="/2026/04/06/custom-cursor-guide/" class="list-group-item list-group-item-action">
-      <time>04-06</time>
-      <div class="list-group-item-title">给博客换上胡桃鼠标！Hexo 自定义光标完整教程</div>
-    </a>
-  
+        <div class="year-group" data-year="2026">
+            <div class="year-header">
+                <h3 class="year-title">
+                    <i class="fas fa-calendar-alt"></i>
+                    2026
+                </h3>
+                <div class="year-divider"></div>
+                <span class="year-count">
+                    7 篇
+                </span>
+            </div>
+            
+            <div class="post-cards">
+                
+                    
+                    <article 
+                        class="post-card" 
+                        data-category=""
+                        data-tags="教程,Hexo,Fluid主题,桌宠,前端特效"
+                    >
+                        <a href="/2026/04/11/%F0%9F%8E%A8-%E4%B8%BA%E4%BD%A0%E7%9A%84-Hexo-Fluid-%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%8F%AF%E7%88%B1%E6%A1%8C%E5%AE%A0%E7%89%B9%E6%95%88/" class="card-link">
+                            <div class="card-header">
+                                
+                                <time class="card-date">
+                                    <i class="fas fa-clock"></i>
+                                    04-11
+                                </time>
+                            </div>
+                            
+                            <h4 class="card-title">
+                                🎨 为你的 Hexo Fluid 博客添加可爱桌宠特效
+                            </h4>
+                            
+                            
+                            
+                            <div class="card-footer">
+                                <div class="card-tags">
+                                    
+                                        
+                                            <span class="tag">
+                                                <i class="fas fa-tag"></i>
+                                                教程
+                                            </span>
+                                        
+                                            <span class="tag">
+                                                <i class="fas fa-tag"></i>
+                                                Hexo
+                                            </span>
+                                        
+                                            <span class="tag">
+                                                <i class="fas fa-tag"></i>
+                                                Fluid主题
+                                            </span>
+                                        
+                                        
+                                            <span class="tag">+2</span>
+                                        
+                                    
+                                </div>
+                                
+                                <div class="card-readtime">
+                                    <i class="fas fa-eye"></i>
+                                    3 min
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                
+                    
+                    <article 
+                        class="post-card" 
+                        data-category=""
+                        data-tags="GitHub,自动化,效果美化,工作流"
+                    >
+                        <a href="/2026/04/07/github-readme-snake-effect/" class="card-link">
+                            <div class="card-header">
+                                
+                                <time class="card-date">
+                                    <i class="fas fa-clock"></i>
+                                    04-07
+                                </time>
+                            </div>
+                            
+                            <h4 class="card-title">
+                                为 GitHub Readme 添加动态贪吃蛇效果——我的实践记录
+                            </h4>
+                            
+                            
+                            
+                            <div class="card-footer">
+                                <div class="card-tags">
+                                    
+                                        
+                                            <span class="tag">
+                                                <i class="fas fa-tag"></i>
+                                                GitHub
+                                            </span>
+                                        
+                                            <span class="tag">
+                                                <i class="fas fa-tag"></i>
+                                                自动化
+                                            </span>
+                                        
+                                            <span class="tag">
+                                                <i class="fas fa-tag"></i>
+                                                效果美化
+                                            </span>
+                                        
+                                        
+                                            <span class="tag">+1</span>
+                                        
+                                    
+                                </div>
+                                
+                                <div class="card-readtime">
+                                    <i class="fas fa-eye"></i>
+                                    3 min
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                
+                    
+                    <article 
+                        class="post-card" 
+                        data-category=""
+                        data-tags="教程,Hexo,博客美化,原神"
+                    >
+                        <a href="/2026/04/06/custom-cursor-guide/" class="card-link">
+                            <div class="card-header">
+                                
+                                <time class="card-date">
+                                    <i class="fas fa-clock"></i>
+                                    04-06
+                                </time>
+                            </div>
+                            
+                            <h4 class="card-title">
+                                给博客换上胡桃鼠标！Hexo 自定义光标完整教程
+                            </h4>
+                            
+                            
+                            
+                            <div class="card-footer">
+                                <div class="card-tags">
+                                    
+                                        
+                                            <span class="tag">
+                                                <i class="fas fa-tag"></i>
+                                                教程
+                                            </span>
+                                        
+                                            <span class="tag">
+                                                <i class="fas fa-tag"></i>
+                                                Hexo
+                                            </span>
+                                        
+                                            <span class="tag">
+                                                <i class="fas fa-tag"></i>
+                                                博客美化
+                                            </span>
+                                        
+                                        
+                                            <span class="tag">+1</span>
+                                        
+                                    
+                                </div>
+                                
+                                <div class="card-readtime">
+                                    <i class="fas fa-eye"></i>
+                                    3 min
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                
+                    
+                    <article 
+                        class="post-card" 
+                        data-category=""
+                        data-tags="教程,Hexo,看板娘,Live2D"
+                    >
+                        <a href="/2026/04/05/live2d-widget-guide/" class="card-link">
+                            <div class="card-header">
+                                
+                                <time class="card-date">
+                                    <i class="fas fa-clock"></i>
+                                    04-05
+                                </time>
+                            </div>
+                            
+                            <h4 class="card-title">
+                                给博客加个看板娘！Hexo + Live2D 超详细教程
+                            </h4>
+                            
+                            
+                            
+                            <div class="card-footer">
+                                <div class="card-tags">
+                                    
+                                        
+                                            <span class="tag">
+                                                <i class="fas fa-tag"></i>
+                                                教程
+                                            </span>
+                                        
+                                            <span class="tag">
+                                                <i class="fas fa-tag"></i>
+                                                Hexo
+                                            </span>
+                                        
+                                            <span class="tag">
+                                                <i class="fas fa-tag"></i>
+                                                看板娘
+                                            </span>
+                                        
+                                        
+                                            <span class="tag">+1</span>
+                                        
+                                    
+                                </div>
+                                
+                                <div class="card-readtime">
+                                    <i class="fas fa-eye"></i>
+                                    3 min
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                
+                    
+                    <article 
+                        class="post-card" 
+                        data-category=""
+                        data-tags="AI,开发工具,OpenCode,效率"
+                    >
+                        <a href="/2026/04/05/ai-coding-experience/" class="card-link">
+                            <div class="card-header">
+                                
+                                <time class="card-date">
+                                    <i class="fas fa-clock"></i>
+                                    04-05
+                                </time>
+                            </div>
+                            
+                            <h4 class="card-title">
+                                用 AI 写代码是什么体验？—— 我的 OpenCode 实战记录
+                            </h4>
+                            
+                            
+                            
+                            <div class="card-footer">
+                                <div class="card-tags">
+                                    
+                                        
+                                            <span class="tag">
+                                                <i class="fas fa-tag"></i>
+                                                AI
+                                            </span>
+                                        
+                                            <span class="tag">
+                                                <i class="fas fa-tag"></i>
+                                                开发工具
+                                            </span>
+                                        
+                                            <span class="tag">
+                                                <i class="fas fa-tag"></i>
+                                                OpenCode
+                                            </span>
+                                        
+                                        
+                                            <span class="tag">+1</span>
+                                        
+                                    
+                                </div>
+                                
+                                <div class="card-readtime">
+                                    <i class="fas fa-eye"></i>
+                                    3 min
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                
+                    
+                    <article 
+                        class="post-card" 
+                        data-category=""
+                        data-tags="教程,Hexo,博客维护"
+                    >
+                        <a href="/2026/04/04/hexo-blog-guide/" class="card-link">
+                            <div class="card-header">
+                                
+                                <time class="card-date">
+                                    <i class="fas fa-clock"></i>
+                                    04-04
+                                </time>
+                            </div>
+                            
+                            <h4 class="card-title">
+                                📖 新手必看：如何维护你的 Hexo 博客
+                            </h4>
+                            
+                            
+                            
+                            <div class="card-footer">
+                                <div class="card-tags">
+                                    
+                                        
+                                            <span class="tag">
+                                                <i class="fas fa-tag"></i>
+                                                教程
+                                            </span>
+                                        
+                                            <span class="tag">
+                                                <i class="fas fa-tag"></i>
+                                                Hexo
+                                            </span>
+                                        
+                                            <span class="tag">
+                                                <i class="fas fa-tag"></i>
+                                                博客维护
+                                            </span>
+                                        
+                                        
+                                    
+                                </div>
+                                
+                                <div class="card-readtime">
+                                    <i class="fas fa-eye"></i>
+                                    3 min
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                
+                    
+                    <article 
+                        class="post-card" 
+                        data-category=""
+                        data-tags=""
+                    >
+                        <a href="/2026/04/03/hello-world/" class="card-link">
+                            <div class="card-header">
+                                
+                                <time class="card-date">
+                                    <i class="fas fa-clock"></i>
+                                    04-03
+                                </time>
+                            </div>
+                            
+                            <h4 class="card-title">
+                                Hello World
+                            </h4>
+                            
+                            
+                            
+                            <div class="card-footer">
+                                <div class="card-tags">
+                                    
+                                </div>
+                                
+                                <div class="card-readtime">
+                                    <i class="fas fa-eye"></i>
+                                    3 min
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                
+            </div>
+        </div>
     
-    <a href="/2026/04/05/live2d-widget-guide/" class="list-group-item list-group-item-action">
-      <time>04-05</time>
-      <div class="list-group-item-title">给博客加个看板娘！Hexo + Live2D 超详细教程</div>
-    </a>
-  
+</div>
+    </div>
     
-    <a href="/2026/04/05/ai-coding-experience/" class="list-group-item list-group-item-action">
-      <time>04-05</time>
-      <div class="list-group-item-title">用 AI 写代码是什么体验？—— 我的 OpenCode 实战记录</div>
-    </a>
-  
-    
-    <a href="/2026/04/04/hexo-blog-guide/" class="list-group-item list-group-item-action">
-      <time>04-04</time>
-      <div class="list-group-item-title">📖 新手必看：如何维护你的 Hexo 博客</div>
-    </a>
-  
-    
-    <a href="/2026/04/03/hello-world/" class="list-group-item list-group-item-action">
-      <time>04-03</time>
-      <div class="list-group-item-title">Hello World</div>
-    </a>
-  
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" class="back-to-top" style="display: none;" aria-label="返回顶部">
+        <i class="fas fa-arrow-up"></i>
+        <span class="back-to-top-label">TOP</span>
+    </button>
 </div>
 
-
-
-
+<!-- 引入归档页面专用脚本 -->
+<script src="/js/archive.js"></script>
 
               </div>
             </div>
