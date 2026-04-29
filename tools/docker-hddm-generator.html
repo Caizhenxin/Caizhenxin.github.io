@@ -19,31 +19,25 @@
   <meta name="author" content="Cai Zhenxin">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://caizhenxin.github.io/2026/04/03/hello-world/index.html">
+    <meta name="description" content="DockerHDDM 命令生成器    :root {     --bg: #0d1117;     --surface: #161b22;     --border: #30363d;     --text: #c9d1d9;     --text-muted: #8b949e;     --accent: #58a6ff;     --accent-hover: #79c0ff;">
+<meta property="og:type" content="website">
+<meta property="og:title" content="page.title">
+<meta property="og:url" content="https://caizhenxin.github.io/tools/docker-hddm-generator.html">
 <meta property="og:site_name" content="游手好闲辛大人">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="DockerHDDM 命令生成器    :root {     --bg: #0d1117;     --surface: #161b22;     --border: #30363d;     --text: #c9d1d9;     --text-muted: #8b949e;     --accent: #58a6ff;     --accent-hover: #79c0ff;">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-04-03T07:00:00.000Z">
-<meta property="article:modified_time" content="2026-04-29T08:37:30.852Z">
+<meta property="article:published_time" content="2026-04-29T08:37:30.855Z">
+<meta property="article:modified_time" content="2026-04-29T08:37:30.855Z">
 <meta property="article:author" content="Cai Zhenxin">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Hello World - 游手好闲辛大人</title>
+  <title>page.title - 游手好闲辛大人</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
 
@@ -119,7 +113,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 70vh;">
+<div class="header-inner" style="height: 60vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -321,56 +315,16 @@
 
   
 
-<div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+<div id="banner" class="banner" parallax=true data-random-banner='/img/random/69525419_p0.jpg,/img/random/73023467_p0.jpg,/img/random/73979534_p0.jpg,/img/random/74311568_p0.jpg,/img/random/74808606_p0.jpg,/img/random/75222705_p0.jpg,/img/random/75435752_p0.jpg,/img/random/76592231_p0.png,/img/random/77340385_p0.jpg,/img/random/78734861_p0.jpg,/img/random/79678447_p0.jpg,/img/random/81640912_p0.jpg,/img/random/82387230_p0.jpg,/img/random/87320681_p0.jpg'
+     style="background: url('/img/random/69525419_p0.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hello World"></span>
+            <span id="subtitle" data-typed-text="page.title"></span>
           
         </div>
-
-        
-          
-  <div class="mt-3">
-    
-    
-      <span class="post-meta">
-        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-04-03 15:00" pubdate>
-          2026年4月3日 下午
-        </time>
-      </span>
-    
-  </div>
-
-  <div class="mt-1">
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-chart"></i>
-        
-          367 字
-        
-      </span>
-    
-
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-clock-fill"></i>
-        
-        
-        
-          4 分钟
-        
-      </span>
-    
-
-    
-    
-  </div>
-
 
         
       </div>
@@ -380,6 +334,19 @@
   </div>
 </div>
 
+
+  <script>
+    (function() {
+      var banner = document.getElementById('banner');
+      if (!banner) return;
+      var list = banner.getAttribute('data-random-banner');
+      if (!list) return;
+      list = list.split(',').filter(Boolean);
+      if (list.length === 0) return;
+      var pick = list[Math.floor(Math.random() * list.length)];
+      banner.style.backgroundImage = "url('" + pick + "')";
+    })();
+  </script>
 
 
 </div>
@@ -388,168 +355,474 @@
 
   <main>
     
-      
-
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-
-    </div>
-
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div id="board">
-          <article class="post-content mx-auto">
-            <h1 id="seo-header">Hello World</h1>
-            
-            
-              <div class="markdown-body">
+      <div class="container nopadding-x-md">
+        <div id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
                 
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+<article class="page-content">
+  <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DockerHDDM 命令生成器</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --green: #3fb950;
+    --green-bg: #04260f;
+    --red: #f85149;
+    --orange: #d2991d;
+    --radius: 8px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #58a6ff, #3fb950);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  header p {
+    color: var(--text-muted);
+    font-size: 14px;
+  }
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .card-header .icon { font-size: 18px; }
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
+  label {
+    display: block;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  input[type="text"], select {
+    width: 100%;
+    padding: 10px 14px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-size: 14px;
+    font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
+    transition: border-color 0.2s;
+  }
+  input[type="text"]:focus, select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.15);
+  }
+  input[type="text"]::placeholder {
+    color: #484f58;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+  .options-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  @media (max-width: 600px) {
+    .options-row { grid-template-columns: 1fr; }
+  }
 
-                
-              </div>
-            
-            <hr/>
-            <div>
-              <div class="post-metas my-3">
-  
-  
-</div>
+  .btn-generate {
+    display: block;
+    width: 100%;
+    padding: 12px 24px;
+    background: #238636;
+    color: #fff;
+    border: 1px solid rgba(240,246,252,0.1);
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.2s;
+  }
+  .btn-generate:hover { background: #2ea043; }
 
+  .output-section {
+    display: none;
+  }
+  .output-section.visible {
+    display: block;
+  }
 
-              
-  
+  .code-block {
+    position: relative;
+    background: #0d1117;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    margin-top: 12px;
+    overflow-x: auto;
+  }
+  .code-block pre {
+    font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
+    font-size: 13px;
+    color: #7ee787;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+  .btn-copy {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 6px 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-copy:hover { background: var(--border); }
+  .btn-copy.copied { background: #04260f; color: var(--green); border-color: var(--green); }
 
-  <div class="license-box my-3">
-    <div class="license-title">
-      <div>Hello World</div>
-      <div>https://caizhenxin.github.io/2026/04/03/hello-world/</div>
+  .explanation {
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+  .explanation dt {
+    font-weight: 600;
+    color: var(--accent);
+    margin-top: 8px;
+    font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
+    font-size: 12px;
+  }
+  .explanation dd {
+    margin-left: 16px;
+    margin-bottom: 4px;
+    color: var(--text-muted);
+    font-size: 12px;
+  }
+
+  .tips {
+    margin-top: 12px;
+    padding: 12px 16px;
+    background: rgba(210,153,29,0.1);
+    border: 1px solid rgba(210,153,29,0.3);
+    border-radius: 6px;
+    font-size: 13px;
+    color: var(--orange);
+  }
+  .tips ul { margin: 8px 0 0 20px; }
+  .tips li { margin-bottom: 4px; }
+
+  .path-preview {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: rgba(88,166,255,0.08);
+    border: 1px solid rgba(88,166,255,0.2);
+    border-radius: 6px;
+    font-size: 13px;
+    font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
+    color: var(--accent);
+    display: none;
+  }
+  .path-preview.visible { display: block; }
+  .path-preview .arrow { color: var(--text-muted); margin: 0 8px; }
+
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1 id="🐳-dockerhddm-命令生成器">🐳 DockerHDDM 命令生成器</h1>
+    <p>输入你的数据文件夹路径，一键生成可运行的 Docker 命令</p>
+  </header>
+
+  <!-- Step 1: First-time setup -->
+  <div class="card" id="setupCard">
+    <div class="card-header"><span class="icon">📦</span> 首次使用：拉取镜像</div>
+    <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">
+      如果你的电脑还没有安装 DockerHDDM，请先在 <strong>CMD（管理员模式）</strong> 中运行：
+    </p>
+    <div class="code-block">
+      <button class="btn-copy" onclick="copyCode(this, 'docker pull hcp4715/hddm')">📋 复制</button>
+      <pre>docker pull hcp4715/hddm</pre>
     </div>
-    <div class="license-meta">
-      
-        <div class="license-meta-item">
-          <div>作者</div>
-          <div>Cai Zhenxin</div>
-        </div>
-      
-      
-        <div class="license-meta-item license-meta-date">
-          <div>发布于</div>
-          <div>2026年4月3日</div>
-        </div>
-      
-      
-      
-        <div class="license-meta-item">
-          <div>许可协议</div>
-          <div>
-            
-              
-              
-                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
-                    <i class="iconfont icon-cc-by"></i>
-                  </span>
-                </a>
-              
-            
-          </div>
-        </div>
-      
-    </div>
-    <div class="license-icon iconfont"></div>
   </div>
 
+  <!-- Step 2: Path input -->
+  <div class="card">
+    <div class="card-header"><span class="icon">📁</span> 输入你的数据文件夹路径</div>
 
+    <label for="pathInput">Windows 文件夹路径（支持多种格式）</label>
+    <input type="text" id="pathInput"
+           placeholder="例如: D:\GitHub_programe\GitHub\Self-Repo\AI_Docker_User"
+           autocomplete="off" autofocus>
 
-              
-                <div class="post-prevnext my-3">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/2026/04/04/hexo-blog-guide/" title="📖 新手必看：如何维护你的 Hexo 博客">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">📖 新手必看：如何维护你的 Hexo 博客</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                  </article>
-                </div>
-              
-            </div>
+    <div class="path-preview" id="pathPreview">
+      <span id="previewInput"></span>
+      <span class="arrow">→</span>
+      <span id="previewDocker"></span>
+    </div>
 
-            
-          </article>
-        </div>
+    <div class="options-row">
+      <div>
+        <label for="cpus">CPU 核心数</label>
+        <select id="cpus">
+          <option value="2">2 核</option>
+          <option value="4" selected>4 核 (推荐)</option>
+          <option value="6">6 核</option>
+          <option value="8">8 核</option>
+          <option value="12">12 核</option>
+          <option value="16">16 核</option>
+        </select>
+      </div>
+      <div>
+        <label for="port">Jupyter 端口</label>
+        <input type="text" id="port" value="8888" placeholder="8888">
+      </div>
+      <div>
+        <label for="imageTag">镜像版本</label>
+        <select id="imageTag">
+          <option value="latest">latest (推荐)</option>
+          <option value="1.0.1">1.0.1 (最新稳定)</option>
+          <option value="1.0.1-amd64">1.0.1-amd64 (Intel)</option>
+          <option value="1.0.1-arm64">1.0.1-arm64 (Apple M1/M2)</option>
+          <option value="0.9.8RC">0.9.8RC</option>
+          <option value="0.9.8RC-amd64">0.9.8RC-amd64</option>
+          <option value="0.9.8RC-arm64">0.9.8RC-arm64</option>
+          <option value="0.8.0">0.8.0</option>
+        </select>
       </div>
     </div>
 
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-  <aside class="sidebar" style="margin-left: -1rem">
-    <div id="toc">
-  <p class="toc-header">
-    <i class="iconfont icon-list"></i>
-    <span>目录</span>
-  </p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
+    <button class="btn-generate" onclick="generateCommand()">⚡ 生成命令</button>
+  </div>
 
-
-
-  </aside>
-
-
+  <!-- Output -->
+  <div class="output-section" id="outputSection">
+    <div class="card">
+      <div class="card-header"><span class="icon">🚀</span> 复制以下命令到 CMD（管理员模式）运行</div>
+      <div class="code-block">
+        <button class="btn-copy" id="btnCopyCmd" onclick="copyCode(this, document.getElementById('commandOutput').textContent)">📋 复制命令</button>
+        <pre id="commandOutput"></pre>
+      </div>
+      <dl class="explanation">
+        <dt>docker run</dt><dd>启动一个 Docker 容器</dd>
+        <dt>-it</dt><dd>保持交互模式，可以看到 Jupyter 的输出日志</dd>
+        <dt>--rm</dt><dd>容器退出后自动删除，不占用磁盘空间</dd>
+        <dt>--cpus=N</dt><dd>限制容器使用的 CPU 核心数</dd>
+        <dt>-v 本地路径:容器路径</dt><dd>将你的数据文件夹挂载到容器内</dd>
+        <dt>-p 8888:8888</dt><dd>将容器的 8888 端口映射到本机</dd>
+        <dt>hcp4715/hddm:tag</dt><dd>使用的 Docker 镜像及版本</dd>
+        <dt>jupyter notebook</dt><dd>启动 Jupyter Notebook</dd>
+      </dl>
+      <div class="tips">
+        <strong>💡 使用提示：</strong>
+        <ul>
+          <li>运行后，复制终端中显示的 <code>http://127.0.0.1:8888/?token=...</code> 到浏览器打开</li>
+          <li>在 Jupyter 中找到 <strong>work</strong> 文件夹，里面就是你挂载的数据</li>
+          <li>如果端口被占用，可以修改为 <strong>8787</strong>、<strong>8889</strong> 等其他端口</li>
+          <li>每次用完关闭终端窗口即可，容器会自动清理（--rm）</li>
+        </ul>
+      </div>
     </div>
   </div>
+
+  <footer>
+    <p>基于 <a href="https://hub.docker.com/r/hcp4715/hddm" target="_blank">hcp4715/hddm</a> Docker 镜像 |
+    <a href="https://doi.org/10.1177/25152459241298700" target="_blank">Pan et al. (2025)</a></p>
+  </footer>
+
 </div>
 
+<script>
+const pathInput = document.getElementById('pathInput');
+const pathPreview = document.getElementById('pathPreview');
+const previewInput = document.getElementById('previewInput');
+const previewDocker = document.getElementById('previewDocker');
 
+// Live preview as user types
+pathInput.addEventListener('input', function() {
+  const raw = this.value.trim();
+  if (!raw) {
+    pathPreview.classList.remove('visible');
+    return;
+  }
+  const dockerPath = convertToDockerPath(raw);
+  if (dockerPath) {
+    previewInput.textContent = raw;
+    previewDocker.textContent = dockerPath;
+    pathPreview.classList.add('visible');
+  } else {
+    pathPreview.classList.remove('visible');
+  }
+});
 
+/**
+ * Convert Windows path to Docker-compatible mount path.
+ * Rules (from official docs):
+ *   D:\folder\sub  →  /d/folder/sub
+ *   C:\Users\me    →  /c/Users/me
+ *   "D:\path"      →  /d/path
+ *   D:/path/sub    →  /d/path/sub
+ *   /d/path/sub    →  /d/path/sub  (already docker format)
+ */
+function convertToDockerPath(raw) {
+  if (!raw) return null;
+
+  // Strip surrounding quotes (single or double, Chinese or English)
+  let path = raw.replace(/^["'""'']|["'""'']$/g, '').trim();
+  if (!path) return null;
+
+  // Already in Docker/Linux format? (starts with /)
+  if (path.startsWith('/')) {
+    return ensureNoTrailingSlash(path);
+  }
+
+  // Match Windows drive letter: D:\, D:/, D:\, etc.
+  // Also handle: D:folder (no slash) - treat as root of drive
+  const winMatch = path.match(/^([a-zA-Z]):[\\\/]?(.*)$/);
+  if (winMatch) {
+    const drive = winMatch[1].toLowerCase();
+    const rest = winMatch[2].replace(/\\/g, '/').replace(/\/+/g, '/');
+    const dockerPath = '/' + drive + (rest ? '/' + rest : '');
+    return ensureNoTrailingSlash(dockerPath);
+  }
+
+  // UNC path or other - treat as relative, prepend with /
+  path = path.replace(/\\/g, '/').replace(/\/+/g, '/');
+  if (!path.startsWith('/')) path = '/' + path;
+  return ensureNoTrailingSlash(path);
+}
+
+function ensureNoTrailingSlash(p) {
+  return p.replace(/\/+$/, '') || '/';
+}
+
+function generateCommand() {
+  const raw = pathInput.value.trim();
+  if (!raw) { alert('请先输入文件夹路径！'); return; }
+
+  const dockerPath = convertToDockerPath(raw);
+  if (!dockerPath) { alert('无法识别路径格式，请检查输入。'); return; }
+
+  const cpus = document.getElementById('cpus').value;
+  const port = document.getElementById('port').value || '8888';
+  const imageTag = document.getElementById('imageTag').value;
+  const image = imageTag === 'latest' ? 'hcp4715/hddm' : 'hcp4715/hddm:' + imageTag;
+
+  const cmd = `docker run -it --rm --cpus=${cpus} -v ${dockerPath}:/home/jovyan/work -p ${port}:8888 ${image} jupyter notebook`;
+
+  document.getElementById('commandOutput').textContent = cmd;
+  document.getElementById('outputSection').classList.add('visible');
+  document.getElementById('outputSection').scrollIntoView({ behavior: 'smooth' });
+
+  // Reset copy button state
+  document.getElementById('btnCopyCmd').textContent = '📋 复制命令';
+  document.getElementById('btnCopyCmd').classList.remove('copied');
+}
+
+function copyCode(btn, text) {
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = '✅ 已复制！';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = '📋 复制';
+      btn.classList.remove('copied');
+    }, 2000);
+  }).catch(() => {
+    // Fallback for older browsers
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    btn.textContent = '✅ 已复制！';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = '📋 复制';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+
+// Trigger on Enter key
+pathInput.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') generateCommand();
+});
+</script>
+</body>
+</html>
 
 
   
 
-
-
-  
-
-
-
-  
+</article>
 
 
 
-  
-
-
-
-  
-
-
-
-
-
-
-
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     
 
     
@@ -703,163 +976,6 @@
 
 
 
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
-    var toc = jQuery('#toc');
-    if (toc.length === 0 || !window.tocbot) { return; }
-    var boardCtn = jQuery('#board-ctn');
-    var boardTop = boardCtn.offset().top;
-
-    function isExpandAllEnabled() {
-      return CONFIG.toc && CONFIG.toc.expand_all === true;
-    }
-    function expandAllToc() {
-      if (!isExpandAllEnabled()) { return; }
-      jQuery('#toc-body .tocbot-is-collapsed').removeClass('tocbot-is-collapsed');
-    }
-    function updateTocToggle($li, $childList) {
-      var $toggle = $li.children('.toc-toggle');
-      if ($toggle.length === 0) { return; }
-      var collapsed = $childList.hasClass('tocbot-is-collapsed');
-      $toggle
-        .toggleClass('toc-toggle-collapsed', collapsed)
-        .toggleClass('toc-toggle-expanded', !collapsed);
-    }
-    function bindTocToggle() {
-      if (!isExpandAllEnabled()) { return; }
-      jQuery('#toc-body .toc-list-item').each(function() {
-        var $li = jQuery(this);
-        var $childList = $li.children('ol');
-        if ($childList.length === 0) {
-          if ($li.children('.toc-toggle').length === 0) {
-            $li.prepend('<span class="toc-toggle toc-toggle-placeholder" aria-hidden="true">›</span>');
-          }
-          return;
-        }
-
-        if ($li.children('.toc-toggle').length === 0) {
-          $li.prepend('<span class="toc-toggle toc-toggle-expanded" aria-hidden="true">›</span>');
-        }
-        updateTocToggle($li, $childList);
-      });
-      jQuery('#toc-body').off('click.tocToggle').on('click.tocToggle', '.toc-toggle', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        var $li = jQuery(this).parent('.toc-list-item');
-        var $childList = $li.children('ol');
-        if ($childList.length === 0) { return; }
-        $childList.toggleClass('tocbot-is-collapsed');
-        updateTocToggle($li, $childList);
-      });
-      if (!window.__tocToggleObserver) {
-        window.__tocToggleObserver = new MutationObserver(function(mutations) {
-          mutations.forEach(function(mutation) {
-            if (mutation.type !== 'attributes' || mutation.attributeName !== 'class') { return; }
-            var $list = jQuery(mutation.target);
-            var $li = $list.parent('.toc-list-item');
-            if ($li.length === 0) { return; }
-            updateTocToggle($li, $list);
-          });
-        });
-        jQuery('#toc-body ol').each(function() {
-          window.__tocToggleObserver.observe(this, { attributes: true });
-        });
-      }
-    }
-    var tocConfig = Object.assign({
-      tocSelector     : '#toc-body',
-      contentSelector : '.markdown-body',
-      linkClass       : 'tocbot-link',
-      activeLinkClass : 'tocbot-active-link',
-      listClass       : 'tocbot-list',
-      isCollapsedClass: 'tocbot-is-collapsed',
-      collapsibleClass: 'tocbot-is-collapsible',
-      scrollSmooth    : true,
-      includeTitleTags: true,
-      headingsOffset  : -boardTop,
-    }, CONFIG.toc);
-    if (isExpandAllEnabled()) {
-      tocConfig.collapseDepth = 6;
-    }
-    window.tocbot.init(tocConfig);
-    if (toc.find('.toc-list-item').length > 0) {
-      toc.css('visibility', 'visible');
-    }
-    expandAllToc();
-    bindTocToggle();
-
-    Fluid.events.registerRefreshCallback(function() {
-      if ('tocbot' in window) {
-        tocbot.refresh();
-        var toc = jQuery('#toc');
-        if (toc.length === 0 || !tocbot) {
-          return;
-        }
-        if (toc.find('.toc-list-item').length > 0) {
-          toc.css('visibility', 'visible');
-        }
-        expandAllToc();
-        bindTocToggle();
-      }
-    });
-  });
-</script>
-
-
-  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
-
-  <script>Fluid.plugins.codeWidget();</script>
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
-    window.anchors.options = {
-      placement: CONFIG.anchorjs.placement,
-      visible  : CONFIG.anchorjs.visible
-    };
-    if (CONFIG.anchorjs.icon) {
-      window.anchors.options.icon = CONFIG.anchorjs.icon;
-    }
-    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
-    var res = [];
-    for (var item of el) {
-      res.push('.markdown-body > ' + item.trim());
-    }
-    if (CONFIG.anchorjs.placement === 'left') {
-      window.anchors.options.class = 'anchorjs-link-left';
-    }
-    window.anchors.add(res.join(', '));
-
-    Fluid.events.registerRefreshCallback(function() {
-      if ('anchors' in window) {
-        anchors.removeAll();
-        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
-        var res = [];
-        for (var item of el) {
-          res.push('.markdown-body > ' + item.trim());
-        }
-        if (CONFIG.anchorjs.placement === 'left') {
-          anchors.options.class = 'anchorjs-link-left';
-        }
-        anchors.add(res.join(', '));
-      }
-    });
-  });
-</script>
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
-    Fluid.plugins.fancyBox();
-  });
-</script>
-
-
-  <script>Fluid.plugins.imageCaption();</script>
 
   <script  src="/js/local-search.js" ></script>
 
