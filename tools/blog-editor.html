@@ -1,0 +1,1682 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN,en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Cai Zhenxin">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="博客文章编辑器    :root {     --bg: #0d1117;     --surface: #161b22;     --border: #30363d;     --text: #c9d1d9;     --text-muted: #8b949e;     --accent: #58a6ff;     --accent-hover: #79c0ff;     --gree">
+<meta property="og:type" content="website">
+<meta property="og:title" content="page.title">
+<meta property="og:url" content="https://caizhenxin.github.io/tools/blog-editor.html">
+<meta property="og:site_name" content="游手好闲辛大人">
+<meta property="og:description" content="博客文章编辑器    :root {     --bg: #0d1117;     --surface: #161b22;     --border: #30363d;     --text: #c9d1d9;     --text-muted: #8b949e;     --accent: #58a6ff;     --accent-hover: #79c0ff;     --gree">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://caizhenxin.github.io/tools/...">
+<meta property="article:published_time" content="2026-05-03T04:54:08.457Z">
+<meta property="article:modified_time" content="2026-05-03T04:54:08.457Z">
+<meta property="article:author" content="Cai Zhenxin">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://caizhenxin.github.io/tools/...">
+  
+  
+  
+  <title>page.title - 游手好闲辛大人</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/lang-switch.css">
+<link rel="stylesheet" href="/css/cursors.css">
+<link rel="stylesheet" href="/css/ripple-effect.css">
+<link rel="stylesheet" href="/css/divergence-loader.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"caizhenxin.github.io","root":"/","version":"1.9.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"expand_all":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"openkounter":{"server_url":"https://open-kounter.mintimate.cn","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+<body>
+  
+
+  <div id="divergence-loader" class="divergence-loader" aria-hidden="true">
+    <div class="divergence-loader__bg"></div>
+    <div class="divergence-loader__overlay"></div>
+    <div class="divergence-loader__center">
+      <div class="divergence-loader__title">STEINS;GATE</div>
+      <div class="divergence-loader__meter" role="img" aria-label="divergence meter">
+        <span class="divergence-loader__frame divergence-loader__frame--major"></span>
+        <span class="divergence-loader__frame divergence-loader__frame--dot"></span>
+        <span class="divergence-loader__frame"></span>
+        <span class="divergence-loader__frame"></span>
+        <span class="divergence-loader__frame"></span>
+        <span class="divergence-loader__frame"></span>
+        <span class="divergence-loader__frame"></span>
+        <span class="divergence-loader__frame"></span>
+      </div>
+      <div class="divergence-loader__subtitle">Loading world lines...</div>
+    </div>
+  </div>
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>游手好闲辛大人</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content (desktop) -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile grid menu overlay -->
+<div id="mobile-grid-menu" class="d-lg-none">
+  <div class="mobile-grid-menu-inner">
+    <div class="container">
+      <div class="row">
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-home-fill"></i>
+                  <span>首页</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/archives/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-archive-fill"></i>
+                  <span>归档</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/categories/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-category-fill"></i>
+                  <span>分类</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/tags/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-tags-fill"></i>
+                  <span>标签</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/about/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-user-fill"></i>
+                  <span>关于</span>
+                </div>
+              </a>
+            </div>
+          
+        
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-search-btn">
+            <a href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-search"></i>
+                <span>搜索</span>
+              </div>
+            </a>
+          </div>
+        
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-color-toggle-btn"
+               data-label-light="开灯"
+               data-label-dark="关灯">
+            <a href="javascript:;" aria-label="Color Toggle">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-dark" id="mobile-color-toggle-icon"></i>
+                <span id="mobile-color-toggle-label">关灯</span>
+              </div>
+            </a>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+<div id="banner" class="banner" parallax=true data-random-banner='/img/random/69525419_p0.jpg,/img/random/73023467_p0.jpg,/img/random/73979534_p0.jpg,/img/random/74311568_p0.jpg,/img/random/74808606_p0.jpg,/img/random/75222705_p0.jpg,/img/random/75435752_p0.jpg,/img/random/76592231_p0.png,/img/random/77340385_p0.jpg,/img/random/78734861_p0.jpg,/img/random/79678447_p0.jpg,/img/random/81640912_p0.jpg,/img/random/82387230_p0.jpg,/img/random/87320681_p0.jpg'
+     style="background: url('/img/random/69525419_p0.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="page.title"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+
+  <script>
+    (function() {
+      var banner = document.getElementById('banner');
+      if (!banner) return;
+      var list = banner.getAttribute('data-random-banner');
+      if (!list) return;
+      list = list.split(',').filter(Boolean);
+      if (list.length === 0) return;
+      var pick = list[Math.floor(Math.random() * list.length)];
+      banner.style.backgroundImage = "url('" + pick + "')";
+    })();
+  </script>
+
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<article class="page-content">
+  <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>博客文章编辑器</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --green: #3fb950;
+    --green-bg: #04260f;
+    --red: #f85149;
+    --red-bg: #490202;
+    --orange: #d2991d;
+    --orange-bg: rgba(210,153,29,0.1);
+    --radius: 8px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #58a6ff, #3fb950);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  header p {
+    color: var(--text-muted);
+    font-size: 14px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .card-header .icon { font-size: 18px; }
+
+  label {
+    display: block;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  input[type="text"], textarea {
+    width: 100%;
+    padding: 10px 14px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-size: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    transition: border-color 0.2s;
+  }
+  input[type="text"]:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.15);
+  }
+  input[type="text"]::placeholder, textarea::placeholder {
+    color: #484f58;
+  }
+  textarea {
+    resize: vertical;
+    min-height: 60px;
+    font-size: 14px;
+  }
+
+  .meta-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 12px;
+  }
+  @media (max-width: 640px) {
+    .meta-row { grid-template-columns: 1fr; }
+  }
+
+  .editor-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 8px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px 6px 0 0;
+    border-bottom: none;
+  }
+  .toolbar-btn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: var(--text-muted);
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .toolbar-btn:hover {
+    background: var(--surface);
+    border-color: var(--border);
+    color: var(--text);
+  }
+  .toolbar-btn.active {
+    background: rgba(88,166,255,0.15);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .toolbar-sep {
+    width: 1px;
+    height: 24px;
+    background: var(--border);
+    margin: 4px 6px;
+    align-self: center;
+  }
+
+  .editor-body {
+    display: flex;
+    min-height: 360px;
+    border: 1px solid var(--border);
+    border-radius: 0 0 6px 6px;
+    overflow: hidden;
+  }
+  @media (max-width: 768px) {
+    .editor-body { flex-direction: column; }
+  }
+
+  .editor-pane {
+    flex: 1;
+    padding: 16px;
+    background: var(--bg);
+    overflow-y: auto;
+    max-height: 520px;
+    outline: none;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text);
+    word-break: break-word;
+  }
+  .editor-pane:empty::before {
+    content: '开始写你的博客内容...';
+    color: #484f58;
+    pointer-events: none;
+  }
+  .editor-pane h1 { font-size: 24px; margin: 12px 0 8px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  .editor-pane h2 { font-size: 20px; margin: 12px 0 6px; }
+  .editor-pane h3 { font-size: 17px; margin: 10px 0 4px; }
+  .editor-pane p { margin: 8px 0; }
+  .editor-pane ul, .editor-pane ol { padding-left: 24px; margin: 8px 0; }
+  .editor-pane li { margin: 4px 0; }
+  .editor-pane blockquote {
+    border-left: 3px solid var(--accent);
+    padding: 8px 16px;
+    margin: 12px 0;
+    background: rgba(88,166,255,0.06);
+    color: var(--text-muted);
+  }
+  .editor-pane pre {
+    background: #0d1117;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin: 12px 0;
+    overflow-x: auto;
+    font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
+    font-size: 13px;
+    white-space: pre-wrap;
+  }
+  .editor-pane code {
+    background: rgba(88,166,255,0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
+    font-size: 13px;
+  }
+  .editor-pane hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 16px 0;
+  }
+  .editor-pane a {
+    color: var(--accent);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .editor-pane img {
+    max-width: 100%;
+    border-radius: 6px;
+  }
+
+  .preview-pane {
+    flex: 1;
+    padding: 16px;
+    background: #0a0e13;
+    overflow-y: auto;
+    max-height: 520px;
+    border-left: 1px solid var(--border);
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-muted);
+  }
+  @media (max-width: 768px) {
+    .preview-pane {
+      border-left: none;
+      border-top: 1px solid var(--border);
+      max-height: 260px;
+    }
+  }
+  .preview-pane .preview-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .preview-pane .preview-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .preview-pane h1 { font-size: 22px; margin: 10px 0; border-bottom: 1px solid var(--border); padding-bottom: 4px; color: var(--text); }
+  .preview-pane h2 { font-size: 18px; margin: 10px 0; color: var(--text); }
+  .preview-pane h3 { font-size: 15px; margin: 8px 0; color: var(--text); }
+  .preview-pane p { margin: 6px 0; }
+  .preview-pane ul, .preview-pane ol { padding-left: 20px; margin: 6px 0; }
+  .preview-pane blockquote { border-left: 3px solid var(--accent); padding: 6px 12px; margin: 8px 0; background: rgba(88,166,255,0.05); }
+  .preview-pane pre { background: #0d1117; border: 1px solid var(--border); border-radius: 6px; padding: 10px 14px; margin: 8px 0; font-family: "Cascadia Code", monospace; font-size: 12px; white-space: pre-wrap; }
+  .preview-pane code { background: rgba(88,166,255,0.1); padding: 1px 4px; border-radius: 3px; font-family: "Cascadia Code", monospace; font-size: 12px; }
+  .preview-pane hr { border: none; border-top: 1px solid var(--border); margin: 12px 0; }
+  .preview-pane a { color: var(--accent); }
+  .preview-pane img { max-width: 100%; border-radius: 4px; }
+
+  .btn-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    padding: 12px 24px;
+    background: #238636;
+    color: #fff;
+    border: 1px solid rgba(240,246,252,0.1);
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #2ea043; }
+  .btn-primary:disabled {
+    background: #21262d;
+    color: #484f58;
+    cursor: not-allowed;
+  }
+  .btn-secondary {
+    padding: 12px 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover { background: var(--border); }
+  .btn-danger {
+    padding: 12px 24px;
+    background: transparent;
+    border: 1px solid rgba(248,81,73,0.4);
+    border-radius: 6px;
+    color: var(--red);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-danger:hover { background: var(--red-bg); }
+
+  .output-section {
+    display: none;
+  }
+  .output-section.visible {
+    display: block;
+  }
+
+  .code-block {
+    position: relative;
+    background: #0d1117;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    margin-top: 12px;
+    overflow-x: auto;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  .code-block pre {
+    font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
+    font-size: 13px;
+    color: #7ee787;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+  .btn-copy {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 6px 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    z-index: 1;
+  }
+  .btn-copy:hover { background: var(--border); }
+  .btn-copy.copied { background: #04260f; color: var(--green); border-color: var(--green); }
+
+  .validation-error {
+    margin-top: 8px;
+    padding: 10px 14px;
+    background: var(--red-bg);
+    border: 1px solid rgba(248,81,73,0.3);
+    border-radius: 6px;
+    color: var(--red);
+    font-size: 13px;
+    display: none;
+  }
+  .validation-error.visible { display: block; }
+
+  .char-count {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 4px;
+    text-align: right;
+  }
+  .char-count.warn { color: var(--orange); }
+
+  .toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .toast {
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    animation: toastIn 0.3s ease, toastOut 0.3s ease 2.7s;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    max-width: 380px;
+  }
+  @keyframes toastIn {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes toastOut {
+    from { opacity: 1; transform: translateX(0); }
+    to { opacity: 0; transform: translateX(40px); }
+  }
+  .toast.success {
+    background: var(--green-bg);
+    border: 1px solid rgba(63,185,80,0.4);
+    color: var(--green);
+  }
+  .toast.error {
+    background: var(--red-bg);
+    border: 1px solid rgba(248,81,73,0.4);
+    color: var(--red);
+  }
+  .toast.info {
+    background: rgba(88,166,255,0.1);
+    border: 1px solid rgba(88,166,255,0.3);
+    color: var(--accent);
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 9998;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-overlay.visible { display: flex; }
+  .modal {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    width: 90%;
+    max-width: 480px;
+  }
+  .modal h3 { margin-bottom: 12px; font-size: 16px; }
+  .modal input[type="text"] { margin-bottom: 12px; }
+  .modal .btn-row { justify-content: flex-end; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1 id="📝-博客文章编辑器">📝 博客文章编辑器</h1>
+    <p>撰写你的 Hexo 博客文章，支持富文本编辑，一键导出为 Markdown 文件</p>
+  </header>
+
+  <!-- 文章元信息 -->
+  <div class="card">
+    <div class="card-header"><span class="icon">📋</span> 文章信息</div>
+    <label for="titleInput">文章标题 *</label>
+    <input type="text" id="titleInput" placeholder="输入文章标题" autocomplete="off" maxlength="200">
+    <div id="titleError" class="validation-error">请输入文章标题</div>
+
+    <div class="meta-row">
+      <div>
+        <label for="tagsInput">标签（用逗号分隔）</label>
+        <input type="text" id="tagsInput" placeholder="例如: Hexo, 教程, 前端">
+      </div>
+      <div>
+        <label for="categoryInput">分类</label>
+        <input type="text" id="categoryInput" placeholder="例如: 技术分享">
+      </div>
+    </div>
+  </div>
+
+  <!-- 编辑器 -->
+  <div class="card">
+    <div class="card-header"><span class="icon">✏️</span> 文章内容</div>
+
+    <div class="editor-toolbar" id="toolbar">
+      <button class="toolbar-btn" data-cmd="bold" title="加粗 (Ctrl+B)"><b>B</b></button>
+      <button class="toolbar-btn" data-cmd="italic" title="斜体 (Ctrl+I)"><i>I</i></button>
+      <button class="toolbar-btn" data-cmd="underline" title="下划线 (Ctrl+U)"><u>U</u></button>
+      <span class="toolbar-sep"></span>
+      <button class="toolbar-btn" data-cmd="formatBlock" data-val="h1" title="标题 1">H1</button>
+      <button class="toolbar-btn" data-cmd="formatBlock" data-val="h2" title="标题 2">H2</button>
+      <button class="toolbar-btn" data-cmd="formatBlock" data-val="h3" title="标题 3">H3</button>
+      <span class="toolbar-sep"></span>
+      <button class="toolbar-btn" data-cmd="insertUnorderedList" title="无序列表">•≡</button>
+      <button class="toolbar-btn" data-cmd="insertOrderedList" title="有序列表">1≡</button>
+      <span class="toolbar-sep"></span>
+      <button class="toolbar-btn" data-cmd="justifyLeft" title="左对齐">≡◁</button>
+      <button class="toolbar-btn" data-cmd="justifyCenter" title="居中">≡◁▷</button>
+      <span class="toolbar-sep"></span>
+      <button class="toolbar-btn" id="btnLink" title="插入链接">🔗</button>
+      <button class="toolbar-btn" id="btnImage" title="插入图片">🖼</button>
+      <button class="toolbar-btn" id="btnCode" title="插入代码块">&lt;/&gt;</button>
+      <button class="toolbar-btn" data-cmd="formatBlock" data-val="blockquote" title="引用">❝</button>
+      <button class="toolbar-btn" data-cmd="insertHorizontalRule" title="分割线">—</button>
+      <span class="toolbar-sep"></span>
+      <button class="toolbar-btn" id="btnClearFormat" title="清除格式">✕</button>
+    </div>
+
+    <div class="editor-body">
+      <div class="editor-pane" id="editor" contenteditable="true"></div>
+      <div class="preview-pane" id="previewPane">
+        <div class="preview-label">📄 实时预览</div>
+        <div id="previewContent"><span style="color:#484f58;">在此处开始编辑，预览将自动更新...</span></div>
+      </div>
+    </div>
+
+    <div class="char-count" id="charCount">内容字数: 0</div>
+    <div id="contentError" class="validation-error"></div>
+  </div>
+
+  <!-- 操作按钮 -->
+  <div class="btn-row">
+    <button class="btn-primary" id="btnSubmit">🚀 提交并生成文件</button>
+    <button class="btn-secondary" id="btnPreviewFull">📄 预览 Markdown 源码</button>
+    <button class="btn-danger" id="btnClear">🗑 清空内容</button>
+  </div>
+
+  <!-- 输出区域 -->
+  <div class="output-section" id="outputSection">
+    <div class="card">
+      <div class="card-header"><span class="icon">📦</span> 生成的 Markdown 文件</div>
+      <p style="font-size:13px;color:var(--text-muted);margin-bottom:8px;">
+        请将以下内容保存为 <code>.md</code> 文件，放入 <code>source/_posts/</code> 目录
+      </p>
+      <div class="code-block">
+        <button class="btn-copy" id="btnCopyMd" onclick="copyOutput()">📋 复制全部</button>
+        <pre id="mdOutput"></pre>
+      </div>
+      <div class="btn-row" style="margin-top:12px;">
+        <button class="btn-primary" id="btnDownload">💾 下载 .md 文件</button>
+        <button class="btn-secondary" id="btnCopyMd2" onclick="copyOutput()">📋 复制到剪贴板</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>文章将保存为 Hexo 兼容的 Markdown 格式 · 存放路径: <code>source/_posts/</code></p>
+  </footer>
+
+</div>
+
+<!-- 链接弹窗 -->
+<div class="modal-overlay" id="linkModal">
+  <div class="modal">
+    <h3>🔗 插入链接</h3>
+    <label for="linkUrl">链接地址</label>
+    <input type="text" id="linkUrl" placeholder="https://">
+    <label for="linkText">显示文本</label>
+    <input type="text" id="linkText" placeholder="链接文字">
+    <div class="btn-row" style="margin-top:16px;">
+      <button class="btn-secondary" onclick="closeLinkModal()">取消</button>
+      <button class="btn-primary" onclick="insertLink()">插入</button>
+    </div>
+  </div>
+</div>
+
+<!-- 图片弹窗 -->
+<div class="modal-overlay" id="imageModal">
+  <div class="modal">
+    <h3>🖼 插入图片</h3>
+    <label for="imageUrl">图片链接地址</label>
+    <input type="text" id="imageUrl" placeholder="https://example.com/image.png">
+    <label for="imageAlt">替代文本（可选）</label>
+    <input type="text" id="imageAlt" placeholder="图片描述">
+    <div class="btn-row" style="margin-top:16px;">
+      <button class="btn-secondary" onclick="closeImageModal()">取消</button>
+      <button class="btn-primary" onclick="insertImage()">插入</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast 容器 -->
+<div class="toast-container" id="toastContainer"></div>
+
+<script>
+const editor = document.getElementById('editor');
+const previewContent = document.getElementById('previewContent');
+const titleInput = document.getElementById('titleInput');
+const mdOutput = document.getElementById('mdOutput');
+const outputSection = document.getElementById('outputSection');
+const charCount = document.getElementById('charCount');
+const titleError = document.getElementById('titleError');
+const contentError = document.getElementById('contentError');
+
+let currentMdContent = '';
+
+// ==================== 工具栏按钮事件 ====================
+document.getElementById('toolbar').addEventListener('click', function(e) {
+  const btn = e.target.closest('.toolbar-btn');
+  if (!btn) return;
+
+  const cmd = btn.dataset.cmd;
+  const val = btn.dataset.val || null;
+
+  if (cmd) {
+    document.execCommand(cmd, false, val);
+    editor.focus();
+    updatePreview();
+    updateToolbarState();
+  }
+});
+
+// 工具栏状态同步
+function updateToolbarState() {
+  document.querySelectorAll('.toolbar-btn[data-cmd]').forEach(btn => {
+    const cmd = btn.dataset.cmd;
+    if (cmd === 'formatBlock') {
+      const val = btn.dataset.val;
+      const current = document.queryCommandValue('formatBlock');
+      btn.classList.toggle('active', current && current.toLowerCase() === val);
+    } else if (['bold','italic','underline','justifyLeft','justifyCenter'].includes(cmd)) {
+      btn.classList.toggle('active', document.queryCommandState(cmd));
+    }
+  });
+}
+
+document.addEventListener('selectionchange', () => {
+  if (document.activeElement === editor) {
+    updateToolbarState();
+  }
+});
+
+// ==================== 链接弹窗 ====================
+document.getElementById('btnLink').addEventListener('click', function() {
+  const sel = window.getSelection();
+  if (sel.rangeCount > 0 && sel.toString().trim()) {
+    document.getElementById('linkText').value = sel.toString().trim();
+  }
+  document.getElementById('linkModal').classList.add('visible');
+  document.getElementById('linkUrl').focus();
+});
+
+function closeLinkModal() {
+  document.getElementById('linkModal').classList.remove('visible');
+  document.getElementById('linkUrl').value = '';
+  document.getElementById('linkText').value = '';
+}
+
+function insertLink() {
+  const url = document.getElementById('linkUrl').value.trim();
+  const text = document.getElementById('linkText').value.trim() || url;
+  if (!url) {
+    showToast('请输入链接地址', 'error');
+    return;
+  }
+  closeLinkModal();
+  editor.focus();
+  document.execCommand('createLink', false, url);
+  // 修正链接文本
+  const links = editor.querySelectorAll('a');
+  const lastLink = links[links.length - 1];
+  if (lastLink && lastLink.getAttribute('href') === url && !lastLink.textContent.trim()) {
+    lastLink.textContent = text;
+  }
+  updatePreview();
+}
+
+document.getElementById('linkUrl').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') insertLink();
+});
+document.getElementById('linkText').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') insertLink();
+});
+
+// ==================== 图片弹窗 ====================
+document.getElementById('btnImage').addEventListener('click', function() {
+  document.getElementById('imageModal').classList.add('visible');
+  document.getElementById('imageUrl').focus();
+});
+
+function closeImageModal() {
+  document.getElementById('imageModal').classList.remove('visible');
+  document.getElementById('imageUrl').value = '';
+  document.getElementById('imageAlt').value = '';
+}
+
+function insertImage() {
+  const url = document.getElementById('imageUrl').value.trim();
+  const alt = document.getElementById('imageAlt').value.trim();
+  if (!url) {
+    showToast('请输入图片链接地址', 'error');
+    return;
+  }
+  closeImageModal();
+  editor.focus();
+  const imgHtml = '<img src="' + url + '" srcset="/img/loading.gif" lazyload alt="' + alt + '">';
+  document.execCommand('insertHTML', false, imgHtml);
+  updatePreview();
+}
+
+document.getElementById('imageUrl').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') insertImage();
+});
+document.getElementById('imageAlt').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') insertImage();
+});
+
+// ==================== 代码块按钮 ====================
+document.getElementById('btnCode').addEventListener('click', function() {
+  editor.focus();
+  const sel = window.getSelection();
+  const selectedText = sel.toString().trim();
+  if (selectedText) {
+    document.execCommand('insertHTML', false, '<pre><code class="hljs">' + escapeHtml(selectedText) + '</code></pre>');
+  } else {
+    document.execCommand('insertHTML', false, '<pre><code class="hljs">// 在此输入代码</code></pre>');
+  }
+  updatePreview();
+});
+
+// ==================== 清除格式 ====================
+document.getElementById('btnClearFormat').addEventListener('click', function() {
+  editor.focus();
+  document.execCommand('removeFormat', false, null);
+  updatePreview();
+});
+
+// ==================== 键盘快捷键 ====================
+editor.addEventListener('keydown', function(e) {
+  if (e.ctrlKey || e.metaKey) {
+    switch (e.key.toLowerCase()) {
+      case 'b': e.preventDefault(); document.execCommand('bold'); break;
+      case 'i': e.preventDefault(); document.execCommand('italic'); break;
+      case 'u': e.preventDefault(); document.execCommand('underline'); break;
+    }
+  }
+  // Tab 缩进
+  if (e.key === 'Tab') {
+    e.preventDefault();
+    document.execCommand('insertHTML', false, '&emsp;');
+  }
+});
+
+// ==================== 编辑器内容变化 ====================
+editor.addEventListener('input', function() {
+  updatePreview();
+  updateCharCount();
+});
+
+// 粘贴时清理格式
+editor.addEventListener('paste', function(e) {
+  e.preventDefault();
+  const text = (e.clipboardData || window.clipboardData).getData('text/plain');
+  const html = text.replace(/\n/g, '<br>');
+  document.execCommand('insertHTML', false, html);
+});
+
+// ==================== 实时预览 ====================
+function updatePreview() {
+  const html = editor.innerHTML;
+  if (!html || html === '<br>' || html === '<br>' || html === '\n') {
+    previewContent.innerHTML = '<span style="color:#484f58;">在此处开始编辑，预览将自动更新...</span>';
+    return;
+  }
+  // 显示清洗后的HTML预览
+  previewContent.innerHTML = html;
+}
+
+// ==================== 字数统计 ====================
+function updateCharCount() {
+  const text = editor.innerText || '';
+  const count = text.replace(/\s/g, '').length;
+  charCount.textContent = '内容字数: ' + count;
+  charCount.classList.toggle('warn', count > 50000);
+}
+
+// ==================== HTML 转 Markdown ====================
+function htmlToMarkdown(html) {
+  let md = html;
+
+  // 解码 HTML 实体
+  const tempDiv = document.createElement('div');
+  tempDiv.innerHTML = md;
+  md = tempDiv.innerHTML;
+
+  // 标题: <h1> -> #, <h2> -> ##, <h3> -> ###
+  md = md.replace(/<h1[^>]*>([\s\S]*?)<\/h1>/gi, function(_, content) {
+    return '\n\n# ' + stripHtml(content.trim()) + '\n\n';
+  });
+  md = md.replace(/<h2[^>]*>([\s\S]*?)<\/h2>/gi, function(_, content) {
+    return '\n\n## ' + stripHtml(content.trim()) + '\n\n';
+  });
+  md = md.replace(/<h3[^>]*>([\s\S]*?)<\/h3>/gi, function(_, content) {
+    return '\n\n### ' + stripHtml(content.trim()) + '\n\n';
+  });
+
+  // <strong>/<b> -> **
+  md = md.replace(/<(strong|b)[^>]*>([\s\S]*?)<\/(strong|b)>/gi, '**$2**');
+  // <em>/<i> -> *
+  md = md.replace(/<(em|i)[^>]*>([\s\S]*?)<\/(em|i)>/gi, '*$2*');
+  // <u> -> 无对应，保留文本
+  md = md.replace(/<u[^>]*>([\s\S]*?)<\/u>/gi, '$1');
+
+  // 无序列表
+  md = md.replace(/<ul[^>]*>([\s\S]*?)<\/ul>/gi, function(_, content) {
+    let items = content.match(/<li[^>]*>([\s\S]*?)<\/li>/gi);
+    if (items) {
+      return '\n' + items.map(function(li) {
+        return '- ' + stripHtml(li.replace(/<\/?li[^>]*>/gi, ''));
+      }).join('\n') + '\n';
+    }
+    return '';
+  });
+
+  // 有序列表
+  md = md.replace(/<ol[^>]*>([\s\S]*?)<\/ol>/gi, function(_, content) {
+    let items = content.match(/<li[^>]*>([\s\S]*?)<\/li>/gi);
+    if (items) {
+      return '\n' + items.map(function(li, idx) {
+        return (idx + 1) + '. ' + stripHtml(li.replace(/<\/?li[^>]*>/gi, ''));
+      }).join('\n') + '\n';
+    }
+    return '';
+  });
+
+  // 引用: <blockquote> -> >
+  md = md.replace(/<blockquote[^>]*>([\s\S]*?)<\/blockquote>/gi, function(_, content) {
+    const lines = stripHtml(content).split('\n');
+    return '\n\n> ' + lines.join('\n> ') + '\n\n';
+  });
+
+  // 代码块: <pre><code class="hljs"> -> ```...```
+  md = md.replace(/<pre[^>]*><code[^>]*>([\s\S]*?)<\/code><\/pre>/gi, function(_, content) {
+    return '\n\n```\n' + decodeHtml(content) + '\n```\n\n';
+  });
+
+  // 行内代码: <code> -> `
+  md = md.replace(/<code[^>]*>([\s\S]*?)<\/code>/gi, '`$1`');
+
+  // 链接: <a href="..."> -> [...](...)
+  md = md.replace(/<a[^>]*href=["']([^"']*)["'][^>]*>([\s\S]*?)<\/a>/gi, '[$2]($1)');
+
+  // 图片: <img src="..." srcset="/img/loading.gif" lazyload alt="..."> -> ![alt](src)
+  md = md.replace(/<img[^>]*src=["']([^"']*)["'][^>]*alt=["']([^"']*)["'][^>]*\/?>/gi, '![$2]($1)');
+  md = md.replace(/<img[^>]*src=["']([^"']*)["'][^>]*\/?>/gi, '![]($1)');
+
+  // 分割线: <hr> -> ---
+  md = md.replace(/<hr[^>]*\/?>/gi, '\n\n---\n\n');
+
+  // <br> -> 换行
+  md = md.replace(/<br\s*\/?>/gi, '\n');
+
+  // 段落: <p> 保留内容
+  md = md.replace(/<p[^>]*>([\s\S]*?)<\/p>/gi, '\n\n$1\n\n');
+
+  // 移除剩余标签
+  md = md.replace(/<\/?[^>]+>/g, '');
+
+  // 解码实体
+  md = decodeHtml(md);
+
+  // 清理多余空行
+  md = md.replace(/\n{3,}/g, '\n\n');
+  md = md.trim();
+
+  return md;
+}
+
+function stripHtml(html) {
+  const div = document.createElement('div');
+  div.innerHTML = html;
+  return div.textContent || div.innerText || '';
+}
+
+function decodeHtml(html) {
+  const txt = document.createElement('textarea');
+  txt.innerHTML = html;
+  return txt.value;
+}
+
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+// ==================== 生成 Hexo 格式 Markdown ====================
+function generateHexoMarkdown() {
+  const title = titleInput.value.trim();
+  const tags = document.getElementById('tagsInput').value.trim();
+  const category = document.getElementById('categoryInput').value.trim();
+  const now = new Date();
+  const dateStr = now.getFullYear() + '-' +
+    String(now.getMonth() + 1).padStart(2, '0') + '-' +
+    String(now.getDate()).padStart(2, '0') + ' ' +
+    String(now.getHours()).padStart(2, '0') + ':' +
+    String(now.getMinutes()).padStart(2, '0') + ':' +
+    String(now.getSeconds()).padStart(2, '0');
+
+  let frontMatter = '---\n';
+  frontMatter += 'title: ' + title + '\n';
+  frontMatter += 'date: ' + dateStr + '\n';
+  if (tags || category) {
+    if (tags) {
+      const tagList = tags.split(/[,，]/).map(t => t.trim()).filter(Boolean);
+      frontMatter += 'tags:\n';
+      tagList.forEach(t => { frontMatter += '  - ' + t + '\n'; });
+    }
+    if (category) {
+      frontMatter += 'categories:\n';
+      frontMatter += '  - ' + category + '\n';
+    }
+  }
+  frontMatter += '---\n\n';
+
+  const editorHtml = editor.innerHTML;
+  let bodyMd = '';
+  if (editorHtml && editorHtml !== '<br>') {
+    bodyMd = htmlToMarkdown(editorHtml);
+  }
+
+  return frontMatter + bodyMd;
+}
+
+// ==================== 验证 ====================
+function validate() {
+  let valid = true;
+  titleError.classList.remove('visible');
+  contentError.classList.remove('visible');
+
+  const title = titleInput.value.trim();
+  if (!title) {
+    titleError.classList.add('visible');
+    titleError.textContent = '请输入文章标题';
+    valid = false;
+  } else if (title.length > 200) {
+    titleError.classList.add('visible');
+    titleError.textContent = '标题不能超过200个字符';
+    valid = false;
+  }
+
+  const text = editor.innerText.trim();
+  if (!text) {
+    contentError.classList.add('visible');
+    contentError.textContent = '文章内容不能为空';
+    valid = false;
+  } else if (text.replace(/\s/g, '').length < 10) {
+    contentError.classList.add('visible');
+    contentError.textContent = '文章内容至少需要10个字符（不含空格）';
+    valid = false;
+  } else if (text.replace(/\s/g, '').length > 100000) {
+    contentError.classList.add('visible');
+    contentError.textContent = '文章内容不能超过100,000个字符';
+    valid = false;
+  }
+
+  return valid;
+}
+
+// ==================== 提交 ====================
+document.getElementById('btnSubmit').addEventListener('click', function() {
+  if (!validate()) {
+    showToast('请修正表单中的错误后再提交', 'error');
+    return;
+  }
+
+  currentMdContent = generateHexoMarkdown();
+  mdOutput.textContent = currentMdContent;
+  outputSection.classList.add('visible');
+  outputSection.scrollIntoView({ behavior: 'smooth' });
+
+  document.getElementById('btnCopyMd').textContent = '📋 复制全部';
+  document.getElementById('btnCopyMd').classList.remove('copied');
+
+  showToast('✅ 文章生成成功！请下载或复制 Markdown 文件', 'success');
+});
+
+// ==================== 复制输出 ====================
+function copyOutput() {
+  const text = mdOutput.textContent;
+  navigator.clipboard.writeText(text).then(function() {
+    document.getElementById('btnCopyMd').textContent = '✅ 已复制！';
+    document.getElementById('btnCopyMd').classList.add('copied');
+    showToast('已复制到剪贴板', 'info');
+    setTimeout(function() {
+      document.getElementById('btnCopyMd').textContent = '📋 复制全部';
+      document.getElementById('btnCopyMd').classList.remove('copied');
+    }, 2000);
+  }).catch(function() {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    showToast('已复制到剪贴板', 'info');
+  });
+}
+
+// ==================== 下载文件 ====================
+document.getElementById('btnDownload').addEventListener('click', function() {
+  if (!currentMdContent) {
+    showToast('请先生成文件', 'error');
+    return;
+  }
+
+  let filename = titleInput.value.trim();
+  if (!filename) filename = 'untitled';
+  // 清理文件名中的非法字符
+  filename = filename.replace(/[\\/:*?"<>|]/g, '-').replace(/\s+/g, '-');
+  // 截断过长文件名
+  if (filename.length > 80) filename = filename.substring(0, 80);
+  filename += '.md';
+
+  const blob = new Blob([currentMdContent], { type: 'text/markdown;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+
+  showToast('📥 文件下载已开始！请将其放入 source/_posts/ 目录', 'success');
+});
+
+// ==================== 预览源码 ====================
+document.getElementById('btnPreviewFull').addEventListener('click', function() {
+  if (!validate()) {
+    showToast('请先填写标题和内容', 'error');
+    return;
+  }
+  currentMdContent = generateHexoMarkdown();
+  mdOutput.textContent = currentMdContent;
+  outputSection.classList.add('visible');
+  outputSection.scrollIntoView({ behavior: 'smooth' });
+  showToast('已生成 Markdown 源码', 'info');
+});
+
+// ==================== 清空 ====================
+document.getElementById('btnClear').addEventListener('click', function() {
+  if (editor.innerText.trim() || titleInput.value.trim()) {
+    if (!confirm('确定要清空所有内容吗？此操作不可撤销。')) return;
+  }
+  titleInput.value = '';
+  document.getElementById('tagsInput').value = '';
+  document.getElementById('categoryInput').value = '';
+  editor.innerHTML = '';
+  previewContent.innerHTML = '<span style="color:#484f58;">在此处开始编辑，预览将自动更新...</span>';
+  outputSection.classList.remove('visible');
+  currentMdContent = '';
+  updateCharCount();
+  titleError.classList.remove('visible');
+  contentError.classList.remove('visible');
+  showToast('已清空所有内容', 'info');
+});
+
+// ==================== Toast 通知 ====================
+function showToast(message, type) {
+  const container = document.getElementById('toastContainer');
+  const toast = document.createElement('div');
+  toast.className = 'toast ' + type;
+  toast.textContent = message;
+  container.appendChild(toast);
+
+  toast.addEventListener('animationend', function(e) {
+    if (e.animationName === 'toastOut') {
+      toast.remove();
+    }
+  });
+}
+
+// ==================== 弹窗关闭 ====================
+document.querySelectorAll('.modal-overlay').forEach(function(overlay) {
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) {
+      overlay.classList.remove('visible');
+    }
+  });
+});
+
+// ESC 关闭弹窗
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.visible').forEach(function(m) {
+      m.classList.remove('visible');
+    });
+  }
+});
+
+// 标题输入实时校验
+titleInput.addEventListener('input', function() {
+  if (this.value.trim()) {
+    titleError.classList.remove('visible');
+  }
+});
+
+// 编辑器输入实时清除错误
+editor.addEventListener('input', function() {
+  if (editor.innerText.trim().length >= 10) {
+    contentError.classList.remove('visible');
+  }
+});
+
+// 初始化
+updateCharCount();
+editor.focus();
+</script>
+</body>
+</html>
+
+
+  
+
+</article>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+      <div class="col-lg-7 mx-auto nopadding-x-md">
+        <div class="container custom mx-auto">
+          <!-- 底部走动的桌宠 -->
+<img id="zhuochong" src="/images/zc.gif" srcset="/img/loading.gif" lazyload>
+<style>
+    #zhuochong{position: fixed;z-index: 999999;bottom:0;left:-100px;opacity: 0.9;transform:scaleX(-1);animation-direction: alternate;animation-timing-function: linear;}
+</style>
+<style id="zcCss"></style>
+<script type="text/javascript">
+    (function () {
+        var zc,zcCss,w1,w2,leftStart,leftEnd,speed,time,fx,isfirst;
+        document.addEventListener("DOMContentLoaded", function () {
+            zc=document.querySelector("#zhuochong"),
+            zcCss=document.querySelector("#zcCss"),
+            w1=document.body.scrollWidth,
+            w2=86,
+            leftStart=0-w2,
+            leftEnd=w1-w2,
+            speed=100,
+            time=parseInt(w1/speed),
+            fx="r",
+            isfirst=true;
+            zcmove(fx);
+            zc.addEventListener("animationend", function () {
+                isfirst=false;
+                fx==="r"?fx="l":fx="r";
+                zcmove(fx);
+            });
+        });
+ 
+        function zcmove(fx) {
+            if (!isfirst) {
+                leftStart=0;
+            }
+            if (fx==="r") {
+                zc.style.transform="scaleX(-1)";
+                zcCss.innerHTML='@keyframes zcmove{' +
+                                    'from {left: '+leftStart+'px}' +
+                                    'to {left: '+leftEnd+'px}' +
+                                '}';
+                zc.style.animationName="zcmove";
+                zc.style.animationDuration=time+"s";
+            }else if (fx==="l") {
+                zc.style.transform="scaleX(1)";
+                zcCss.innerHTML='@keyframes zcmove2{' +
+                                    'from {left: '+leftEnd+'px}' +
+                                    'to {left: '+leftStart+'px}' +
+                                '}';
+                zc.style.animationName="zcmove2";
+                zc.style.animationDuration=time+"s";
+            }
+        }
+    })();
+</script>
+
+        </div>
+      </div>
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+<i class="iconfont icon-love"></i>
+<a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/lang-switch.js"></script>
+<script src="/js/ripple-effect.js"></script>
+<script src="/js/mouse-trail.js"></script>
+<script src="/js/title-effect.js"></script>
+<script src="/js/snow-effect.js"></script>
+<script src="/js/divergence-loader.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+</html>

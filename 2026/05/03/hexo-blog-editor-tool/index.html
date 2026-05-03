@@ -19,21 +19,25 @@
   <meta name="author" content="Cai Zhenxin">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="给博客加个在线编辑器！Hexo 博客文章编辑工具开发记录 写博客最麻烦的事情是什么？每次都要打开本地编辑器、找到正确的文件夹、创建新文件、还要记着 Hexo 的 front matter 格式……有没有一种更优雅的方式？  最近给自己的博客写了一个在线文章编辑器，彻底解决了这个痛点。这篇文章就来聊聊这个编辑器的设计思路和实现细节。 🎯 痛点分析在写这个编辑器之前，我每次发博客都要经历这样一个流程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://caizhenxin.github.io/2026/04/03/hello-world/index.html">
+<meta property="og:title" content="给博客加个在线编辑器！Hexo 博客文章编辑工具开发记录">
+<meta property="og:url" content="https://caizhenxin.github.io/2026/05/03/hexo-blog-editor-tool/index.html">
 <meta property="og:site_name" content="游手好闲辛大人">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="给博客加个在线编辑器！Hexo 博客文章编辑工具开发记录 写博客最麻烦的事情是什么？每次都要打开本地编辑器、找到正确的文件夹、创建新文件、还要记着 Hexo 的 front matter 格式……有没有一种更优雅的方式？  最近给自己的博客写了一个在线文章编辑器，彻底解决了这个痛点。这篇文章就来聊聊这个编辑器的设计思路和实现细节。 🎯 痛点分析在写这个编辑器之前，我每次发博客都要经历这样一个流程">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-04-03T07:00:00.000Z">
+<meta property="article:published_time" content="2026-05-03T06:30:00.000Z">
 <meta property="article:modified_time" content="2026-05-03T04:54:08.454Z">
 <meta property="article:author" content="Cai Zhenxin">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="博客优化">
+<meta property="article:tag" content="工具开发">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Hello World - 游手好闲辛大人</title>
+  <title>给博客加个在线编辑器！Hexo 博客文章编辑工具开发记录 - 游手好闲辛大人</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -328,7 +332,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hello World"></span>
+            <span id="subtitle" data-typed-text="给博客加个在线编辑器！Hexo 博客文章编辑工具开发记录"></span>
           
         </div>
 
@@ -339,8 +343,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-04-03 15:00" pubdate>
-          2026年4月3日 下午
+        <time datetime="2026-05-03 14:30" pubdate>
+          2026年5月3日 下午
         </time>
       </span>
     
@@ -351,7 +355,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          367 字
+          2.5k 字
         
       </span>
     
@@ -362,7 +366,7 @@
         
         
         
-          4 分钟
+          21 分钟
         
       </span>
     
@@ -401,24 +405,114 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Hello World</h1>
+            <h1 id="seo-header">给博客加个在线编辑器！Hexo 博客文章编辑工具开发记录</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+                <h1 id="给博客加个在线编辑器！Hexo-博客文章编辑工具开发记录"><a href="#给博客加个在线编辑器！Hexo-博客文章编辑工具开发记录" class="headerlink" title="给博客加个在线编辑器！Hexo 博客文章编辑工具开发记录"></a>给博客加个在线编辑器！Hexo 博客文章编辑工具开发记录</h1><blockquote>
+<p>写博客最麻烦的事情是什么？每次都要打开本地编辑器、找到正确的文件夹、创建新文件、还要记着 Hexo 的 front matter 格式……有没有一种更优雅的方式？</p>
+</blockquote>
+<p>最近给自己的博客写了一个在线文章编辑器，彻底解决了这个痛点。这篇文章就来聊聊这个编辑器的设计思路和实现细节。</p>
+<h2 id="🎯-痛点分析"><a href="#🎯-痛点分析" class="headerlink" title="🎯 痛点分析"></a>🎯 痛点分析</h2><p>在写这个编辑器之前，我每次发博客都要经历这样一个流程：</p>
+<ol>
+<li>打开 VS Code</li>
+<li>找到 <code>source/_posts/</code> 目录</li>
+<li>新建一个 <code>.md</code> 文件</li>
+<li>手动写 front matter（<code>title</code>、<code>date</code>、<code>tags</code>……）</li>
+<li>开始写正文</li>
+<li>终端运行 <code>hexo g</code> + <code>hexo d</code></li>
+</ol>
+<p>虽然不算复杂，但总觉得可以更顺滑。尤其是写 front matter 这件事，纯属机械性操作，浪费生命。</p>
+<p>于是我花了大半天时间，给博客写了一个专属的在线编辑器。</p>
+<h2 id="✨-功能设计"><a href="#✨-功能设计" class="headerlink" title="✨ 功能设计"></a>✨ 功能设计</h2><p>编辑器的核心目标是：<strong>在浏览器里写文章，一键导出符合 Hexo 规范的 Markdown 文件</strong>。</p>
+<p>具体功能如下：</p>
+<h3 id="1-富文本编辑"><a href="#1-富文本编辑" class="headerlink" title="1. 富文本编辑"></a>1. 富文本编辑</h3><p>编辑器使用浏览器原生的 <code>contenteditable</code> 实现，无需引入任何第三方库。工具栏提供了完整的格式化选项：</p>
+<ul>
+<li><strong>文本样式</strong>：加粗、斜体、下划线（支持快捷键 <code>Ctrl+B/I/U</code>）</li>
+<li><strong>标题</strong>：H1、H2、H3 一键切换</li>
+<li><strong>列表</strong>：有序列表和无序列表</li>
+<li><strong>对齐</strong>：左对齐、居中</li>
+<li><strong>插入</strong>：链接、图片、代码块、引用、分割线</li>
+</ul>
+<h3 id="2-实时双栏预览"><a href="#2-实时双栏预览" class="headerlink" title="2. 实时双栏预览"></a>2. 实时双栏预览</h3><p>最实用的功能之一：左侧写文章，右侧实时看到渲染效果。</p>
+<p>编辑器右侧是一个只读的预览面板，当你在左侧输入时，右边会即时更新。这样写文章的时候就能直观看到最终效果，不用反复猜测格式是否正确。</p>
+<h3 id="3-一键导出-Hexo-Markdown"><a href="#3-一键导出-Hexo-Markdown" class="headerlink" title="3. 一键导出 Hexo Markdown"></a>3. 一键导出 Hexo Markdown</h3><p>这是最关键的功能。点击「提交」按钮后，系统会自动：</p>
+<ol>
+<li>将富文本内容转换为标准 Markdown 语法</li>
+<li>生成符合 Hexo 规范的 front matter（包含 <code>title</code>、<code>date</code>、<code>tags</code>、<code>categories</code>）</li>
+<li>合并为完整的 <code>.md</code> 文件内容</li>
+</ol>
+<p>生成的格式如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">文章标题</span><br><span class="hljs-attr">date:</span> <span class="hljs-number">2026-05-03 14:30:00</span><br><span class="hljs-attr">tags:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">标签1</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">标签2</span><br><span class="hljs-attr">categories:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">分类</span><br><span class="hljs-meta">---</span><br><span class="hljs-meta"></span><br><span class="hljs-string">正文内容...</span><br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+<h3 id="4-数据验证与用户反馈"><a href="#4-数据验证与用户反馈" class="headerlink" title="4. 数据验证与用户反馈"></a>4. 数据验证与用户反馈</h3><p>编辑器内置了完整的数据验证机制：</p>
+<table>
+<thead>
+<tr>
+<th>验证项</th>
+<th>规则</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>标题</td>
+<td>必填，最大 200 字符</td>
+</tr>
+<tr>
+<td>内容</td>
+<td>必填，最少 10 字符，最大 100,000 字符</td>
+</tr>
+<tr>
+<td>字数统计</td>
+<td>编辑器底部实时显示</td>
+</tr>
+</tbody></table>
+<p>提交时如果验证失败，会在对应位置显示红色错误提示。提交成功后，右上角会弹出 Toast 通知告知用户。</p>
+<h3 id="5-文件下载与复制"><a href="#5-文件下载与复制" class="headerlink" title="5. 文件下载与复制"></a>5. 文件下载与复制</h3><p>生成 Markdown 后，提供两种获取方式：</p>
+<ul>
+<li><strong>下载 .md 文件</strong>：自动以文章标题命名文件，一键下载</li>
+<li><strong>复制到剪贴板</strong>：一键复制全部内容</li>
+</ul>
+<p>下载后的文件只需要放入博客的 <code>source/_posts/</code> 目录，然后 <code>hexo g</code> 即可。</p>
+<h2 id="🛠-技术实现"><a href="#🛠-技术实现" class="headerlink" title="🛠 技术实现"></a>🛠 技术实现</h2><h3 id="HTML-转-Markdown-的核心逻辑"><a href="#HTML-转-Markdown-的核心逻辑" class="headerlink" title="HTML 转 Markdown 的核心逻辑"></a>HTML 转 Markdown 的核心逻辑</h3><p>这是最复杂的部分。由于使用的是 <code>contenteditable</code>，它输出的都是 HTML。要转换成 Markdown，需要处理各种 HTML 标签的对应转换：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 标题转换</span><br>md = md.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/&lt;h1[^&gt;]*&gt;([\s\S]*?)&lt;\/h1&gt;/gi</span>, <span class="hljs-string">&#x27;# $1\n&#x27;</span>);<br>md = md.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/&lt;h2[^&gt;]*&gt;([\s\S]*?)&lt;\/h2&gt;/gi</span>, <span class="hljs-string">&#x27;## $1\n&#x27;</span>);<br><br><span class="hljs-comment">// 链接转换</span><br>md = md.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/&lt;a[^&gt;]*href=[&quot;&#x27;]([^&quot;&#x27;]*)[&quot;&#x27;][^&gt;]*&gt;([\s\S]*?)&lt;\/a&gt;/gi</span>, <span class="hljs-string">&#x27;[$2]($1)&#x27;</span>);<br><br><span class="hljs-comment">// 图片转换</span><br>md = md.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/&lt;img[^&gt;]*src=[&quot;&#x27;]([^&quot;&#x27;]*)[&quot;&#x27;][^&gt;]*alt=[&quot;&#x27;]([^&quot;&#x27;]*)[&quot;&#x27;][^&gt;]*\/?&gt;/gi</span>, <span class="hljs-string">&#x27;![$2]($1)&#x27;</span>);<br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+<h3 id="纯前端实现"><a href="#纯前端实现" class="headerlink" title="纯前端实现"></a>纯前端实现</h3><p>整个编辑器完全依赖浏览器原生 API，不依赖任何外部库：</p>
+<ul>
+<li>富文本编辑：<code>document.execCommand</code>（已废弃但仍广泛支持）</li>
+<li>文件下载：Blob + URL.createObjectURL</li>
+<li>剪贴板：navigator.clipboard</li>
+<li>弹窗：CSS + 原生 JS</li>
+</ul>
+<p>这样做的好处是：只要能打开这个 HTML 文件的地方，就能用这个编辑器。</p>
+<h3 id="风格统一"><a href="#风格统一" class="headerlink" title="风格统一"></a>风格统一</h3><p>编辑器的视觉风格完全参照博客已有的 <a href="https://caizhenxin.github.io/tools/docker-hddm-generator.html">DockerHDDM 命令生成器</a>，保持了一致的暗色主题和配色方案：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-pseudo">:root</span> &#123;<br>  <span class="hljs-attr">--bg</span>: <span class="hljs-number">#0d1117</span>;<br>  <span class="hljs-attr">--surface</span>: <span class="hljs-number">#161b22</span>;<br>  <span class="hljs-attr">--border</span>: <span class="hljs-number">#30363d</span>;<br>  <span class="hljs-attr">--text</span>: <span class="hljs-number">#c9d1d9</span>;<br>  <span class="hljs-attr">--accent</span>: <span class="hljs-number">#58a6ff</span>;<br>  <span class="hljs-attr">--green</span>: <span class="hljs-number">#3fb950</span>;<br>  <span class="hljs-attr">--red</span>: <span class="hljs-number">#f85149</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h2 id="📋-使用方法"><a href="#📋-使用方法" class="headerlink" title="📋 使用方法"></a>📋 使用方法</h2><ol>
+<li>打开 <a href="https://caizhenxin.github.io/tools/blog-editor.html">博客编辑器</a></li>
+<li>填写文章标题、标签、分类</li>
+<li>在左侧编辑器中撰写正文（右侧实时预览）</li>
+<li>点击「🚀 提交并生成文件」</li>
+<li>下载生成的 <code>.md</code> 文件</li>
+<li>将文件放入 <code>source/_posts/</code> 目录</li>
+<li>运行 <code>hexo g</code> 部署</li>
+</ol>
+<h2 id="🔮-未来改进"><a href="#🔮-未来改进" class="headerlink" title="🔮 未来改进"></a>🔮 未来改进</h2><p>目前这个编辑器已经满足了基本需求，但还有一些可以优化的地方：</p>
+<ul>
+<li><strong>图片上传</strong>：目前只支持输入 URL，未来可以接入图床实现本地上传</li>
+<li><strong>草稿保存</strong>：加入 LocalStorage 自动保存功能，防止意外丢失</li>
+<li><strong>多语言支持</strong>：增加中英文界面切换</li>
+<li><strong>模板功能</strong>：预设几种文章模板（如「教程」「笔记」「日常」），一键套用</li>
+</ul>
+<h2 id="📝-结语"><a href="#📝-结语" class="headerlink" title="📝 结语"></a>📝 结语</h2><p>这个小工具开发起来其实不算复杂，但确实能显著提升写博客的体验。纯前端实现意味着零门槛，随时随地都能用。</p>
+<p>如果你也有 Hexo 博客，不妨试试给自己写一个专属编辑器。把它放在 <code>source/tools/</code> 目录下，既不影响博客结构，又能随时通过 <code>/tools/</code> 路径访问。</p>
+<p>技术本身不复杂，关键是想清楚自己要解决什么问题，然后动手去做。</p>
+<hr>
+<blockquote>
+<p><strong>编辑器地址</strong>：<a href="https://caizhenxin.github.io/tools/blog-editor.html">博客文章编辑器</a></p>
+<p><strong>作者</strong>：Cai Zhenxin</p>
+<p><strong>博客</strong>：<a href="https://caizhenxin.github.io/">游手好闲辛大人</a></p>
+</blockquote>
 
                 
               </div>
@@ -427,6 +521,40 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="category-chain-item">技术分享</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Hexo/" class="print-no-link">#Hexo</a>
+      
+        <a href="/tags/%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91/" class="print-no-link">#工具开发</a>
+      
+        <a href="/tags/%E5%89%8D%E7%AB%AF/" class="print-no-link">#前端</a>
+      
+        <a href="/tags/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/" class="print-no-link">#博客优化</a>
+      
+    </div>
   
 </div>
 
@@ -436,8 +564,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hello World</div>
-      <div>https://caizhenxin.github.io/2026/04/03/hello-world/</div>
+      <div>给博客加个在线编辑器！Hexo 博客文章编辑工具开发记录</div>
+      <div>https://caizhenxin.github.io/2026/05/03/hexo-blog-editor-tool/</div>
     </div>
     <div class="license-meta">
       
@@ -449,7 +577,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年4月3日</div>
+          <div>2026年5月3日</div>
         </div>
       
       
@@ -481,15 +609,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/04/04/hexo-blog-guide/" title="📖 新手必看：如何维护你的 Hexo 博客">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">📖 新手必看：如何维护你的 Hexo 博客</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2026/04/29/hddm-docker-tutorial-for-beginners/" title="零基础 HDDM 数据分析完全指南：Docker 一键部署与实战">
+                        <span class="hidden-mobile">零基础 HDDM 数据分析完全指南：Docker 一键部署与实战</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
