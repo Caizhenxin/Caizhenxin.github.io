@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>🎮 博客新增纸飞机射击游戏！网页元素破坏者上线</title>
+    <link href="/2026/05/12/asteroids-game-feature/"/>
+    <url>/2026/05/12/asteroids-game-feature/</url>
+    
+    <content type="html"><![CDATA[<h1 id="🎮-博客新增纸飞机射击游戏！网页元素破坏者上线"><a href="#🎮-博客新增纸飞机射击游戏！网页元素破坏者上线" class="headerlink" title="🎮 博客新增纸飞机射击游戏！网页元素破坏者上线"></a>🎮 博客新增纸飞机射击游戏！网页元素破坏者上线</h1><blockquote><p>按下 <code>G</code> 键开启游戏，用 WASD &#x2F; 方向键控制飞机，空格键发射子弹，尽情破坏网页上的一切吧！💥</p></blockquote><hr><h2 id="功能简介"><a href="#功能简介" class="headerlink" title="功能简介"></a>功能简介</h2><p>这次给博客添加了一个有趣的彩蛋功能 —— <strong>网页纸飞机射击游戏</strong>！灵感来自于 <a href="https://github.com/stevenjoezhang/live2d-widget">live2d-widget</a> 项目中展示的 <a href="http://www.websiteasteroids.com/">Website Asteroids</a>。</p><h3 id="操作说明"><a href="#操作说明" class="headerlink" title="操作说明"></a>操作说明</h3><table><thead><tr><th>按键</th><th>功能</th></tr></thead><tbody><tr><td><strong>G</strong></td><td>开启 &#x2F; 关闭游戏模式</td></tr><tr><td><strong>W &#x2F; ↑</strong></td><td>飞机向上移动</td></tr><tr><td><strong>S &#x2F; ↓</strong></td><td>飞机向下移动</td></tr><tr><td><strong>A &#x2F; ←</strong></td><td>飞机向左移动</td></tr><tr><td><strong>D &#x2F; →</strong></td><td>飞机向右移动</td></tr><tr><td><strong>Space（空格）</strong></td><td>发射子弹</td></tr></tbody></table><h3 id="游戏特色"><a href="#游戏特色" class="headerlink" title="游戏特色"></a>游戏特色</h3><ul><li>✨ <strong>发光三角飞船</strong> — Canvas 绘制的霓虹风格飞机，带有引擎火焰特效</li><li>🔫 <strong>金色光弹</strong> — 带有发光效果的子弹，有射程限制和射击冷却</li><li>💥 <strong>爆炸粒子</strong> — 击中元素时产生彩色碎片飞散效果</li><li>📊 <strong>计分系统</strong> — 实时显示击毁数量，得分时有弹跳动画</li><li>🎯 <strong>精确碰撞</strong> — 支持行内元素（<code>&lt;code&gt;</code>、<code>&lt;strong&gt;</code>、<code>&lt;em&gt;</code>等）的精确打击</li></ul><hr><h2 id="技术实现"><a href="#技术实现" class="headerlink" title="技术实现"></a>技术实现</h2><h3 id="核心技术栈"><a href="#核心技术栈" class="headerlink" title="核心技术栈"></a>核心技术栈</h3><ul><li><strong>HTML5 Canvas</strong> — 用于绘制飞机和子弹</li><li><strong>DOM API</strong> — <code>getBoundingClientRect()</code> 获取元素坐标</li><li><strong>requestAnimationFrame</strong> — 60fps 游戏循环</li><li><strong>事件监听</strong> — 键盘控制、窗口滚动&#x2F;resize 响应</li></ul><h3 id="碰撞检测优化"><a href="#碰撞检测优化" class="headerlink" title="碰撞检测优化"></a>碰撞检测优化</h3><p>开发过程中遇到了一些挑战：</p><ol><li><p><strong>滚动导致坐标失效</strong> — 最初缓存了元素坐标，但滚动页面后坐标就失效了。解决方案：碰撞检测时实时获取元素位置。</p></li><li><p><strong>子弹跳过小元素</strong> — 子弹移动速度（10px&#x2F;帧）快于行内元素宽度，导致直接穿过。解决方案：采用<strong>扫掠碰撞检测</strong>，沿子弹路径细分采样。</p></li><li><p><strong>性能优化</strong> — 全量 DOM 查询开销大。解决方案：缓存可破坏元素列表，每 10 帧刷新一次。</p></li></ol><h3 id="代码架构"><a href="#代码架构" class="headerlink" title="代码架构"></a>代码架构</h3><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm">├── asteroids-game.<span class="hljs-keyword">js </span>   <span class="hljs-comment"># 游戏核心逻辑（约 480 行）</span><br>│   ├── 游戏状态管理<br>│   ├── 飞船控制与渲染<br>│   ├── 子弹系统<br>│   ├── 碰撞检测<br>│   └── 粒子效果<br>└── asteroids-game.css   <span class="hljs-comment"># 游戏样式（约 105 行）</span><br>    ├── Canvas 样式<br>    ├── HUD 界面<br>    ├── 元素销毁动画<br>    └── 粒子样式<br></code></pre></td></tr></table></figure><hr><h2 id="可破坏元素"><a href="#可破坏元素" class="headerlink" title="可破坏元素"></a>可破坏元素</h2><p>游戏支持破坏以下 HTML 标签元素：</p><ul><li><strong>标题</strong>：<code>h1</code> ~ <code>h6</code></li><li><strong>文本</strong>：<code>p</code>, <code>span</code>, <code>strong</code>, <code>em</code>, <code>b</code>, <code>i</code>, <code>u</code>, <code>mark</code></li><li><strong>链接</strong>：<code>a</code></li><li><strong>代码</strong>：<code>code</code>, <code>pre</code></li><li><strong>列表</strong>：<code>li</code>, <code>dt</code>, <code>dd</code>, <code>td</code>, <code>th</code></li><li><strong>引用</strong>：<code>blockquote</code>, <code>q</code>, <code>cite</code></li><li><strong>其他</strong>：<code>img</code>, <code>button</code>, <code>label</code>, <code>figure</code>, <code>figcaption</code></li></ul><blockquote><p>🚫 为保护页面结构，<code>body</code>、<code>script</code>、<code>style</code>、<code>header</code>、<code>footer</code>、<code>main</code> 等核心容器不会被破坏。</p></blockquote><hr><h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><h3 id="v1-0-0-2026-05-12"><a href="#v1-0-0-2026-05-12" class="headerlink" title="v1.0.0 (2026-05-12)"></a>v1.0.0 (2026-05-12)</h3><ul><li>✅ 初始版本发布</li><li>✅ 飞船移动与子弹发射</li><li>✅ 基础碰撞检测</li><li>✅ 粒子爆炸效果</li><li>✅ 计分 HUD 界面</li></ul><h3 id="v1-1-0-2026-05-12"><a href="#v1-1-0-2026-05-12" class="headerlink" title="v1.1.0 (2026-05-12)"></a>v1.1.0 (2026-05-12)</h3><ul><li>✅ 修复：滚动页面后子弹无法命中元素的问题</li><li>✅ 修复：子弹跳过小行内元素的问题</li><li>✅ 优化：碰撞检测改用实时坐标获取</li><li>✅ 优化：新增扫掠碰撞检测算法</li><li>✅ 扩充：支持 49 种 HTML 标签元素</li><li>✅ 优化：缓存按元素面积升序排列，优先打击小元素</li></ul><hr><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>在博客任意页面按下 <code>G</code> 键即可开启游戏。飞机默认出现在屏幕中央，你可以：</p><ol><li>用方向键或 WASD 移动飞机</li><li>瞄准页面上的文字、图片、按钮等元素</li><li>按空格键发射子弹击毁它们</li><li>再次按 <code>G</code> 键退出游戏</li></ol><blockquote><p>💡 <strong>小贴士</strong>：文章页的代码高亮块、加粗文字、链接都是很好的目标！</p></blockquote><hr><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>这是一个纯粹为娱乐而生的功能，希望能给你的博客浏览体验增添一些乐趣。如果你有任何想法或建议，欢迎在评论区留言！</p><hr><p><em>本文代码已集成到博客中，按下 <code>G</code> 键即可体验！</em> 🎮</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>博客优化</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>前端特效</tag>
+      
+      <tag>博客美化</tag>
+      
+      <tag>游戏开发</tag>
+      
+      <tag>JavaScript</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>给博客加个在线编辑器！Hexo 博客文章编辑工具开发记录</title>
     <link href="/2026/05/03/hexo-blog-editor-tool/"/>
     <url>/2026/05/03/hexo-blog-editor-tool/</url>
