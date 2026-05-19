@@ -58,10 +58,11 @@
         }
     };
 
-    function Asteroids() {
+    function Asteroids(color) {
         if (!window.ASTEROIDS) window.ASTEROIDS = { enemiesKilled: 0 };
 
         var that = this;
+        this.shipColor = color || '#ffffff';
         var w = window.innerWidth;
         var h = window.innerHeight;
 
@@ -397,10 +398,10 @@
             this.translate(that.pos.x, that.pos.y);
             this.rotate(that.dir.angle());
             this.tracePoly(playerVerts);
-            this.fillStyle = 'white';
+            this.fillStyle = that.shipColor;
             this.fill();
             this.tracePoly(playerVerts);
-            this.strokeStyle = 'white';
+            this.strokeStyle = that.shipColor;
             this.stroke();
             this.restore();
         };
@@ -612,6 +613,296 @@
         this.destroy = destroy;
     }
 
+    var SHIP_COLORS = [
+        { name: '皓月白', value: '#ffffff' },
+        { name: '霓虹青', value: '#00ffff' },
+        { name: '翠绿',   value: '#00ff88' },
+        { name: '琥珀金', value: '#ffcc00' },
+        { name: '洋红',   value: '#ff00ff' },
+        { name: '赤焰红', value: '#ff4444' }
+    ];
+
+    var DEBUG = true;
+
+    function log() {
+        if (!DEBUG) return;
+        var args = Array.prototype.slice.call(arguments);
+        args.unshift('[Asteroids]');
+        if (console && typeof console.log === 'function') {
+            console.log.apply(console, args);
+        }
+    }
+
+    function logErr() {
+        var args = Array.prototype.slice.call(arguments);
+        args.unshift('[Asteroids]');
+        if (console && typeof console.error === 'function') {
+            console.error.apply(console, args);
+        }
+    }
+
+    function drawAirplaneIcon(canvas, color, size) {
+        var ctx = canvas.getContext('2d');
+        if (!ctx) {
+            logErr('drawAirplaneIcon: cannot get 2d context');
+            return;
+        }
+        size = size || 40;
+        canvas.width = size * 2;
+        canvas.height = size * 2;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        var cx = canvas.width / 2;
+        var cy = canvas.height / 2;
+        var s = size * 0.7;
+
+        ctx.save();
+        ctx.translate(cx, cy);
+
+        var noseX = s;
+        var noseY = 0;
+        var tailX = -s * 0.55;
+        var topY = -s * 0.5;
+        var botY = s * 0.5;
+
+        ctx.beginPath();
+        ctx.moveTo(noseX, noseY);
+        ctx.lineTo(tailX, topY);
+        ctx.lineTo(tailX, 0);
+        ctx.closePath();
+        ctx.fillStyle = color;
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(255,255,255,0.45)';
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(noseX, noseY);
+        ctx.lineTo(tailX, botY);
+        ctx.lineTo(tailX, 0);
+        ctx.closePath();
+        ctx.fillStyle = color;
+        ctx.globalAlpha = 0.65;
+        ctx.fill();
+        ctx.globalAlpha = 1;
+        ctx.strokeStyle = 'rgba(255,255,255,0.45)';
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+
+        ctx.restore();
+    }
+
+    var spawnedPlanes = [];
+    var isExpanded = false;
+    var hoverTimeout = null;
+    var btnWrapper = null;
+    var btnHub = null;
+
+    function computeOrbitPositions(count, radius) {
+        var positions = [];
+        var totalAngle = Math.PI * 0.75;
+        var startAngle = Math.PI * 1.125;
+        for (var i = 0; i < count; i++) {
+            var angle = startAngle + totalAngle * i / (count - 1);
+            positions.push({
+                x: Math.cos(angle) * radius,
+                y: Math.sin(angle) * radius
+            });
+        }
+        return positions;
+    }
+
+    function expandPlanes() {
+        if (isExpanded) return;
+        isExpanded = true;
+        log('expandPlanes: fanning out colored airplanes');
+
+        var wrapperRect = btnWrapper.getBoundingClientRect();
+        var radius = Math.min(wrapperRect.width, wrapperRect.height) * 0.42;
+        var positions = computeOrbitPositions(SHIP_COLORS.length, radius);
+
+        for (var i = 0; i < spawnedPlanes.length; i++) {
+            var p = positions[i];
+            var baseT = 'translate(' + p.x + 'px, ' + p.y + 'px)';
+            spawnedPlanes[i].baseTranslate = baseT;
+            spawnedPlanes[i].el.style.opacity = '1';
+            spawnedPlanes[i].el.style.transform = baseT + ' scale(1)';
+            spawnedPlanes[i].el.classList.add('visible');
+        }
+    }
+
+    function collapsePlanes() {
+        if (!isExpanded) return;
+        isExpanded = false;
+        log('collapsePlanes: retracting');
+
+        for (var i = 0; i < spawnedPlanes.length; i++) {
+            spawnedPlanes[i].el.style.opacity = '0';
+            spawnedPlanes[i].el.style.transform = 'scale(0.3)';
+            spawnedPlanes[i].el.classList.remove('visible');
+        }
+    }
+
+    function handleHubEnter() {
+        log('hub enter');
+        clearHoverTimeout();
+        expandPlanes();
+    }
+
+    function handleHubLeave() {
+        log('hub leave');
+        scheduleCollapseIfNoChild();
+    }
+
+    function handlePlaneEnter(idx) {
+        spawnedPlanes[idx].isHovered = true;
+        var baseT = spawnedPlanes[idx].baseTranslate;
+        if (baseT) {
+            spawnedPlanes[idx].el.style.transform = baseT + ' scale(1.25)';
+        }
+        spawnedPlanes[idx].el.classList.add('hovered');
+        clearHoverTimeout();
+    }
+
+    function handlePlaneLeave(idx) {
+        spawnedPlanes[idx].isHovered = false;
+        var baseT = spawnedPlanes[idx].baseTranslate;
+        if (baseT) {
+            spawnedPlanes[idx].el.style.transform = baseT + ' scale(1)';
+        }
+        spawnedPlanes[idx].el.classList.remove('hovered');
+        scheduleCollapseIfNoChild();
+    }
+
+    function clearHoverTimeout() {
+        if (hoverTimeout) {
+            clearTimeout(hoverTimeout);
+            hoverTimeout = null;
+        }
+    }
+
+    function scheduleCollapseIfNoChild() {
+        hoverTimeout = setTimeout(function () {
+            for (var i = 0; i < spawnedPlanes.length; i++) {
+                if (spawnedPlanes[i].isHovered) return;
+            }
+            collapsePlanes();
+        }, 200);
+    }
+
+    function handlePlaneClick(idx) {
+        var colorInfo = SHIP_COLORS[idx];
+        log('plane clicked: ' + colorInfo.name + ' (' + colorInfo.value + ')');
+        collapsePlanes();
+        launchGame(colorInfo.value);
+    }
+
+    function launchGame(color) {
+        log('launchGame: color=' + color);
+        if (!color) {
+            logErr('launchGame: color is null/undefined');
+            return;
+        }
+        try {
+            window.ASTEROIDSPLAYERS = window.ASTEROIDSPLAYERS || [];
+            var player = new Asteroids(color);
+            window.ASTEROIDSPLAYERS.push(player);
+            log('launchGame: OK, total=' + window.ASTEROIDSPLAYERS.length);
+            if (btnWrapper) {
+                btnWrapper.style.display = 'none';
+            }
+        } catch (e) {
+            logErr('launchGame: error', e);
+            if (btnWrapper) {
+                btnWrapper.style.display = '';
+            }
+        }
+    }
+
+    function buildButton() {
+        log('buildButton');
+        try {
+            btnWrapper = document.createElement('div');
+            btnWrapper.className = 'asteroids-btn-wrapper';
+
+            var stage = document.createElement('div');
+            stage.className = 'asteroids-btn-stage';
+
+            var pulse = document.createElement('div');
+            pulse.className = 'asteroids-btn-pulse';
+            stage.appendChild(pulse);
+
+            spawnedPlanes = [];
+            for (var i = 0; i < SHIP_COLORS.length; i++) {
+                var spawnEl = document.createElement('div');
+                spawnEl.className = 'asteroids-spawn-plane';
+                spawnEl.setAttribute('aria-label', SHIP_COLORS[i].name);
+                spawnEl.setAttribute('role', 'button');
+
+                var c = document.createElement('canvas');
+                c.width = 80;
+                c.height = 80;
+                drawAirplaneIcon(c, SHIP_COLORS[i].value, 22);
+                spawnEl.appendChild(c);
+
+                var label = document.createElement('span');
+                label.className = 'asteroids-spawn-plane-label';
+                label.textContent = SHIP_COLORS[i].name;
+                spawnEl.appendChild(label);
+
+                stage.appendChild(spawnEl);
+                spawnedPlanes.push({ el: spawnEl, isHovered: false });
+            }
+
+            btnHub = document.createElement('div');
+            btnHub.className = 'asteroids-btn-hub';
+            btnHub.setAttribute('aria-label', '悬停选择飞船颜色');
+            btnHub.setAttribute('role', 'button');
+
+            var hubCanvas = document.createElement('canvas');
+            hubCanvas.width = 120;
+            hubCanvas.height = 120;
+            drawAirplaneIcon(hubCanvas, '#ffffff', 36);
+            btnHub.appendChild(hubCanvas);
+
+            stage.appendChild(btnHub);
+            btnWrapper.appendChild(stage);
+            document.body.appendChild(btnWrapper);
+
+            bindButtonEvents();
+            log('buildButton: done');
+
+        } catch (e) {
+            logErr('buildButton: error', e);
+        }
+    }
+
+    function bindButtonEvents() {
+        btnHub.addEventListener('mouseenter', handleHubEnter);
+        btnHub.addEventListener('mouseleave', handleHubLeave);
+
+        for (var i = 0; i < spawnedPlanes.length; i++) {
+            (function (idx) {
+                spawnedPlanes[idx].el.addEventListener('mouseenter', function () {
+                    handlePlaneEnter(idx);
+                });
+                spawnedPlanes[idx].el.addEventListener('mouseleave', function () {
+                    handlePlaneLeave(idx);
+                });
+                spawnedPlanes[idx].el.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    handlePlaneClick(idx);
+                });
+            })(i);
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', buildButton);
+        log('waiting DOMContentLoaded');
+    } else {
+        buildButton();
+    }
+
     window.ASTEROIDSPLAYERS = window.ASTEROIDSPLAYERS || [];
-    window.ASTEROIDSPLAYERS.push(new Asteroids());
 })();
