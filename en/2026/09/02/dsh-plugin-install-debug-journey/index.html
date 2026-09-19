@@ -27,7 +27,7 @@
 <meta property="og:description" content="🐛 给 DeepSeek Harness 装插件的排障全记录：pnpm、GitHub 网络与”版本线” 一条 dsh plugin add 命令，引出了一连串意料之外的坑：pnpm 的全量重解析、死活连不上的 GitHub、藏在 lockfile 里的玄机，以及”插件版本跟基础库版本对不上”这种最容易忽略的兼容性问题。这篇文章完整记录了我的排查过程与最终解法。   起因：我想装三个插件最近在折腾">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-09-02T12:30:00.000Z">
-<meta property="article:modified_time" content="2026-09-02T12:09:02.983Z">
+<meta property="article:modified_time" content="2026-09-02T12:06:08.160Z">
 <meta property="article:author" content="Cai Zhenxin">
 <meta property="article:tag" content="DSH">
 <meta property="article:tag" content="DeepSeek Harness">
@@ -195,6 +195,18 @@
           
           
             <li class="nav-item">
+              <a class="nav-link" href="/research/" target="_self">
+                <i class="iconfont icon-articles"></i>
+                <span>Research</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
               <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>About</span>
@@ -279,6 +291,20 @@
                 <div class="mobile-grid-item">
                   <i class="iconfont icon-tags-fill"></i>
                   <span>Tags</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/research/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-articles"></i>
+                  <span>Research</span>
                 </div>
               </a>
             </div>
@@ -546,7 +572,7 @@
 <td><strong>alpha 线（我装的基础就是它！）</strong></td>
 </tr>
 </tbody></table>
-<p>真相是：<strong>DSH 同时存在多条”版本线”</strong>（rc.6 &#x2F; rc.7 &#x2F; rc.8 &#x2F; alpha.2…），每条线的基础库 API 都不完全一样。npm 的 <code>latest</code> 标签并不代表”适合你的环境”——<a href="mailto:&#98;&#x65;&#116;&#x74;&#x65;&#114;&#x2d;&#x73;&#105;&#100;&#101;&#x62;&#97;&#114;&#x40;&#x30;&#x2e;&#x31;&#55;&#46;&#x31;">better-sidebar@0.17.1</a> 是给 rc.8 基础线编译的，代码里直接 <code>import { settingsNamespace }</code>，而我的基础层是 alpha.5，API 没有这个名字，于是一 import 就炸。</p>
+<p>真相是：<strong>DSH 同时存在多条”版本线”</strong>（rc.6 &#x2F; rc.7 &#x2F; rc.8 &#x2F; alpha.2…），每条线的基础库 API 都不完全一样。npm 的 <code>latest</code> 标签并不代表”适合你的环境”——<a href="mailto:&#x62;&#101;&#116;&#116;&#101;&#x72;&#45;&#x73;&#105;&#100;&#101;&#x62;&#x61;&#114;&#x40;&#x30;&#x2e;&#49;&#x37;&#x2e;&#x31;">better-sidebar@0.17.1</a> 是给 rc.8 基础线编译的，代码里直接 <code>import { settingsNamespace }</code>，而我的基础层是 alpha.5，API 没有这个名字，于是一 import 就炸。</p>
 <h3 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h3><p>换成<strong>同一版本线的配套版本</strong>：<code>dsh-better-sidebar@0.18.0-alpha.0</code>（作者为 alpha 基础线发布的 alpha 版，peer 声明 <code>^0.1.2-alpha.2</code>，正好覆盖已装的 0.1.2-alpha.5）。</p>
 <p>做法与第二幕相同，但这次更彻底——以”装 0.17.1 之前的 lockfile 备份”为基底重建 lockfile，再并入 alpha 版的子图：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pnpm install --frozen-lockfile   <span class="hljs-comment"># 只 +1/-1：把 0.17.1 换成 0.18.0-alpha.0</span><br></code></pre></td></tr></table></figure>
