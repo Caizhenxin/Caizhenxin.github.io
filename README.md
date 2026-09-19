@@ -13,6 +13,7 @@
 **技术栈**: Valaxy v0.28.0-beta.1 + valaxy-theme-yun v0.27.0 + Vue 3 + TypeScript
 
 **完成的工作**:
+
 - ✅ 成功搭建基础博客框架
 - ✅ 部署到 GitHub Pages
 - ✅ 添加了 3 篇博客文章（博客搭建历程、Vue 3 学习笔记、GitHub Actions 指南）
@@ -20,6 +21,7 @@
 - ✅ 自定义了首页布局（头像 + 个人介绍 + 文章列表）
 
 **遇到的问题**:
+
 1. **路由初始化错误**: Yun 主题的 `App.vue` 在组件初始化时访问 `route.meta`，但在 SSG 静态部署中 `route` 对象可能为 `undefined`，导致 `TypeError: Cannot read properties of undefined (reading 'meta')`
 2. **构建依赖冲突**: 自定义 `App.vue` 时遇到 `@unhead/vue` 模块无法解析的问题
 3. **主题兼容性问题**: Yun 主题与 Valaxy beta 版本之间存在多处兼容性问题，包括 `route.path`、`route.meta` 等属性在多个组件中未做安全检查
@@ -34,6 +36,7 @@
 **技术栈**: Hexo v8.0 + hexo-theme-fluid v1.9.9 + Node.js 20
 
 **完成的工作**:
+
 - ✅ 成功迁移到 Hexo + Fluid 主题
 - ✅ 配置 GitHub Actions 自动部署工作流
 - ✅ 设计了个人"关于"页面（头像 + 社交链接 + 自我介绍 + 简历下载）
@@ -47,13 +50,13 @@
 
 ## 🛠️ 当前技术栈
 
-| 组件 | 版本 |
-|------|------|
-| 静态站点生成器 | Hexo v8.0 |
-| 主题 | Fluid v1.9.9 |
-| 渲染器 | hexo-renderer-marked + hexo-renderer-stylus |
-| 部署 | GitHub Actions → GitHub Pages |
-| 包管理 | npm |
+| 组件           | 版本                                        |
+| -------------- | ------------------------------------------- |
+| 静态站点生成器 | Hexo v8.0                                   |
+| 主题           | Fluid v1.9.9                                |
+| 渲染器         | hexo-renderer-marked + hexo-renderer-stylus |
+| 部署           | GitHub Actions → GitHub Pages              |
+| 包管理         | npm                                         |
 
 ## ✨ 功能特性
 
@@ -196,6 +199,7 @@ url: https://caizhenxin.github.io
 ### 主题配置
 
 编辑 `themes/fluid/_config.yml` 可修改：
+
 - 导航菜单
 - 社交链接
 - 头像
@@ -205,12 +209,12 @@ url: https://caizhenxin.github.io
 
 ## 📝 日常维护
 
-| 任务 | 操作 |
-|------|------|
-| 添加新文章 | `npx hexo new post "标题"` → 编辑 → `git push` |
-| 修改头像 | 替换 `source/img/avatar.jpg` → `git push` |
-| 添加下载文件 | 放入 `source/files/` → `git push` |
-| 修改主题配置 | 编辑 `themes/fluid/_config.yml` → `git push` |
+| 任务         | 操作                                                 |
+| ------------ | ---------------------------------------------------- |
+| 添加新文章   | `npx hexo new post "标题"` → 编辑 → `git push` |
+| 修改头像     | 替换`source/img/avatar.jpg` → `git push`        |
+| 添加下载文件 | 放入`source/files/` → `git push`                |
+| 修改主题配置 | 编辑`themes/fluid/_config.yml` → `git push`     |
 
 ## 🔗 相关链接
 
@@ -221,6 +225,9 @@ url: https://caizhenxin.github.io
 ## 📄 许可证
 
 MIT License
+
 ## ✨ 更新频率
-  <!--Activity Graph-->
+
+<!--Activity Graph-->
+
 [![Ashutosh's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=Caizhenxin&theme=react)](https://github.com/Caizhenxin/Caizhenxin.github.io)

@@ -23,6 +23,11 @@ tag:
   subtitle: '标签'
   post_total: '共计 %d 篇文章'
 
+research:
+  menu: '研究'
+  title: '研究'
+  subtitle: '研究'
+
 about:
   menu: '关于'
   title: '关于'

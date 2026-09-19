@@ -23,6 +23,11 @@ tag:
   subtitle: 'Tags'
   post_total: '%d posts in total'
 
+research:
+  menu: 'Research'
+  title: 'Research'
+  subtitle: 'Research'
+
 about:
   menu: 'About'
   title: 'About'

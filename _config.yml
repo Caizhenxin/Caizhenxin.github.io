@@ -99,6 +99,42 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: fluid
 
+# ============================================================
+# 主题配置覆盖（Hexo 原生机制，无需修改 themes/fluid/_config.yml）
+# 目的：在导航栏增加「研究 / Research」入口，指向学术主页 /research/
+#
+# 关于菜单文字如何变成双语的：
+#   Fluid 的菜单项文字 = each.name || __(key + '.menu') || __(key + '.title')
+#   这里**故意不写 name**，让主题走 __() 翻译查找，于是在
+#   themes/fluid/languages/zh-CN.yml 里读到「研究」，
+#   在 themes/fluid/languages/en.yml 里读到「Research」。
+#   → 中文页面显示「研究」，/en/ 页面显示「Research」，自动切换。
+#
+# 关于图标：menu 的 icon 必须填「真实存在于 iconfont 里」的类名，
+#   写错不会有报错、也不会有提示，只是那个位置一片空白（原 bug 就是如此：
+#   之前用的 icon-book-fill 在两套 iconfont 里都不存在）。
+#   本站实际加载了**两套** iconfont，它们共用 font-family: "iconfont"，
+#   浏览器按字符逐个回退，所以两套的图标都能显示：
+#     ① //at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css  ← Fluid 主题依赖的图标集
+#        （home-fill / archive-fill / category-fill / tags-fill / user-fill /
+#          search / dark / arrowleft / arrowright / arrowup / arrowdown /
+#          articles / list / chart / date / date-fill / clock-fill / cc-* 等）
+#     ② //at.alicdn.com/t/c/font_1736178_k526ubmyhba.css  ← theme.iconfont 配置项
+#        （book / books / pen / notebook / github-fill / wechat-fill / mail /
+#          switch-fill / docker / rss-fill 等）
+#   这里选 icon-articles（属于 ①，Fluid 自己保证加载），最稳。
+#   想换成更好看的书本图标可以改成 "iconfont icon-book"（属于 ②）。
+# ============================================================
+theme_config:
+  navbar:
+    menu:
+      - { key: "home",     link: "/",            icon: "iconfont icon-home-fill" }
+      - { key: "archive",  link: "/archives/",   icon: "iconfont icon-archive-fill" }
+      - { key: "category", link: "/categories/", icon: "iconfont icon-category-fill" }
+      - { key: "tag",      link: "/tags/",       icon: "iconfont icon-tags-fill" }
+      - { key: "research", link: "/research/",   icon: "iconfont icon-articles" }
+      - { key: "about",    link: "/about/",      icon: "iconfont icon-user-fill" }
+
 # Live2D 看板娘
 ## https://github.com/EYHN/hexo-helper-live2d
 live2d:
