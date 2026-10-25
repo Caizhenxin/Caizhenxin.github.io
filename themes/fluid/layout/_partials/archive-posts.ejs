@@ -30,19 +30,24 @@
             <div class="post-cards">
                 <% yearGroups[year].forEach(function(post) { %>
                     <% 
+                    // 注意：post.categories / post.tags 是 Hexo 的 Query 对象，
+                    // 不是数组，不能用 [0] 取值——之前这里取到的永远是 undefined，
+                    // 结果每个卡片的 data-category 都是空字符串，
+                    // 点上方分类标签（含新加的专栏）就会什么都筛不出来。
+                    // 必须走 toArray()。
                     var categoryName = '';
-                    if (post.categories && post.categories.length > 0 && post.categories[0]) {
-                        categoryName = post.categories[0].name || '';
+                    var postCats = post.categories ? post.categories.toArray() : [];
+                    if (postCats.length > 0) {
+                        categoryName = postCats[0].name || '';
                     }
-                    
+
                     var tagNames = [];
-                    if (post.tags && post.tags.length > 0) {
-                        post.tags.forEach(function(tag) {
-                            if (tag && tag.name) {
-                                tagNames.push(tag.name);
-                            }
-                        });
-                    }
+                    var postTags = post.tags ? post.tags.toArray() : [];
+                    postTags.forEach(function(tag) {
+                        if (tag && tag.name) {
+                            tagNames.push(tag.name);
+                        }
+                    });
                     %>
                     <article 
                         class="post-card" 
