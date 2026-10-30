@@ -241,6 +241,7 @@ custom_js:
   - /js/snow-effect.js
   - /js/divergence-loader.js
   - /js/asteroids-game.js
+  - /js/topic-drawer.js
 
 # 指定自定义 .css 文件路径，用法和 custom_js 相同
 # The usage is the same as custom_js
@@ -250,6 +251,7 @@ custom_css:
   - /css/ripple-effect.css
   - /css/divergence-loader.css
   - /css/asteroids-game.css
+  - /css/topic-card.css
 
 # 网页访问统计
 # Analysis of website visitors

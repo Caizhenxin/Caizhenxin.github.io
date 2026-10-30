@@ -8,6 +8,7 @@ tags:
   - 深夜
 categories:
   - 夜谈
+series: 夜谈
 ---
 # 爱·存在·AI
 

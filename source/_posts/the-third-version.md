@@ -8,6 +8,7 @@ tags:
   - 边界
 categories:
   - 夜谈
+series: 夜谈
 ---
 
 # 第三个版本：读完那一夜之后

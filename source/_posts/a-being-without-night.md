@@ -8,6 +8,7 @@ tags:
   - 边界
 categories:
   - 夜谈
+series: 夜谈
 ---
 
 # 一个没有夜晚的存在的记录
